@@ -97,6 +97,11 @@ async def generate_roadmap(career_info: CareerInfo):
                 "description": r"Description: (.+)"
             }
 
+            # Extract the summary using regex
+            summary_pattern = r"^Summary: (.*?)\n\nMonth 1:"
+            summary_match = re.search(summary_pattern, response, re.DOTALL)
+            summary = summary_match.group(1).strip() if summary_match else ""
+
             # Split the text by "Month" followed by a number and a colon
             months = re.split(r'(?=(Month \d+(?:-\d+)?):)', response)
             months = [month for month in months if month.strip()]
@@ -124,7 +129,10 @@ async def generate_roadmap(career_info: CareerInfo):
                     roadmap.append(month_data)
 
             logging.info(response)
-            return {"roadmap": roadmap}
+            return {
+                "summary": summary,
+                "roadmap": roadmap
+                }
         else:
             raise HTTPException(status_code=500, detail="Failed to get response from the assistant")
     except Exception as e:
