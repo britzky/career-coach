@@ -9,6 +9,9 @@ from ..config import assistant_id, client
 # Initalize the router
 router = APIRouter()
 
+# Basic configuration for logging
+logging.basicConfig(level=logging.INFO)
+
 
 # Define the schema for the user input
 class CareerInfo(BaseModel):
