@@ -67,20 +67,19 @@ async def generate_roadmap(career_info: CareerInfo):
             thread_id=thread.id,
             assistant_id=assistant_id,
             instructions=(
-                "Please format the career roadmap response using the following strict template for each month section: " +
-                "\n\n- Begin each section with the month and course title on the same line." +
-                "\n- Followed by the course details on separate lines." +
-                "\n- Ensure each course detail starts on a new line and follows the exact order: Course Name, Link, Skill level, Price, and Description." +
-                "\n- Do not use any markdown formatting." +
-                "\n\nHere is an example format to follow:" +
+                "Start the response with a summary that highlights the key learning outcomes, total time commitment, and skill development progression. Mention the overarching goals and how this roadmap prepares the learner for their career. After the summary, use the following strict template for each month section of the career roadmap: " +
+                "\n- Begin each section with the month and course title." +
+                "\n- Follow with details: Course Name, Link, Skill level, Price, and Description, each on a new line, in this order." +
+                "\n- Avoid markdown formatting." +
+                "\nExample format:" +
+                "\nSummary: This roadmap covers the essential skills and knowledge for a career in Java development, requiring a total of 6 months with an average weekly study time of 10 hours. It aims to equip learners with foundational to advanced Java skills, preparing them for job-ready competencies." +
                 "\n\nMonth 1: Basic Java Programming" +
                 "\nCourse Name: Java Programming Basics" +
                 "\nLink: https://www.udacity.com/course/java-programming-basics--ud282" +
                 "\nSkill level: Beginner" +
                 "\nPrice: $12.99" +
-                "\nDescription: This course will introduce you to the basics of Java programming, including variables, loops, and lists—essential knowledge for all aspiring Java developers." +
-                "\n\nContinue with this format for each month section, ensuring the courses align with the user's provided timeframe and weekly study hours." +
-                "\n\nAfter detailing the monthly sections, conclude with a brief summary of the entire roadmap. This summary should encapsulate the key learning outcomes, total time commitment, and the progression path of skills development. Highlight the overall goals achieved through this roadmap and how it prepares the learner for their career in programming."
+                "\nDescription: Introduction to Java programming basics, including variables, loops, and lists." +
+                "\n\nContinue with this format for each month, ensuring the courses align with the learner's timeframe and weekly study hours."
             )
         )
 
