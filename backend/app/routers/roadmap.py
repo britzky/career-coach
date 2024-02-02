@@ -1,28 +1,15 @@
 from fastapi import APIRouter, HTTPException
-from pydantic import BaseModel
-from typing import List
 import logging
 import asyncio
 import re
 from ..config import assistant_id, client
+from app.schemas import CareerInfo
 
 # Initalize the router
 router = APIRouter()
 
 # Basic configuration for logging
 logging.basicConfig(level=logging.INFO)
-
-
-# Define the schema for the user input
-class CareerInfo(BaseModel):
-    career: str
-    experience: str
-    hours_dedicated_to_learning: int
-    budget: int
-    skills: List[str]
-    preferred_learning_style: str
-    timeframe: str
-    current_knowledge: str
 
 async def wait_for_run_completion(client, thread_id, run_id):
     while True:
