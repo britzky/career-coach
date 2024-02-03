@@ -3,7 +3,7 @@ import logging
 import asyncio
 import re
 from ..config import assistant_id, client
-from backend.app.schemas import CareerInfo
+from schemas import CareerInfo
 
 # Initalize the router
 router = APIRouter()
