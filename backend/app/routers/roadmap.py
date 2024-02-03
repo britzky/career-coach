@@ -3,7 +3,7 @@ import logging
 import asyncio
 import re
 from ..config import assistant_id, client
-from schemas import schemas
+from app.schemas import CareerInfo
 
 # Initalize the router
 router = APIRouter()
@@ -25,7 +25,7 @@ async def wait_for_run_completion(client, thread_id, run_id):
         await asyncio.sleep(1)
 
 @router.post("/generate-roadmap/")
-async def generate_roadmap(career_info: schemas.CareerInfo):
+async def generate_roadmap(career_info: CareerInfo):
     try:
         skills = ', '.join(career_info.skills)
         message = (
