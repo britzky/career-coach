@@ -1,11 +1,12 @@
 import openai
-import os
-from dotenv import load_dotenv
+from starlette.config import Config
 
-dotenv_path = os.path.join(os.path.dirname(__file__), '.env')
-load_dotenv(dotenv_path)
+config = Config(".env")
 
-openai_api_key = os.getenv('OPENAI_API_KEY')
-assistant_id = os.getenv('OPEN_AI_ASSISTANT_ID')
-database_url = os.getenv('DATABASE_URL')
+openai_api_key = config('OPENAI_API_KEY', cast=str)
+assistant_id = config('OPEN_AI_ASSISTANT_ID', cast=str)
+database_url = config('DATABASE_URL', cast=str)
+secret_key = config('SECRET_KEY', cast=str)
+algorithm = config('ALGORITHM', cast=str, default="HS256")
+access_token_expire_minutes = config("ACCESS_TOKEN_EXPIRE_MINUTES", cast=int, default=30)
 client = openai.Client(api_key=openai_api_key)
