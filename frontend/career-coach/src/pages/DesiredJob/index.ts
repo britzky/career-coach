@@ -1,0 +1,1 @@
+export { DesiredJob } from './DesiredJob';
