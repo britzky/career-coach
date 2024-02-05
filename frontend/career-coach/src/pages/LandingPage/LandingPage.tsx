@@ -1,7 +1,7 @@
-import React from 'react'
-
 export const LandingPage = () => {
   return (
-    <div>LandingPage</div>
+    <div className="bg-green-600">
+      <h1>Landing page</h1>
+    </div>
   )
 }

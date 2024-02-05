@@ -5,3 +5,7 @@ export const Budget = () => {
     <div>Budget</div>
   )
 }
+
+export const Christmas = () => {
+  
+}
