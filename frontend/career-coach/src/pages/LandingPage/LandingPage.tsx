@@ -1,7 +1,7 @@
 export const LandingPage = () => {
   return (
-    <div className="bg-green-600">
-      <h1>Landing page</h1>
+    <div>
+      <h1 className="font-bold text-xl bg-desired-job gradient-text max-w-[143px]">skills</h1>
     </div>
   )
 }
