@@ -5,7 +5,7 @@ from .routers import roadmap, quote
 app = FastAPI()
 
 app.include_router(roadmap.router)
-app.include_route(quote.router)
+app.include_router(quote.router)
 
 
 
