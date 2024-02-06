@@ -1,1 +1,1 @@
-export { CareerContext } from "./CareerContext";
+export { CareerProvider, useCareerDetails } from "./CareerContext";

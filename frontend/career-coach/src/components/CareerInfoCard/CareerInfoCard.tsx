@@ -9,3 +9,5 @@ export const CareerInfoCard: React.FC<CareerInfoCardProps> = ({text}) => {
       </div>
   )
 }
+
+
