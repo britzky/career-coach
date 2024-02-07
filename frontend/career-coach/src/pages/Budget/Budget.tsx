@@ -12,16 +12,28 @@ import { NavButton } from '../../components/NavButton';
       
 //   )
 // }
+const Footer: React.FC = ({ children }) => {
+  return (
+    <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+      {children}
+    </div>
+  );
+};
 
 export const Budget: React.FC = () => {
   return (
     <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', minHeight: '100vh' }}>
-      <div>What is your budget? (optional)</div>
+      <div>
+        <p className='text-purple-900'>What is your budget? (optional)</p>
+      </div>
       <div className='w-40'><InputBox placeholder='Enter your budget'/></div>
       <div style={{ marginTop: 'auto' }}>
-        <NavButton>Back</NavButton>
-        <NavButton>Continue</NavButton>
+        <Footer>
+          <NavButton>Back</NavButton>
+          <NavButton>Continue</NavButton>
+        </Footer>
       </div>
     </div>
   );
 };
+
