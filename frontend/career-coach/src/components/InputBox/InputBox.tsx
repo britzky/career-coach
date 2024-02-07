@@ -14,7 +14,7 @@ export const InputBox: React.FC<InputBoxProps> = ({ placeholder, border=false, o
           type="text"
           placeholder={placeholder}
           onChange={(e) => onChange && onChange(e.target.value)}
-          required
+          // required # it says (optional) so I think we disable this?
         />
     </>
   )
