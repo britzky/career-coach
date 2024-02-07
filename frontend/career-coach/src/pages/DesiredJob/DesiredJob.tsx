@@ -8,6 +8,10 @@ export const DesiredJob = () => {
   const handleCardClick = (tag: string) => {
     updateCareer('career', tag)
   }
+
+  const handleInputChange = (value: string) => {
+    updateCareer('career', value)
+  }
   // remove before shipping to production
   useEffect(() => {
     console.log(careerDetails)
@@ -20,7 +24,7 @@ export const DesiredJob = () => {
           <p className="text-purpleText text-base font-bold bg-desired-job gradient-text">I want to be a...</p>
         </div>
         <div className="mb-7">
-          <InputBox placeholder='If you cant find your job below, search it here' border />
+          <InputBox placeholder='If you cant find your job below, search it here' onChange={handleInputChange} border />
         </div>
         <div className="flex flex-wrap gap-10 justify-center">
           <div>
