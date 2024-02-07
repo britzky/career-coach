@@ -23,20 +23,24 @@ export const LoadingScreen = () => {
 
   useEffect(() => {
     fetchQuote();
-    const interval = setInterval(fetchQuote, 10000);
+    const interval = setInterval(fetchQuote, 20000);
 
     return () => clearInterval(interval);
   }, [])
-  console.log(quote)
+
+
   return (
-    <div>
-      <p>LoadingScreen</p>
-      {quote &&
-      <>
-      <blockquote>{quote.quote}</blockquote>
-      <p>{quote.author}</p>
-      </>
-      }
+    <div className="flex justify-center mt-14">
+      <div className="flex-col items-center">
+        <div className="self-center">
+          <p className="text-purpleText font-bold text-xl text-center">Loading your results...</p>
+        </div>
+        {quote &&
+        <div className="my-12">
+        <blockquote className="bg-loading-screen-quote gradient-text text-base font-bold">"{quote.quote}" - {quote.author}</blockquote>
+        </div>
+        }
+      </div>
     </div>
   )
 }
