@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { CareerInfoCard } from '../../components'
+import { CareerInfoCard, InputBox } from '../../components'
 import { useCareerDetails } from '../../context/CareerContext';
 
 export const DesiredJob = () => {
@@ -18,6 +18,9 @@ export const DesiredJob = () => {
       <div className="flex flex-col max-w-[1200px]">
         <div className="flex justify-center mb-8">
           <p className="text-purpleText text-base font-bold bg-desired-job gradient-text">I want to be a...</p>
+        </div>
+        <div className="mb-7">
+          <InputBox placeholder='If you cant find your job below, search it here' border />
         </div>
         <div className="flex flex-wrap gap-10 justify-center">
           <div>
