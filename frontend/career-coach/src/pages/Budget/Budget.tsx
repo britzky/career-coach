@@ -2,24 +2,6 @@ import React from 'react'
 import { InputBox } from '../../components/InputBox'
 import { NavButton } from '../../components/NavButton'
 
-// export const Budget = () => {
-//   return (
-//     <>
-//     <div>Budget</div>
-//     <div className='w-40'><InputBox placeholder='this is the budget'/></div>
-//      </>
-    
-      
-//   )
-// }
-const Footer: React.FC = ({ children }) => {
-  return (
-    <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-      {children}
-    </div>
-  );
-};
-
 export const Budget: React.FC = () => {
   return (
     <div className="flex justify-center min-h-screen w-full mt-14">
@@ -33,10 +15,10 @@ export const Budget: React.FC = () => {
           </div>
         </div>
         <div style={{ marginTop: 'auto' }}>
-          <Footer>
+          <div className="flex justify-between">
             <NavButton>Back</NavButton>
             <NavButton>Continue</NavButton>
-          </Footer>
+          </div>
         </div>
       </div>
     </div>
