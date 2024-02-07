@@ -1,7 +1,14 @@
 import React from 'react'
 
-export const NavButton = () => {
-  return (
-    <div>NavButton</div>
-  )
+interface ButtonProps {
+  onClick?: () => void;
+  children?: React.ReactNode;
 }
+
+export const NavButton: React.FC<ButtonProps> = ({ onClick, children }) => {
+  return (
+    <button onClick={onClick}>
+      {children}
+    </button>
+  );
+};
