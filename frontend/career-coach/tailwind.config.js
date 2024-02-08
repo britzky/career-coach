@@ -22,6 +22,9 @@ export default {
         'bold': 700
       },
       colors: {
+        buttonWhite: '#FFFFFF',
+        hoverButton: '#F3F5FF',
+        clickedButton: '#E7EAFF',
         ligthPurple: '#ECEEFB',
         purpleText: '#4835BD',
         buttonText: '#4263F1',
