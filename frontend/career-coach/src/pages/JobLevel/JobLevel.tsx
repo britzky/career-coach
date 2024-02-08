@@ -20,20 +20,18 @@ export const JobLevel = () => {
         <div className="flex justify-center mb-8">
           <p className="text-purpleText text-base font-bold">What is your <span className="bg-desired-job-level gradient-text">Expected Level </span>at your new job?</p>
         </div>
-        <div className="flex gap-10 justify-center">
+        <div className="flex flex-wrap gap-10 justify-center">
           <div>
-            <CareerInfoCard text="Entry Level" tag="entry" onCardClick={handleCardClick}/>
-            <br />
-            <span>0-3 Years</span>
+            <CareerInfoCard text="Entry Level" years= "0-3 Years" tag="entry" onCardClick={handleCardClick}/>
           </div>
           <div>
-            <CareerInfoCard text="Mid Level 3-5 Years" tag="mid" onCardClick={handleCardClick}/>
+            <CareerInfoCard text="Mid Level" years= "3-5 Years" tag="mid" onCardClick={handleCardClick}/>
           </div>
           <div>
-            <CareerInfoCard text="Senior Level 5-7 Years" tag="senior" onCardClick={handleCardClick}/>
+            <CareerInfoCard text="Senior Level" years="5-7 Years" tag="senior" onCardClick={handleCardClick}/>
           </div>
           <div>
-            <CareerInfoCard text="Manager 7-10 Years" tag="manager" onCardClick={handleCardClick}/>
+            <CareerInfoCard text="Manager" years="7-10 Years" tag="manager" onCardClick={handleCardClick}/>
           </div>
         </div>
         <div className="flex justify-between mt-40">

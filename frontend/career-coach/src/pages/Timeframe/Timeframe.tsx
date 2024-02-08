@@ -8,11 +8,13 @@ export const Timeframe = () => {
           <p className="text-purpleText text-base font-bold">What is your expected<span className="bg-timeframe gradient-text"> timeframe</span>?</p>
         </div>
         <div className="flex flex-col items-center">
-          <div className='mb-6 w-40'>
+          <div className='mb-6 w-40 flex justify-center'> {/* added flex justify-center */}
             <InputBox placeholder='12 Months' required/>
+            <span className='ml-2'>Months</span> {/* added this line */}
           </div>
-          <div className='mb-6 w-40'>
+          <div className='mb-6 w-40 flex justify-center'>
             <InputBox placeholder='0 Years' required/>
+            <span className='ml-2'>Years</span>
           </div>
         </div>
         <div className="flex justify-between mt-40 w-[1200px]">

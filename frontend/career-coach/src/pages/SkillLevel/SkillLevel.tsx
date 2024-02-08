@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import { CareerInfoCard } from '../../components';
 import { useCareerDetails } from '../../context/CareerContext';
+import { NavButton } from '../../components';
 
 export const SkillLevel = () => {
   const { careerDetails, updateCareer } = useCareerDetails()
@@ -29,6 +30,10 @@ export const SkillLevel = () => {
           <div>
             <CareerInfoCard text="Expert" tag="expert" onCardClick={handleCardClick}/>
           </div>
+        </div>
+        <div className="flex justify-between mt-40 w-[1200px]">
+          <NavButton back to='/timeframe'>Back</NavButton>
+          <NavButton to='/loading-screen'>Continue</NavButton>
         </div>
       </div>
     </div>
