@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { CareerInfoCard } from '../../components'
+import { CareerInfoCard } from '../../components';
 import { useCareerDetails } from '../../context/CareerContext';
 
 export const LearningStyle = () => {
@@ -24,13 +24,13 @@ export const LearningStyle = () => {
             <CareerInfoCard text="Project Based" tag="project" onCardClick={handleCardClick}/>
           </div>
           <div>
-            <CareerInfoCard text="Video Based" tag="video" onCardClick={handleCardClick} />
+            <CareerInfoCard text="Video Based" tag="video" onCardClick={handleCardClick}/>
           </div>
           <div>
-            <CareerInfoCard text="Assessment Based" tag="Assessment" onCardClick={handleCardClick} />
+            <CareerInfoCard text="Assessment Based" tag="Assessment" onCardClick={handleCardClick}/>
           </div>
           <div>
-            <CareerInfoCard text="Micro learning" tag="micro learning" onCardClick={handleCardClick} />
+            <CareerInfoCard text="Micro Learning" tag="micro learning" onCardClick={handleCardClick}/>
           </div>
         </div>
       </div>

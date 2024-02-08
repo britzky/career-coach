@@ -11,16 +11,16 @@ export const DesiredSkills = () => {
         </div>
         <div className="flex flex-col justify-center">
           <div className='mb-8'>
-            <InputBox placeholder='Skill 1'/>
+            <InputBox placeholder='Skill 1' border/>
           </div>
           <div className='mb-8'>
-            <InputBox placeholder='Skill 2'/>
+            <InputBox placeholder='Skill 2' border/>
           </div>
           <div className='mb-8'>
-            <InputBox placeholder='Skill 3'/>
+            <InputBox placeholder='Skill 3' border/>
           </div>
           <div className='mb-8'>
-            <InputBox placeholder='Skill 4'/>
+            <InputBox placeholder='Skill 4' border/>
           </div>          
         </div>
       </div>
