@@ -14,11 +14,9 @@ export const Budget: React.FC = () => {
             <InputBox placeholder='$100'/>
           </div>
         </div>
-        <div style={{ marginTop: 'auto' }}>
-          <div className="flex justify-between">
-            <NavButton>Back</NavButton>
-            <NavButton>Continue</NavButton>
-          </div>
+        <div className="flex justify-between mt-40 w-[1200px]">
+          <NavButton back to='/hours-per-week'>Back</NavButton>
+          <NavButton to='/desired-skills'>Continue</NavButton>
         </div>
       </div>
     </div>

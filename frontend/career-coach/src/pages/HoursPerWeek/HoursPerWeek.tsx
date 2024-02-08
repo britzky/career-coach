@@ -1,5 +1,5 @@
 import { useEffect } from 'react'
-import { InputBox } from "../../components"
+import { InputBox, NavButton } from "../../components"
 import { useCareerDetails } from "../../context/CareerContext"
 
 export const HoursPerWeek = () => {
@@ -29,6 +29,10 @@ export const HoursPerWeek = () => {
             max="40"
             className="w-full text-purpleText"
           />
+        </div>
+        <div className="flex justify-between mt-40 w-[1200px]">
+          <NavButton to='/job-level' back>Back</NavButton>
+          <NavButton to='/budget'>Continue</NavButton>
         </div>
       </div>
     </div>

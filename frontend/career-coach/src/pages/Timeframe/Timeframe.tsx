@@ -1,6 +1,4 @@
-import React from 'react'
-import { InputBox } from '../../components/InputBox'
-import { NavButton } from '../../components/NavButton'
+import { InputBox, NavButton } from '../../components'
 
 export const Timeframe = () => {
   return (
@@ -15,7 +13,11 @@ export const Timeframe = () => {
           </div>
           <div className='mb-6 w-40'>
             <InputBox placeholder='0 Years' required/>
-          </div>         
+          </div>
+        </div>
+        <div className="flex justify-between mt-40 w-[1200px]">
+          <NavButton back to='/learning-style'>Back</NavButton>
+          <NavButton to='/skill-level'>Continue</NavButton>
         </div>
       </div>
     </div>

@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { CareerInfoCard } from '../../components';
+import { CareerInfoCard, NavButton } from '../../components';
 import { useCareerDetails } from '../../context/CareerContext';
 
 export const LearningStyle = () => {
@@ -32,6 +32,10 @@ export const LearningStyle = () => {
           <div>
             <CareerInfoCard text="Micro Learning" tag="micro learning" onCardClick={handleCardClick}/>
           </div>
+        </div>
+        <div className="flex justify-between mt-40 w-[1200px]">
+          <NavButton back to='/desired-skills'>Back</NavButton>
+          <NavButton to='/timeframe'>Continue</NavButton>
         </div>
       </div>
     </div>
