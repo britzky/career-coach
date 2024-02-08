@@ -17,7 +17,7 @@ export const SkillLevel = () => {
     <div className="flex justify-center min-h-screen w-full mt-14">
       <div className="flex flex-col max-w-[1200px]">
         <div className="flex justify-center mb-8">
-          <p className="text-purpleText text-base font-bold">What is your current knowledge in <span className="bg-current-knowledge gradient-text">updateCareer('career', value)</span>?</p>
+          <p className="text-purpleText text-base font-bold">What is your current knowledge in <span className="bg-current-knowledge gradient-text">{careerDetails.career}</span>?</p>
         </div>
         <div className="flex gap-10 justify-center">
           <div>

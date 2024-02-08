@@ -22,18 +22,18 @@ export const JobLevel = () => {
         </div>
         <div className="flex gap-10 justify-center">
           <div>
-            <CareerInfoCard text="Entry Level" tag="entry" onCardClick={handleCardClick}/>
+            <CareerInfoCard text="Entry Level" tag="0-3 years" onCardClick={handleCardClick}/>
             <br />
             <span>0-3 Years</span>
           </div>
           <div>
-            <CareerInfoCard text="Mid Level 3-5 Years" tag="mid" onCardClick={handleCardClick}/>
+            <CareerInfoCard text="Mid Level 3-5 Years" tag="3-5 years" onCardClick={handleCardClick}/>
           </div>
           <div>
-            <CareerInfoCard text="Senior Level 5-7 Years" tag="senior" onCardClick={handleCardClick}/>
+            <CareerInfoCard text="Senior Level 5-7 Years" tag="5-7 years" onCardClick={handleCardClick}/>
           </div>
           <div>
-            <CareerInfoCard text="Manager 7-10 Years" tag="manager" onCardClick={handleCardClick}/>
+            <CareerInfoCard text="Manager 7-10 Years" tag="7-10 years" onCardClick={handleCardClick}/>
           </div>
         </div>
         <div className="flex justify-between mt-40">

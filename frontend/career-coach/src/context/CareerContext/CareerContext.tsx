@@ -37,10 +37,19 @@ export const CareerProvider: React.FC<CareerProviderProps> = ({ children }) => {
   });
 
   const updateCareer: CareerContextType['updateCareer'] = (key, value) => {
-    setCareerDetails((prevCareer) => ({
-      ...prevCareer,
-      [key]: value,
-    }));
+    setCareerDetails((prevCareer) => {
+      if (key === 'skills' && typeof value === 'string') {
+        return {
+          ...prevCareer,
+          [key]: [...prevCareer.skills, value],
+        }
+      } else {
+        return {
+          ...prevCareer,
+          [key]: value,
+        }
+      }
+    });
   };
 
   return (
