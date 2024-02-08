@@ -37,19 +37,19 @@ export const DesiredJob = () => {
             <CareerInfoCard text="Product Designer" tag="Product Designer" onCardClick={handleCardClick}/>
           </div>
           <div>
-            <CareerInfoCard text="UX Researcher" tag="UX Researcher" onCardClick={handleCardClick} />
+            <CareerInfoCard text="UX Researcher" tag="UX Researcher" onCardClick={handleCardClick}/>
           </div>
           <div>
-            <CareerInfoCard text="UI Designer" tag="UI Designer" onCardClick={handleCardClick} />
+            <CareerInfoCard text="UI Designer" tag="UI Designer" onCardClick={handleCardClick}/>
           </div>
           <div>
-            <CareerInfoCard text="Full Stack Engineer" tag="Full Stack Engineer" onCardClick={handleCardClick} />
+            <CareerInfoCard text="Full Stack Engineer" tag="Full Stack Engineer" onCardClick={handleCardClick}/>
           </div>
           <div>
             <CareerInfoCard text="Front End Engineer" tag="Front End Engineer" onCardClick={handleCardClick}/>
           </div>
           <div>
-            <CareerInfoCard text="Back End Engineer" tag="Back End Engineer" onCardClick={handleCardClick} />
+            <CareerInfoCard text="Back End Engineer" tag="Back End Engineer" onCardClick={handleCardClick}/>
           </div>
           <div>
             <CareerInfoCard text="Product Manager" tag="Product Manager" onCardClick={handleCardClick} />
