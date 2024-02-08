@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
-import { CareerInfoCard, InputBox } from '../../components'
+import { CareerInfoCard, InputBox, NavButton } from '../../components'
 import { useCareerDetails } from '../../context/CareerContext';
+import { Link } from 'react-router-dom';
 
 export const DesiredJob = () => {
   const  { careerDetails, updateCareer } = useCareerDetails()
@@ -12,6 +13,7 @@ export const DesiredJob = () => {
   const handleInputChange = (value: string) => {
     updateCareer('career', value)
   }
+
   // remove before shipping to production
   useEffect(() => {
     console.log(careerDetails)
@@ -50,11 +52,14 @@ export const DesiredJob = () => {
             <CareerInfoCard text="Back End Engineer" tag="Back End Engineer" onCardClick={handleCardClick} />
           </div>
           <div>
-            <CareerInfoCard text="Prooduct Manager" tag="Product Manager" onCardClick={handleCardClick} />
+            <CareerInfoCard text="Product Manager" tag="Product Manager" onCardClick={handleCardClick} />
           </div>
           <div>
             <CareerInfoCard text="Cloud Developer" tag="Cloud Developer" onCardClick={handleCardClick} />
           </div>
+        </div>
+        <div className="mt-14 flex justify-end">
+          <NavButton to='/job-level'>Continue</NavButton>
         </div>
       </div>
     </div>
