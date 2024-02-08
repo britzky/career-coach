@@ -11,10 +11,10 @@ export const Timeframe = () => {
         </div>
         <div className="flex flex-col items-center">
           <div className='mb-6 w-40'>
-            <InputBox placeholder='12 Months'/>
+            <InputBox placeholder='12 Months' required/>
           </div>
           <div className='mb-6 w-40'>
-            <InputBox placeholder='0 Years'/>
+            <InputBox placeholder='0 Years' required/>
           </div>         
         </div>
       </div>
