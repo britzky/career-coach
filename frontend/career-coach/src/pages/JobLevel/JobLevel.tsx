@@ -21,7 +21,9 @@ export const JobLevel = () => {
         </div>
         <div className="flex gap-10 justify-center">
           <div>
-            <CareerInfoCard text="Entry Level 0-3 Years" tag="entry" onCardClick={handleCardClick}/>
+            <CareerInfoCard text="Entry Level" tag="entry" onCardClick={handleCardClick}/>
+            <br />
+            <span>0-3 Years</span>
           </div>
           <div>
             <CareerInfoCard text="Mid Level 3-5 Years" tag="mid" onCardClick={handleCardClick}/>
