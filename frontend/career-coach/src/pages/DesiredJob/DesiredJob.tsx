@@ -1,7 +1,6 @@
 import { useEffect } from 'react';
 import { CareerInfoCard, InputBox, NavButton } from '../../components'
 import { useCareerDetails } from '../../context/CareerContext';
-import { Link } from 'react-router-dom';
 
 export const DesiredJob = () => {
   const  { careerDetails, updateCareer } = useCareerDetails()

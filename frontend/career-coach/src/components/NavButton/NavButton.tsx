@@ -5,13 +5,17 @@ import { useNavigate } from 'react-router-dom';
 interface ButtonProps {
   back?: boolean;
   to?: string;
+  onClick?: () => void;
   children?: React.ReactNode;
 }
 
-export const NavButton: React.FC<ButtonProps> = ({ children, back, to }) => {
+export const NavButton: React.FC<ButtonProps> = ({ children, back, to, onClick }) => {
   const navigate = useNavigate();
 
   const handleClick = () => {
+    if (onClick) {
+      onClick();
+    }
     if (to !== undefined){
       navigate(to);
     }

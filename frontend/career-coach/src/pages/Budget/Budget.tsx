@@ -1,8 +1,14 @@
 import React from 'react'
-import { InputBox } from '../../components/InputBox'
-import { NavButton } from '../../components/NavButton'
+import { InputBox, NavButton } from '../../components'
+import { useCareerDetails } from '../../context/CareerContext';
 
 export const Budget: React.FC = () => {
+  const { updateCareer } = useCareerDetails();
+
+  const handleInputChange = (value: string) => {
+    updateCareer('budget', Number(value))
+  }
+
   return (
     <div className="flex justify-center min-h-screen w-full mt-14">
       <div className="flex flex-col max-w-[1200px]">
@@ -11,7 +17,7 @@ export const Budget: React.FC = () => {
         </div>
         <div className='flex justify-center'>
           <div className='flex items-center'>
-            <InputBox placeholder='$100'/>
+            <InputBox placeholder='$100' onChange={handleInputChange}/>
             <span className='ml-2'>USD</span>
           </div>
         </div>

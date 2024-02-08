@@ -38,7 +38,9 @@ export default {
         'learning-style': 'linear-gradient(90deg, #448FD9 53.03%, #A270C0 61.48%, #D76573 67.92%, #F0944C 75.23%)',
         'timeframe': 'linear-gradient(90deg, #448FD9 58.7%, #A270C0 65.66%, #D76573 70.96%, #F0944C 76.97%)',
         'current-knowledge': 'linear-gradient(89.96deg, #448FD9 65.12%, #A270C0 74.22%, #D76573 81.15%, #F0944C 89.01%)',
-        'loading-screen-quote': 'linear-gradient(89.96deg, #448FD9 1%, #A270C0 38.71%, #D76573 67.41%, #F0944C 99.97%)'
+        'loading-screen-quote': 'linear-gradient(89.96deg, #448FD9 1%, #A270C0 38.71%, #D76573 67.41%, #F0944C 99.97%)',
+        'landing-page': 'linear-gradient(90deg, #448FD9 0%, #A270C0 38.1%, #D76573 67.1%, #F0944C 100%)',
+        'landing-page-reverse': 'linear-gradient(90deg, #F0944C 0%, #D76573 32.9%, #A270C0 61.9%, #448FD9 100%)',
       }
     },
   },
