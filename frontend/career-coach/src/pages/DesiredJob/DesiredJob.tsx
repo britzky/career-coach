@@ -52,10 +52,10 @@ export const DesiredJob = () => {
             <CareerInfoCard text="Back End Engineer" tag="Back End Engineer" onCardClick={handleCardClick}/>
           </div>
           <div>
-            <CareerInfoCard text="Product Manager" tag="Product Manager" onCardClick={handleCardClick} />
+            <CareerInfoCard text="Product Manager" tag="Product Manager" onCardClick={handleCardClick}/>
           </div>
           <div>
-            <CareerInfoCard text="Cloud Developer" tag="Cloud Developer" onCardClick={handleCardClick} />
+            <CareerInfoCard text="Cloud Developer" tag="Cloud Developer" onCardClick={handleCardClick}/>
           </div>
         </div>
         <div className="mt-14 flex justify-end">
