@@ -16,11 +16,11 @@ export const Timeframe = () => {
         </div>
         <div className="flex flex-col items-center">
           <div className='mb-6 w-40 flex justify-center'> {/* added flex justify-center */}
-            <InputBox placeholder='12 Months' onChange={handleInputChange}/>
+            <InputBox placeholder='12' onChange={handleInputChange}/>
             <span className='ml-2'>Months</span> {/* added this line */}
           </div>
           <div className='mb-6 w-40 flex justify-center'>
-            <InputBox placeholder='0 Years' onChange={handleInputChange} />
+            <InputBox placeholder='0' onChange={handleInputChange} />
             <span className='ml-2'>Years</span>
           </div>
         </div>

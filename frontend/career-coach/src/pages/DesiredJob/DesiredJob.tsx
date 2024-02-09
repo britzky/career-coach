@@ -26,7 +26,7 @@ export const DesiredJob = () => {
         </div>
         <div className="mb-7">
           <InputBox
-            placeholder='If you cant find your job below, search it here'
+            placeholder="If you can't find your job below, search it here"
             onChange={handleInputChange}
             border
           />
