@@ -1,5 +1,5 @@
 import { useEffect } from 'react'
-import { InputBox } from '../../components/InputBox'
+import { SkillsInputBox } from '../../components/SkillsInputBox'
 import { NavButton } from '../../components/NavButton'
 import { useCareerDetails } from '../../context/CareerContext'
 
@@ -24,22 +24,22 @@ export const DesiredSkills = () => {
           <p className="text-purpleText text-base font-bold">What are some<span className="bg-desired-skills gradient-text"> skills </span>you want to gain? (optional)</p>
         </div>
         <div className='flex justify-center'> {/* added this line/div  */}    
-          <div className="flex flex-col justify-center w-[700px]">
+          <div className="flex flex-col justify-center w-[791px]">
             <div className='mb-8 flex items-center'>
               <span className='mr-2 text-purpleText text-base'>Skill 1</span>
-              <InputBox placeholder='Figma' onBlur={handleInputChange} border/>
+              <SkillsInputBox placeholder='Figma' onBlur={handleInputChange} border/>
             </div>
             <div className='mb-8 flex items-center'>
               <span className='mr-2 text-purpleText text-base'>Skill 2</span>
-              <InputBox placeholder='Skill 2' onBlur={handleInputChange} border/>
+              <SkillsInputBox placeholder='Maze' onBlur={handleInputChange} border/>
             </div>
             <div className='mb-8 flex items-center'>
               <span className='mr-2 text-purpleText text-base'>Skill 3</span>
-              <InputBox placeholder='Skill 3' onBlur={handleInputChange} border/>
+              <SkillsInputBox placeholder='Design Systems' onBlur={handleInputChange} border/>
             </div>
             <div className='mb-8 flex items-center'>
               <span className='mr-2 text-purpleText text-base'>Skill 4</span>
-              <InputBox placeholder='Skill 4' onBlur={handleInputChange} border/>
+              <SkillsInputBox placeholder='Usability Testing' onBlur={handleInputChange} border/>
             </div>
           </div>
         </div>
