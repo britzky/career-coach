@@ -1,7 +1,7 @@
 import { Routes, Route, useLocation } from "react-router-dom";
 import {
     Budget, LandingPage, DesiredJob, DesiredSkills, HoursPerWeek, JobLevel,
-    LearningStyle, LoadingScreen, SkillLevel, Timeframe
+    LearningStyle, LoadingScreen, SkillLevel, Timeframe, Roadmap
 } from "../../pages";
 import { NavBar } from "../../components/NavBar";
 
@@ -23,6 +23,7 @@ export const AllRoutes = () => {
           <Route path="loading-screen" element={<LoadingScreen />} />
           <Route path="skill-level" element={<SkillLevel />} />
           <Route path="timeframe" element={<Timeframe />} />
+          <Route path="roadmap" element={<Roadmap />} />
       </Routes>
     </div>
   )

@@ -7,7 +7,7 @@ interface NavBarProps {
 
 export const NavBar: React.FC<NavBarProps> = ({ isLandingPage }) => {
     return (
-        <nav className='navbar p-5'>
+        <nav className='fixed p-5 top-0'>
             <div className='navbar-text'>
                 <Link to='/' className='text-purpleText text-base font-bold'>
                     {isLandingPage ? "MyPDP" : "WayFinder"}
