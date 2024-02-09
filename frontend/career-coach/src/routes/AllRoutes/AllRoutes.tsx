@@ -1,14 +1,14 @@
 import { Routes, Route } from "react-router-dom";
 import {
     Budget, LandingPage, DesiredJob, DesiredSkills, HoursPerWeek, JobLevel,
-    LearningStyle, LoadingScreen, SkillLevel, Timeframe
+    LearningStyle, LoadingScreen, SkillLevel, Timeframe, Roadmap
 } from "../../pages";
 import { NavBar } from "../../components/NavBar";
 
 export const AllRoutes = () => {
   return (
     <div>
-      <NavBar text="WayFinder" />   
+      <NavBar text="WayFinder" />
       <Routes>
           <Route path="/" element={<LandingPage />} />
           <Route path="budget" element={<Budget />} />
@@ -20,6 +20,7 @@ export const AllRoutes = () => {
           <Route path="loading-screen" element={<LoadingScreen />} />
           <Route path="skill-level" element={<SkillLevel />} />
           <Route path="timeframe" element={<Timeframe />} />
+          <Route path="roadmap" element={<Roadmap />} />
       </Routes>
     </div>
   )

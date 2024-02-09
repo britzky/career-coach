@@ -1,4 +1,6 @@
 import { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { useCareerDetails } from '../../context/CareerContext';
 
 interface QuoteState {
   quote: string;
@@ -7,6 +9,8 @@ interface QuoteState {
 
 export const LoadingScreen = () => {
   const [quote, setQuote] = useState<QuoteState | undefined>()
+  const { loading, roadmap } = useCareerDetails();
+  const navigate = useNavigate();
 
   const fetchQuote = async () => {
     try {
@@ -27,6 +31,12 @@ export const LoadingScreen = () => {
 
     return () => clearInterval(interval);
   }, [])
+
+  useEffect(() => {
+    if (!loading && roadmap) {
+      navigate('/roadmap');
+    }
+  }, [loading, navigate, roadmap]);
 
 
   return (
