@@ -6,7 +6,10 @@ from .routers import roadmap, quote
 app = FastAPI()
 
 allowed_origins = [
-    "http://localhost:5173"
+    "http://localhost:5173",
+    "https://main--career-planner.netlify.app",
+    "https://career-planner.netlify.app"
+
 ]
 
 app.add_middleware(
