@@ -1,7 +1,13 @@
 import { useNavigate } from "react-router-dom";
+import { CourseAccordion } from "../../components";
+
 export const LandingPage = () => {
   const navigate = useNavigate();
   return (
+    <div>
+      <div className="">
+        <CourseAccordion />
+      </div>
     <div className="flex justify-center items-center min-h-screen">
       <button
         type="button"
@@ -10,6 +16,7 @@ export const LandingPage = () => {
       >
         Try our product without an account!
       </button>
+    </div>
     </div>
   )
 }
