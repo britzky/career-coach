@@ -1,6 +1,5 @@
 import { useEffect } from 'react'
-import { SkillsInputBox } from '../../components/SkillsInputBox'
-import { NavButton } from '../../components/NavButton'
+import { SkillsInputBox, NavButton } from '../../components'
 import { useCareerDetails } from '../../context/CareerContext'
 
 export const DesiredSkills = () => {
@@ -23,7 +22,7 @@ export const DesiredSkills = () => {
         <div className="flex justify-center mb-8">
           <p className="text-purpleText text-base font-bold">What are some<span className="bg-desired-skills gradient-text"> skills </span>you want to gain? (optional)</p>
         </div>
-        <div className='flex justify-center'> {/* added this line/div  */}    
+        <div className='flex justify-center'> {/* added this line/div  */}
           <div className="flex flex-col justify-center w-[791px]">
             <div className='mb-8 flex items-center'>
               <span className='mr-2 text-purpleText text-base'>Skill 1</span>

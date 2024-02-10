@@ -1,1 +1,0 @@
-export { MonthCard } from "./MonthCard";
