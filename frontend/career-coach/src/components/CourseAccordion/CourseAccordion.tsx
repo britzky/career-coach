@@ -9,7 +9,7 @@ export const CourseAccordion: React.FC = () => {
   return (
     <div>
         {roadmap && roadmap.roadmap.map((item, index) => (
-            <div className="my-1 flex flex-col justify-center items-center">
+            <div className="flex flex-col items-center">
                 <CourseAccordionItems
                     key={index}
                     month={item.month}

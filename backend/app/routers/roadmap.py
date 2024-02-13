@@ -30,7 +30,7 @@ async def generate_roadmap(career_info: CareerInfo):
         skills = ', '.join(career_info.skills)
         message = (
             f"I want to be a {career_info.career}, "
-            f"I have {career_info.experience} years of experience. "
+            f"My experience in {career_info.career} is {career_info.experience} "
             f"I can dedicate {career_info.hours_dedicated_to_learning} hours per week to learn. "
             f"My total budget for the courses is {career_info.budget} dollars a week. "
             f"The skills I want to gain are: {skills}. "

@@ -13,7 +13,6 @@ export const Overview = () => {
       }
 
   return (
-    <div className="flex flex-col items-center mt-28">
     <div className="border-2 border-purpleText py-2 px-10 rounded-lg">
       <p className="text-xs font-bold mb-4 text-purpleText">Overview</p>
       <div className="space-y-4">
@@ -36,6 +35,5 @@ export const Overview = () => {
         ))}
       </div>
     </div>
-  </div>
   )
 }
