@@ -23,6 +23,13 @@ app.add_middleware(
 app.include_router(roadmap.router)
 app.include_router(quote.router)
 
+# wake the server up
+@app.get("/")
+def wake_up():
+    return {"message": "Server is awake!"}
+
+
+
 
 
 
