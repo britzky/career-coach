@@ -1,21 +1,25 @@
-import { useCareerDetails } from "../../context/CareerContext"
 import { CourseAccordion } from "../../components"
 import { RoadmapDetails } from "./RoadmapDetails"
 import { Overview } from "./Overview"
+import { Summary } from "./Summary"
 
 export const Roadmap = () => {
-    const { roadmap, careerDetails } = useCareerDetails()
-    console.log(roadmap)
+
   return (
-    <div className="flex justify-center min-h-screen w-full mt-20">
-      <div className="flex flex-col">
-        <RoadmapDetails />
-        <Overview />
-      </div>
-      <div>
-        <h1>{careerDetails.career} Roadmap</h1>
-        <p>{roadmap?.summary}</p>
-        <CourseAccordion />
+    <div className="mt-28">
+      <div className="grid grid-cols-5 row-span-1">
+        <div className="col-span-1 ml-5">
+          <div className="flex flex-col gap-5">
+            <RoadmapDetails />
+            <Overview />
+          </div>
+        </div>
+        <div className="col-span-4">
+        <div className="flex flex-col gap-5 items-center">
+            <Summary />
+            <CourseAccordion />
+          </div>
+        </div>
       </div>
     </div>
   )

@@ -7,7 +7,7 @@ export const CourseAccordion: React.FC = () => {
     const { roadmap } = useCareerDetails();
 
   return (
-    <div>
+    <>
         {roadmap && roadmap.roadmap.map((item, index) => (
             <div className="flex flex-col items-center">
                 <CourseAccordionItems
@@ -21,6 +21,6 @@ export const CourseAccordion: React.FC = () => {
                 </div>
             </div>
         ))}
-    </div>
+    </>
   )
 }

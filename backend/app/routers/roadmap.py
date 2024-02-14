@@ -35,7 +35,7 @@ async def generate_roadmap(career_info: CareerInfo):
             f"My total budget for the courses is {career_info.budget} dollars a week. "
             f"The skills I want to gain are: {skills}. "
             f"My preferred learning style is {career_info.preferred_learning_style}. "
-            f"My expected timeframe is {career_info.timeframe}. "
+            f"My expected timeframe is {career_info.timeframe} months. "
             f"I am a {career_info.current_knowledge} in this field."
         )
 

@@ -4,7 +4,7 @@ export const RoadmapDetails = () => {
     const { careerDetails } = useCareerDetails();
 
   return (
-    <div className="border-2 border-purpleText p-2 text-purpleText rounded-lg">
+    <div className="border-2 border-purpleText p-2 text-purpleText rounded-lg space-y-3">
         <h1 className="font-bold">Roadmap Details</h1>
         <p className="font-bold">Hours Per Week: <span>{careerDetails.hours_dedicated_to_learning}</span></p>
         <p className="font-bold">Budget: <span>{careerDetails.budget}</span></p>
