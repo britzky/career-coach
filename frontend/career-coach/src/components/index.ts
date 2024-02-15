@@ -3,3 +3,4 @@ export { NavButton } from './NavButton';
 export { InputBox } from './InputBox'
 export { SkillsInputBox } from './SkillsInputBox';
 export { CourseAccordion } from './CourseAccordion';
+export { Footer } from './Footer';

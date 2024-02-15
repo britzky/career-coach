@@ -1,4 +1,5 @@
 import { useNavigate } from "react-router-dom";
+import { Footer } from "../../components";
 
 export const LandingPage = () => {
   const navigate = useNavigate();
@@ -14,6 +15,7 @@ export const LandingPage = () => {
           Try our product without an account!
         </button>
       </div>
+      <Footer/>
     </div>
   )
 }
