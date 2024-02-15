@@ -1,13 +1,15 @@
-import { useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { CareerInfoCard, NavButton } from '../../components';
 import { useCareerDetails } from '../../context/CareerContext';
 
 
 export const JobLevel = () => {
   const { careerDetails, updateCareer } = useCareerDetails()
+  const [selectedCard, setSelectedCard] = useState<string | null>(null)
 
   const handleCardClick = (tag: string) => {
     updateCareer('experience', tag)
+    setSelectedCard(tag)
   }
   // remove before shipping to production
   useEffect(() => {
@@ -22,16 +24,40 @@ export const JobLevel = () => {
         </div>
         <div className="flex flex-wrap gap-10 justify-center">
           <div>
-            <CareerInfoCard text="Entry Level" years="0-3 years" tag="Entry-level" onCardClick={handleCardClick}/>
+            <CareerInfoCard
+              text="Entry Level"
+              years="0-3 years"
+              tag="Entry-level"
+              onCardClick={handleCardClick}
+              selected={selectedCard === 'Entry-level'}
+            />
           </div>
           <div>
-            <CareerInfoCard text="Mid Level" years="3-5 Years" tag="Mid-level" onCardClick={handleCardClick}/>
+            <CareerInfoCard
+              text="Mid Level"
+              years="3-5 Years"
+              tag="Mid-level"
+              onCardClick={handleCardClick}
+              selected={selectedCard === 'Mid-level'}
+            />
           </div>
           <div>
-            <CareerInfoCard text="Senior Level" years="5-7 Years" tag="Senior-level" onCardClick={handleCardClick}/>
+            <CareerInfoCard
+              text="Senior Level"
+              years="5-7 Years"
+              tag="Senior-level"
+              onCardClick={handleCardClick}
+              selected={selectedCard === 'Senior-level'}
+            />
           </div>
           <div>
-            <CareerInfoCard text="Manager" years="7-10 Years" tag="Manager" onCardClick={handleCardClick}/>
+            <CareerInfoCard
+              text="Manager"
+              years="7-10 Years"
+              tag="Manager"
+              onCardClick={handleCardClick}
+              selected={selectedCard === 'Manager'}
+            />
           </div>
         </div>
         <div className="flex justify-between mt-40">

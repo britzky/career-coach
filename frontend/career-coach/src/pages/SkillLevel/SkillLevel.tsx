@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { CareerInfoCard } from '../../components';
 import { useCareerDetails } from '../../context/CareerContext';
@@ -7,9 +7,11 @@ import { NavButton } from '../../components';
 export const SkillLevel = () => {
   const { careerDetails, updateCareer, submitCareerDetails, loading, roadmap } = useCareerDetails()
   const navigate = useNavigate();
+  const [selectedCard, setSelectedCard] = useState<string | null>(null)
 
   const handleCardClick = (tag: string) => {
     updateCareer('current_knowledge', tag)
+    setSelectedCard(tag)
   }
 
   const handleContinue = async () => {
@@ -34,13 +36,28 @@ export const SkillLevel = () => {
         </div>
         <div className="flex gap-10 justify-center">
           <div>
-            <CareerInfoCard text="Beginner" tag="beginner" onCardClick={handleCardClick}/>
+            <CareerInfoCard
+              text="Beginner"
+              tag="Beginner"
+              onCardClick={handleCardClick}
+              selected={selectedCard === 'Beginner'}
+            />
           </div>
           <div>
-            <CareerInfoCard text="Intermediate" tag="intermediate" onCardClick={handleCardClick}/>
+            <CareerInfoCard
+              text="Intermediate"
+              tag="Intermediate"
+              onCardClick={handleCardClick}
+              selected={selectedCard === 'Intermediate'}
+            />
           </div>
           <div>
-            <CareerInfoCard text="Expert" tag="expert" onCardClick={handleCardClick}/>
+            <CareerInfoCard
+              text="Expert"
+              tag="Expert"
+              onCardClick={handleCardClick}
+              selected={selectedCard === 'Expert'}
+            />
           </div>
         </div>
         <div className="flex justify-between mt-40 w-[1200px]">

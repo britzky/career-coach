@@ -1,12 +1,14 @@
-import { useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { CareerInfoCard, NavButton } from '../../components';
 import { useCareerDetails } from '../../context/CareerContext';
 
 export const LearningStyle = () => {
   const  { careerDetails, updateCareer } = useCareerDetails()
+  const [selectedCard, setSelectedCard] = useState<string | null>(null)
 
   const handleCardClick = (tag: string) => {
     updateCareer('preferred_learning_style', tag)
+    setSelectedCard(tag)
   }
   // remove before shipping to production
   useEffect(() => {
@@ -21,16 +23,36 @@ export const LearningStyle = () => {
         </div>
         <div className="flex gap-10 justify-center">
           <div>
-            <CareerInfoCard text="Project Based" tag="project" onCardClick={handleCardClick}/>
+            <CareerInfoCard
+              text="Project Based"
+              tag="Project"
+              onCardClick={handleCardClick}
+              selected={selectedCard === 'Project'}
+            />
           </div>
           <div>
-            <CareerInfoCard text="Video Based" tag="video" onCardClick={handleCardClick}/>
+            <CareerInfoCard
+              text="Video Based"
+              tag="Video"
+              onCardClick={handleCardClick}
+              selected={selectedCard === 'Video'}
+            />
           </div>
           <div>
-            <CareerInfoCard text="Assessment Based" tag="Assessment" onCardClick={handleCardClick}/>
+            <CareerInfoCard
+              text="Assessment Based"
+              tag="Assessment"
+              onCardClick={handleCardClick}
+              selected={selectedCard === 'Assessment'}
+            />
           </div>
           <div>
-            <CareerInfoCard text="Micro Learning" tag="micro learning" onCardClick={handleCardClick}/>
+            <CareerInfoCard
+              text="Micro Learning"
+              tag="Micro Learning"
+              onCardClick={handleCardClick}
+              selected={selectedCard === 'Micro Learning'}
+            />
           </div>
         </div>
         <div className="flex justify-between mt-40 w-[1200px]">
