@@ -1,17 +1,31 @@
-import { useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { CareerInfoCard, InputBox, NavButton } from '../../components'
 import { useCareerDetails } from '../../context/CareerContext';
 
 export const DesiredJob = () => {
   const  { careerDetails, updateCareer } = useCareerDetails()
+  const [selectedCard, setSelectedCard] = useState<string | null>(null)
 
   const handleCardClick = (tag: string) => {
     updateCareer('career', tag)
+    setSelectedCard(tag)
   }
 
   const handleInputChange = (value: string) => {
     updateCareer('career', value)
+    setSelectedCard(null)
   }
+
+  const jobs = [
+    'Product Designer',
+    'UX Researcher',
+    'UI Designer',
+    'Full Stack Engineer',
+    'Front End Engineer',
+    'Back End Engineer',
+    'Product Manager',
+    'Cloud Developer'
+  ]
 
   // remove before shipping to production
   useEffect(() => {
@@ -32,30 +46,16 @@ export const DesiredJob = () => {
           />
         </div>
         <div className="flex flex-wrap gap-10 justify-center">
-          <div>
-            <CareerInfoCard text="Product Designer" tag="Product Designer" onCardClick={handleCardClick}/>
-          </div>
-          <div>
-            <CareerInfoCard text="UX Researcher" tag="UX Researcher" onCardClick={handleCardClick}/>
-          </div>
-          <div>
-            <CareerInfoCard text="UI Designer" tag="UI Designer" onCardClick={handleCardClick}/>
-          </div>
-          <div>
-            <CareerInfoCard text="Full Stack Engineer" tag="Full Stack Engineer" onCardClick={handleCardClick}/>
-          </div>
-          <div>
-            <CareerInfoCard text="Front End Engineer" tag="Front End Engineer" onCardClick={handleCardClick}/>
-          </div>
-          <div>
-            <CareerInfoCard text="Back End Engineer" tag="Back End Engineer" onCardClick={handleCardClick}/>
-          </div>
-          <div>
-            <CareerInfoCard text="Product Manager" tag="Product Manager" onCardClick={handleCardClick}/>
-          </div>
-          <div>
-            <CareerInfoCard text="Cloud Developer" tag="Cloud Developer" onCardClick={handleCardClick}/>
-          </div>
+          {jobs.map((job) => (
+            <div key={job}>
+              <CareerInfoCard
+                text={job}
+                tag={job}
+                onCardClick={handleCardClick}
+                selected={selectedCard === job}
+              />
+            </div>
+          ))}
         </div>
         <div className="mt-14 flex justify-end">
           <NavButton to='/job-level'>Continue</NavButton>
