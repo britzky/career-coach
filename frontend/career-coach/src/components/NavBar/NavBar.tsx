@@ -1,16 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-interface NavBarProps {
-    isLandingPage: boolean;
-}
-
-export const NavBar: React.FC<NavBarProps> = ({ isLandingPage }) => {
+export const NavBar: React.FC = () => {
     return (
         <nav className='fixed p-5 top-0'>
             <div className='navbar-text'>
-                <Link to='/' className='text-purpleText text-base font-bold'>
-                    {isLandingPage ? "MyPDP" : "WayFinder"}
+                <Link to='/' className='bg-logo gradient-text text-base font-bold'>
+                    MyPDP
                 </Link>
             </div>
         </nav>
