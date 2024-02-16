@@ -2,6 +2,27 @@
 @tailwind components;
 @tailwind utilities;
 
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100vh;
+}
+
+footer {
+  display: flex;
+  justify-content: flex-end
+}
 
 input[type="range"] {
     -webkit-appearance: none;

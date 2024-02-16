@@ -5,8 +5,8 @@ export const LandingPage = () => {
   const navigate = useNavigate();
 
   return (
-    <div>
-      <div className="flex justify-center items-center min-h-screen">
+    <div className="flex flex-col min-h-screen">
+      <div className="mt-28">
         <button
           type="button"
           onClick={() => navigate('/desired-job')}
@@ -15,7 +15,9 @@ export const LandingPage = () => {
           Try our product without an account!
         </button>
       </div>
-      <Footer/>
+      <div className="mt-auto">
+        <Footer />
+      </div>
     </div>
   )
 }
