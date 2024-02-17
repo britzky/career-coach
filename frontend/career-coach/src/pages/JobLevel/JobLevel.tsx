@@ -26,7 +26,7 @@ export const JobLevel = () => {
           <div>
             <CareerInfoCard
               text="Entry Level"
-              years="0-3 years"
+              years="0-3 Years"
               tag="Entry-level"
               onCardClick={handleCardClick}
               selected={selectedCard === 'Entry-level'}
@@ -60,7 +60,7 @@ export const JobLevel = () => {
             />
           </div>
         </div>
-        <div className="flex justify-between mt-auto mb-3">
+        <div className="flex justify-between mt-auto mb-3 w-[1200px]"> {/* added w-[1200px] */}
           <NavButton to='/desired-job' back>Back</NavButton>
           <NavButton to='/hours-per-week'>Continue</NavButton>
         </div>
