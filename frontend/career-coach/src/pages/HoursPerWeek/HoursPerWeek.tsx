@@ -23,8 +23,8 @@ export const HoursPerWeek = () => {
   }, [careerDetails])
 
   return (
-    <div className="flex justify-center min-h-screen w-full mt-14">
-      <div className="flex flex-col items-center w-full max-w-[1200px]">
+    <div className="flex justify-center min-h-screen w-full">
+      <div className="flex flex-col items-center max-w-[1200px] mt-28">
         <p className="text-purpleText text-base font-bold">How many <span className="bg-hours-per-week gradient-text">hours per week</span> can you dedicate?</p>
         <div className="w-[210px] my-14 flex items-center">
           <InputBox value={hours} placeholder="0" onChange={handleInputChange} />
@@ -44,7 +44,7 @@ export const HoursPerWeek = () => {
             <span className='text-purpleText text-base font-bold'>40</span>
           </div>
         </div>
-        <div className="flex justify-between mt-40 w-[1200px]">
+        <div className="flex justify-between mt-auto mb-3 w-[1200px]">
           <NavButton to='/job-level' back>Back</NavButton>
           <NavButton to='/budget'>Continue</NavButton>
         </div>

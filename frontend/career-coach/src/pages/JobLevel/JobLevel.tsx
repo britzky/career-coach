@@ -17,8 +17,8 @@ export const JobLevel = () => {
   }, [careerDetails])
 
   return (
-    <div className="flex justify-center min-h-screen w-full mt-14">
-      <div className="flex flex-col max-w-[1200px]">
+    <div className="flex justify-center min-h-screen w-full">
+      <div className="flex flex-col max-w-[1200px] mt-28">
         <div className="flex justify-center mb-8">
           <p className="text-purpleText text-base font-bold">What is your <span className="bg-desired-job-level gradient-text">Expected Level </span>at your new job?</p>
         </div>
@@ -60,7 +60,7 @@ export const JobLevel = () => {
             />
           </div>
         </div>
-        <div className="flex justify-between mt-40">
+        <div className="flex justify-between mt-auto mb-3">
           <NavButton to='/desired-job' back>Back</NavButton>
           <NavButton to='/hours-per-week'>Continue</NavButton>
         </div>

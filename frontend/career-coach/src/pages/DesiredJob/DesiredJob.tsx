@@ -33,8 +33,8 @@ export const DesiredJob = () => {
   }, [careerDetails])
 
   return (
-    <div className="flex justify-center min-h-screen w-full mt-14">
-      <div className="flex flex-col max-w-[1200px]">
+    <div className="flex justify-center min-h-screen w-full">
+      <div className="flex flex-col max-w-[1200px] mt-28">
         <div className="flex justify-center mb-8">
           <p className="text-purpleText text-base font-bold bg-desired-job gradient-text">I want to be a...</p>
         </div>
@@ -57,7 +57,7 @@ export const DesiredJob = () => {
             </div>
           ))}
         </div>
-        <div className="mt-14 flex justify-end">
+        <div className="mt-14 mb-3 flex justify-end">
           <NavButton to='/job-level'>Continue</NavButton>
         </div>
       </div>

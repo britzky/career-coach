@@ -40,8 +40,8 @@ export const LoadingScreen = () => {
 
 
   return (
-    <div className="flex justify-center mt-14">
-      <div className="flex flex-col max-w-[1200px]">
+    <div className="flex justify-center">
+      <div className="flex flex-col max-w-[1200px] mt-28">
         <div className="self-center">
           <p className="text-purpleText font-bold text-xl text-center">Loading your results...</p>
         </div>
