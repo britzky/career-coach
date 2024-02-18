@@ -1,7 +1,7 @@
 import { Routes, Route } from "react-router-dom";
 import {
     Budget, LandingPage, DesiredJob, DesiredSkills, HoursPerWeek, JobLevel,
-    LearningStyle, LoadingScreen, SkillLevel, Timeframe, Roadmap
+    LearningStyle, LoadingScreen, SkillLevel, Timeframe, Roadmap, Error
 } from "../../pages";
 import { NavBar } from "../../components/NavBar";
 
@@ -22,6 +22,7 @@ export const AllRoutes = () => {
             <Route path="skill-level" element={<SkillLevel />} />
             <Route path="timeframe" element={<Timeframe />} />
             <Route path="roadmap" element={<Roadmap />} />
+            <Route path="error" element={<Error />} />
         </Routes>
     </div>
   )
