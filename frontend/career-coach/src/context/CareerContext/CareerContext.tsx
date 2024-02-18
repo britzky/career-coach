@@ -16,6 +16,7 @@ type CareerDetailsValue = string | number | string[]
 interface CareerContextType {
   careerDetails: CareerDetailsState;
   updateCareer: (key: keyof CareerDetailsState, value: CareerDetailsValue) => void;
+  resetCareer: () => void;
   submitCareerDetails: () => Promise<void>;
   roadmap?: RoadmapState;
   loading: boolean;
@@ -46,19 +47,21 @@ interface CourseInfoType {
 
 const CareerContext = createContext<CareerContextType | undefined>(undefined);
 
+const emptyCareerDetails: CareerDetailsState = {
+  career: '',
+  experience: '',
+  hours_dedicated_to_learning: 0,
+  budget: 0,
+  skills: [],
+  preferred_learning_style: '',
+  timeframe: '',
+  current_knowledge: '',
+}
+
 export const CareerProvider: React.FC<CareerProviderProps> = ({ children }) => {
   const [loading, setLoading] = useState<boolean>(false);
   const [roadmap, setRoadmap] = useState<RoadmapState>()
-  const [careerDetails, setCareerDetails] = useState<CareerDetailsState>({
-    career: '',
-    experience: '',
-    hours_dedicated_to_learning: 0,
-    budget: 0,
-    skills: [],
-    preferred_learning_style: '',
-    timeframe: '',
-    current_knowledge: '',
-  });
+  const [careerDetails, setCareerDetails] = useState<CareerDetailsState>(emptyCareerDetails);
 
   const updateCareer: CareerContextType['updateCareer'] = (key, value) => {
     setCareerDetails((prevCareer) => {
@@ -75,6 +78,10 @@ export const CareerProvider: React.FC<CareerProviderProps> = ({ children }) => {
       }
     });
   };
+
+  const resetCareer = () => {
+    setCareerDetails(emptyCareerDetails)
+  }
 
   const submitCareerDetails = async () => {
     setLoading(true)
@@ -100,7 +107,7 @@ export const CareerProvider: React.FC<CareerProviderProps> = ({ children }) => {
   }
 
   return (
-    <CareerContext.Provider value={{careerDetails, updateCareer, submitCareerDetails, roadmap, loading }}>
+    <CareerContext.Provider value={{careerDetails, updateCareer, resetCareer, submitCareerDetails, roadmap, loading }}>
       {children}
     </CareerContext.Provider>
   )

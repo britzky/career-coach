@@ -1,5 +1,9 @@
+import { useNavigate } from 'react-router-dom'
 import error from '../../assets/images/error.png'
+
 export const Error = () => {
+    const navigate = useNavigate();
+
   return (
     <div className="flex justify-center min-h-screen w-full">
       <div className="flex flex-col items-center max-w-[1200px] mt-28 gap-3">
@@ -8,12 +12,13 @@ export const Error = () => {
             <p className="text-error font-medium text-base text-center">It seems our roadmap got lost on the career highway.</p>
         </div>
         <img src={error} alt="Error image" />
-        <p className="text-purpleText text-sm font-medium">Click below to give our roadmap another spin!</p>
+        <p className="text-purpleText text-sm font-medium">Let's go back to the homepage and try again!</p>
         <button
           type="button"
           className="w-full text-white bg-purpleText font-bold rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 ml-10"
+          onClick={() => navigate('/')}
         >
-          Try again
+          Take Me Back!
         </button>
         </div>
     </div>
