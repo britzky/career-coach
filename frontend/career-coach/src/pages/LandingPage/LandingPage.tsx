@@ -3,7 +3,7 @@ import { Footer } from "../../components";
 import skillDev from "../../assets/images/Moving forward.png"
 import progress from "../../assets/images/Progress overview.png"
 import career from "../../assets/images/Job hunt.png"
-import subtract from "../../assets/images/Subtract.png"
+import road from "../../assets/images/road.svg"
 
 export const LandingPage = () => {
   const navigate = useNavigate();
@@ -17,7 +17,7 @@ export const LandingPage = () => {
             <span className="gradient-text bg-landing-page-title font-bold text-xxl">AI-Powered Career Roadmaps</span>
             <p className="font-medium text-sm">Discover personalized courses, expert guidance, and a roadmap to your dream career, all powered by ChatGPT!</p>
           </div>
-            <img src={subtract} alt="road" className="absolute -ml-10" />
+            <img src={road} alt="road" className="absolute -ml-28" />
           <div>
             <button
               type="button"
