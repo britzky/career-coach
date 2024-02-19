@@ -3,7 +3,7 @@ import { Footer } from "../../components";
 import skillDev from "../../assets/images/Moving forward.png"
 import progress from "../../assets/images/Progress overview.png"
 import career from "../../assets/images/Job hunt.png"
-import road from "../../assets/images/road.svg"
+import road from "../../assets/images/road.png"
 
 export const LandingPage = () => {
   const navigate = useNavigate();
@@ -11,13 +11,15 @@ export const LandingPage = () => {
   return (
     <div className="overflow-x-hidden flex flex-col min-h-screen">
       <div className="mt-28 mx-10">
-        <div className="flex flex-col mb-7 h-[695px] w-[1708px]">
+        <div className="flex flex-col mb-7 h-[795px]">
           <div className="max-w-[957px] flex flex-col">
             <span className="text-purpleText2 font-bold text-base">Get your DREAM JOB with our</span>
             <span className="gradient-text bg-landing-page-title font-bold text-xxl">AI-Powered Career Roadmaps</span>
             <p className="font-medium text-sm">Discover personalized courses, expert guidance, and a roadmap to your dream career, all powered by ChatGPT!</p>
           </div>
-            <img src={road} alt="road" className="absolute -ml-28" />
+          <div className="relative">
+            <img src={road} alt="road" className="absolute" />
+          </div>
           <div>
             <button
               type="button"
@@ -28,7 +30,7 @@ export const LandingPage = () => {
             </button>
           </div>
         </div>
-        <div className="space-y-14 my-14">
+        <div className="overflow-x-hidden space-y-14 my-14">
           <h1 className="font-bold text-xxl gradient-text bg-logo text-center">What is a Career Roadmap?</h1>
           <p className="font-medium text-base">
             A career roadmap is your personalized guide to success,
@@ -40,9 +42,9 @@ export const LandingPage = () => {
             you'll have access to a tailored roadmap that empowers you to take control of your professional future.
           </p>
         </div>
-        <div className="mb-7 space-y-7">
+        <div className=" overflow-x-hidden mb-7 space-y-7">
           <h1 className="font-bold text-xxl gradient-text bg-logo text-center w-full">Your Path to Success</h1>
-          <div className="flex justify-between">
+          <div className="overflow-x-hidden flex justify-between">
             <div className="flex flex-col items-center border-2 border-purpleText rounded-md h-[471px] w-[434px] gap-7">
               <img src={skillDev} alt="Man running" />
               <h6 className="font-bold text-sm text-purpleText">Skill development roadmap</h6>
