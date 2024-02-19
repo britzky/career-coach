@@ -15,6 +15,7 @@ export default {
         'base': '32px',
         'lg': '40px',
         'xl': '48px',
+        'xxl': '60px',
       },
       fontWeight: {
         'normal': 400,
@@ -31,6 +32,7 @@ export default {
         line: '#4B4B4B',
         footer: '#9A94FF',
         error: '#DC143CCC',
+        purpleText2: '#6146FF'
       },
       backgroundImage: {
         'desired-job': 'linear-gradient(90deg, #448FD9 3.21%, #A270C0 38.63%, #D76573 65.59%, #F0944C 96.17%)',
@@ -44,7 +46,8 @@ export default {
         'loading-screen-quote': 'linear-gradient(89.96deg, #448FD9 1%, #A270C0 38.71%, #D76573 67.41%, #F0944C 99.97%)',
         'landing-page': 'linear-gradient(90deg, #448FD9 0%, #A270C0 38.1%, #D76573 67.1%, #F0944C 100%)',
         'landing-page-reverse': 'linear-gradient(90deg, #F0944C 0%, #D76573 32.9%, #A270C0 61.9%, #448FD9 100%)',
-        'logo': 'linear-gradient(90deg, #6146FF 0%, #9FA4FF 196.6%)'
+        'logo': 'linear-gradient(90deg, #6146FF 0%, #9FA4FF 196.6%)',
+        'landing-page-title': 'linear-gradient(90deg, #448FD9 3.21%, #A270C0 38.63%, #D76573 65.59%, #F0944C 96.17%)',
       }
     },
   },
