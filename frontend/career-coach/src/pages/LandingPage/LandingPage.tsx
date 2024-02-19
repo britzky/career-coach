@@ -24,7 +24,7 @@ export const LandingPage = () => {
             <button
               type="button"
               onClick={() => navigate('/desired-job')}
-              className="text-white bg-landing-page hover:bg-landing-page-reverse focus:ring-1 focus:outline-none focus:ring-purple-200 font-bold rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 mt-7"
+              className="text-white bg-landing-page hover:bg-landing-page-reverse focus:ring-1 focus:outline-none focus:ring-purple-200 font-bold rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 mt-7 z-10 cursor-pointer relative"
               >
               Try our product without an account!
             </button>
