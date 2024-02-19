@@ -26,8 +26,8 @@ export const LandingPage = () => {
           </button>
         </div>
         </div>
-        <div>
-          <h1 className="font-bold text-xxl gradient-text bg-logo">What is a Career Roadmap?</h1>
+        <div className="space-y-14 my-14">
+          <h1 className="font-bold text-xxl gradient-text bg-logo text-center">What is a Career Roadmap?</h1>
           <p className="font-medium text-base">
             A career roadmap is your personalized guide to success,
             like a GPS for your career journey.
@@ -38,8 +38,8 @@ export const LandingPage = () => {
             you'll have access to a tailored roadmap that empowers you to take control of your professional future.
           </p>
         </div>
-        <div className="mb-7">
-          <span className="font-bold text-xxl gradient-text bg-logo">Your Path to Success</span>
+        <div className="mb-7 space-y-7">
+          <h1 className="font-bold text-xxl gradient-text bg-logo text-center w-full">Your Path to Success</h1>
           <div className="flex justify-between">
             <div className="flex flex-col items-center border-2 border-purpleText rounded-md h-[471px] w-[434px] gap-7">
               <img src={skillDev} alt="Man running" />
