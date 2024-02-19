@@ -11,20 +11,22 @@ export const LandingPage = () => {
   return (
     <div className="overflow-x-hidden flex flex-col min-h-screen">
       <div className="mt-28 mx-10">
-        <div className="flex flex-col mb-7 h-[895px] w-[1708px]">
-          <span className="text-purpleText2 font-bold text-base">Get your DREAM JOB with our</span>
-          <span className="gradient-text bg-landing-page-title font-bold text-xxl">AI-Powered Career Roadmaps</span>
-          <p className="font-medium text-sm">Discover personalized courses, expert guidance, and a roadmap to your dream career, all powered by ChatGPT!</p>
-        <div>
-          <img src={subtract} alt="road" className="absolute -ml-16" />
-          <button
-            type="button"
-            onClick={() => navigate('/desired-job')}
-            className="text-white bg-landing-page hover:bg-landing-page-reverse focus:ring-1 focus:outline-none focus:ring-purple-200 font-bold rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 mt-7"
-            >
-            Try our product without an account!
-          </button>
-        </div>
+        <div className="flex flex-col mb-7 h-[695px] w-[1708px]">
+          <div className="max-w-[957px] flex flex-col">
+            <span className="text-purpleText2 font-bold text-base">Get your DREAM JOB with our</span>
+            <span className="gradient-text bg-landing-page-title font-bold text-xxl">AI-Powered Career Roadmaps</span>
+            <p className="font-medium text-sm">Discover personalized courses, expert guidance, and a roadmap to your dream career, all powered by ChatGPT!</p>
+          </div>
+            <img src={subtract} alt="road" className="absolute -ml-10" />
+          <div>
+            <button
+              type="button"
+              onClick={() => navigate('/desired-job')}
+              className="text-white bg-landing-page hover:bg-landing-page-reverse focus:ring-1 focus:outline-none focus:ring-purple-200 font-bold rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 mt-7"
+              >
+              Try our product without an account!
+            </button>
+          </div>
         </div>
         <div className="space-y-14 my-14">
           <h1 className="font-bold text-xxl gradient-text bg-logo text-center">What is a Career Roadmap?</h1>
