@@ -9,16 +9,18 @@ export const CourseAccordion: React.FC = () => {
   return (
     <>
         {roadmap && roadmap.roadmap.map((item, index) => (
-            <div className="flex flex-col items-center">
+            <div className="flex flex-col items-center" key={index}>
                 <CourseAccordionItems
                     key={index}
                     month={item.month}
                     title={item.title}
                     courseInfo={item.courseInfo}
                 />
-                <div className="my-1">
-                    <DownArrow />
-                </div>
+                {index !== roadmap.roadmap.length - 1 && (
+                    <div className="my-1">
+                        <DownArrow />
+                    </div>
+                )}
             </div>
         ))}
     </>
