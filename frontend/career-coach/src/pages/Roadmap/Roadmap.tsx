@@ -7,7 +7,7 @@ export const Roadmap = () => {
   return (
     <div className="flex flex-col md:flex-row">
       <div className="flex flex-col md:flex-row mt-28">
-        <div className="flex flex-col gap-5 ml-5 mb-5 md:mb-0 md:flex-1">
+        <div className="flex flex-col gap-5 ml-5 md:flex-1">
           <RoadmapDetails />
           <Overview />
         </div>
