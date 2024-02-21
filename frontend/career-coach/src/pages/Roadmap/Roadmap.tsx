@@ -11,11 +11,11 @@ export const Roadmap = () => {
           <RoadmapDetails />
           <Overview />
         </div>
-          <div className="flex flex-col gap-5 items-center flex-1 mx-7">
-            <Summary />
-            <CourseAccordion />
-          </div>
+        <div className="flex flex-col  items-center flex-1 mx-7 mb-28">
+          <Summary />
+          <CourseAccordion />
+        </div>
       </div>
-      </div>
+    </div>
   );
 };

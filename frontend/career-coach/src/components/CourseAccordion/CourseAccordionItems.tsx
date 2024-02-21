@@ -18,27 +18,6 @@ interface CourseInfo {
 export const CourseAccordionItems: React.FC<AccordionItemProps> = ({ month, title, courseInfo }) => {
     const [open, setOpen] = useState<boolean>(false);
 
-    // const url = courseInfo.link;
-
-    // const transformURL = (url: string) => {
-    //     const pattern = /https?:\/\/(?:www\.)?([^\/]+)\/.*\/([^\/?#]+)(?:[?#]|$)/;
-    //     const match = url.match(pattern);
-    //     if (match) {
-    //         const domain = match[1].replace(/\..+$/, '');
-    //         const lastPartOfPath = match[2].replace(/-/g, ' ');
-    //         return `${domain} - ${lastPartOfPath}`;
-    //     }
-    //     return 'Course Link';
-    // }
-
-    // const transformed = transformURL(url);
-
-    // const capitalizeWords = (str: string) => {
-    //     return str.split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
-    // }
-
-    // const formattedUrl = capitalizeWords(transformed)
-
   return (
     <div className="flex justify-center items-center">
         <div className="border-4 rounded-md border-purpleText p-5 w-[1100px]">
