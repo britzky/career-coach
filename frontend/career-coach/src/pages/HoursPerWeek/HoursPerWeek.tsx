@@ -8,13 +8,15 @@ export const HoursPerWeek = () => {
 
   // need to add validation before shipping to production
   const handleSliderChange = (event: ChangeEvent<HTMLInputElement>) => {
-    setHours(Number(event.target.value));
-    updateCareer('hours_dedicated_to_learning', hours);
+    const newHours = Number(event.target.value); {/* added this line */}
+    setHours(newHours); {/* changed from setHours(Number(event.target.value)); */}
+    updateCareer('hours_dedicated_to_learning', newHours); {/* changed from hours to newHours */}
   }
 
   const handleInputChange = (value: string) => {
-    setHours(Number(value));
-    updateCareer('hours_dedicated_to_learning', hours);
+    const newHours = Number(value); {/* added this line */}
+    setHours(newHours); {/* changed from setHours(Number(value)); */}
+    updateCareer('hours_dedicated_to_learning', newHours); {/* changed from hours */}
   }
 
   // remove before shipping to production
