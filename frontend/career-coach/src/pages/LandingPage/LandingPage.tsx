@@ -44,18 +44,18 @@ export const LandingPage = () => {
         </div>
         <div className=" overflow-x-hidden mb-7 space-y-7">
           <h1 className="font-bold text-xxl gradient-text bg-logo text-center w-full">Your Path to Success</h1>
-          <div className="overflow-x-hidden flex justify-between">
-            <div className="flex flex-col items-center border-2 border-purpleText rounded-md h-[471px] w-[434px] gap-7">
+          <div className="overflow-x-hidden flex justify-between space-x-4">
+            <div className="flex flex-col items-center border-2 border-purpleText rounded-md gap-7 p-5">
               <img src={skillDev} alt="Man running" />
               <h6 className="font-bold text-sm text-purpleText">Skill development roadmap</h6>
               <p className="font-medium text-sm text-center">Receive a tailor-made roadmap outlining the skills you need to succeed in your chosen career path.</p>
             </div>
-            <div className="flex flex-col items-center border-2 border-purpleText rounded-md h-[471px] w-[434px] gap-7">
+            <div className="flex flex-col items-center border-2 border-purpleText rounded-md gap-7 p-5">
               <img src={progress} alt="Woman showing progress chart" />
               <h6 className="font-bold text-sm text-purpleText">Progress Tracking and Analytics</h6>
               <p className="font-medium text-sm text-center">Monitor your progress and track your accomplishments with detailed analytics and performance insights.</p>
             </div>
-            <div className="flex flex-col items-center border-2 border-purpleText rounded-md h-[471px] w-[434px] gap-7">
+            <div className="flex flex-col items-center border-2 border-purpleText rounded-md gap-7 p-5">
               <img src={career} alt="Man looking through binoculars at a city" />
               <h6 className="font-bold text-sm text-purpleText">Career Path Exploration</h6>
               <p className="font-medium text-sm text-center self-center">Explore various career paths aligned with your interests and skills with detailed insights and recommendations.</p>
