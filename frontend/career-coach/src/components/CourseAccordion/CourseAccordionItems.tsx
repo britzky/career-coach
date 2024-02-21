@@ -20,7 +20,7 @@ export const CourseAccordionItems: React.FC<AccordionItemProps> = ({ month, titl
 
   return (
     <div className="flex justify-center items-center">
-        <div className="border-4 rounded-md border-purpleText p-5 w-[1100px]">
+        <div className="border-4 rounded-md border-purpleText p-5">
             <div className="flex flex-col">
                 <div className="flex justify-between">
                     <span className="font-bold text-base text-purpleText">{month}: {title}</span>

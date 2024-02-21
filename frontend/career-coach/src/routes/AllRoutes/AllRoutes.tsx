@@ -8,7 +8,7 @@ import { NavBar } from "../../components/NavBar";
 export const AllRoutes = () => {
 
   return (
-    <div>
+    <div className="mx-10">
       <NavBar />
         <Routes>
             <Route path="/" element={<LandingPage />} />
