@@ -1,8 +1,8 @@
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
 import {
-    Budget, LandingPage, DesiredJob, DesiredSkills, HoursPerWeek, JobLevel,
+    Budget, LandingPage, DesiredJob, HoursPerWeek, JobLevel,
     LearningStyle, LoadingScreen, SkillLevel, Timeframe, Roadmap, Error
-} from "../../pages";
+} from "../../pages"; {/* removed DesiredSkills */}
 import { NavBar } from "../../components/NavBar";
 
 export const AllRoutes = () => {
@@ -14,7 +14,9 @@ export const AllRoutes = () => {
             <Route path="/" element={<LandingPage />} />
             <Route path="budget" element={<Budget />} />
             <Route path="desired-job" element={<DesiredJob />} />
-            <Route path="desired-skills" element={<DesiredSkills />} />
+            {/* Redirect from Desired Skills to Learning Style to minimize load time */}
+            <Route path="desired-skills" element={<Navigate to= "/learning-style" replace />} />
+            {/* <Route path="desired-skills" element={<DesiredSkills />} /> */}
             <Route path="hours-per-week" element={<HoursPerWeek />} />
             <Route path="job-level" element={<JobLevel />} />
             <Route path="learning-style" element={<LearningStyle />} />

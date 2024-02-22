@@ -7,7 +7,7 @@ export const Footer = () => {
     <footer className="flex items-center bg-footer h-[110px] w-full mt-auto">
         <div className="flex justify-between w-full max-w-screen-xl mx-auto font-medium text-sm">
             <div>
-                <p>All Rights Reserved The Jays 2024</p>
+                <p>All Rights Reserved © MyPDP 2024</p>
             </div>
             <div className="flex gap-5">
                 <img src={facebook} alt="facebook" />

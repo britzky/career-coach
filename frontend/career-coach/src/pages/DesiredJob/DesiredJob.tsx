@@ -57,7 +57,7 @@ export const DesiredJob = () => {
             </div>
           ))}
         </div>
-        <div className="flex justify-end mt-auto mb-3"> {/* changed from mt-14 mb-3 flex justify-end */}
+        <div className="flex justify-end mt-auto mb-10"> {/* changed from mt-14 mb-3 flex justify-end */}
           <NavButton to='/job-level'>Continue</NavButton>
         </div>
       </div>
