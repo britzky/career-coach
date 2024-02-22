@@ -7,7 +7,7 @@ export { LandingPage } from './LandingPage';
 export { LearningStyle } from './LearningStyle';
 export { LoadingScreen } from './LoadingScreen';
 export { SkillLevel } from './SkillLevel';
-export { Timeframe } from './Timeframe';
+// export { Timeframe } from './Timeframe';
 export { Roadmap } from "./Roadmap";
 export { Error } from "./Error";
 
