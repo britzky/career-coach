@@ -4,10 +4,12 @@ import skillDev from "../../assets/images/Moving forward.png"
 import progress from "../../assets/images/Progress overview.png"
 import career from "../../assets/images/Job hunt.png"
 import road from "../../assets/images/road.png"
+import { useCareerDetails } from "../../context/CareerContext";
 
 export const LandingPage = () => {
   const navigate = useNavigate();
-
+  const { careerDetails } = useCareerDetails();
+  console.log(careerDetails)
   return (
     <div className="overflow-x-hidden flex flex-col min-h-screen">
       <div className="mt-28 mx-10">

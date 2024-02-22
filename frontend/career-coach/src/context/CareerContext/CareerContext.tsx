@@ -42,6 +42,7 @@ interface CourseInfoType {
   link: string;
   skilllevel: string;
   price: string;
+  duration: string;
   description: string;
 }
 
@@ -81,6 +82,7 @@ export const CareerProvider: React.FC<CareerProviderProps> = ({ children }) => {
 
   const resetCareer = () => {
     setCareerDetails(emptyCareerDetails)
+    setRoadmap(undefined)
   }
 
   const submitCareerDetails = async () => {

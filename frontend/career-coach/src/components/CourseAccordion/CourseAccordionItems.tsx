@@ -6,6 +6,7 @@ interface CourseInfo {
     link: string;
     skilllevel: string;
     price: string;
+    duration: string;
     description: string;
   }
 
@@ -39,6 +40,7 @@ export const CourseAccordionItems: React.FC<AccordionItemProps> = ({ month, titl
             {open && (
             <div className="bg-buttonWhite border-2 border-purpleText rounded-md p-3 text-purpleText">
                 <p className="">Course Name: {courseInfo.coursename}</p>
+                <p>Duration: {courseInfo.duration}</p>
                 <p>
                     <a
                         href={courseInfo.link}
