@@ -1,15 +1,15 @@
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
 import {
     Budget, LandingPage, DesiredJob, HoursPerWeek, JobLevel,
     LearningStyle, LoadingScreen, SkillLevel, Roadmap, Error
 } from "../../pages";
-import { NavBar } from "../../components/NavBar";
 
 export const AllRoutes = () => {
+  const location = useLocation();
+  const isLandingPage = location.pathname === "/";
 
   return (
-    <div className="mx-10">
-      <NavBar />
+    <div className={isLandingPage ? "" : "mx-10"}>
         <Routes>
             <Route path="/" element={<LandingPage />} />
             <Route path="budget" element={<Budget />} />
