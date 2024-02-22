@@ -20,7 +20,7 @@ export const Timeframe = () => {
             <span className='ml-2'>Months</span>
           </div>
         </div>
-        <div className="flex justify-between mt-auto mb-3 w-[1200px]">
+        <div className="flex justify-between mt-auto mb-10 w-[1200px]">
           <NavButton back to='/learning-style'>Back</NavButton>
           <NavButton to='/skill-level'>Continue</NavButton>
         </div>

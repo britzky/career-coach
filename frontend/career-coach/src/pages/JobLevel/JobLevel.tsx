@@ -60,7 +60,7 @@ export const JobLevel = () => {
             />
           </div>
         </div>
-        <div className="flex justify-between mt-auto mb-3 w-[1200px]"> {/* added w-[1200px] */}
+        <div className="flex justify-between mt-auto mb-10 w-[1200px]"> {/* added w-[1200px] */}
           <NavButton to='/desired-job' back>Back</NavButton>
           <NavButton to='/hours-per-week'>Continue</NavButton>
         </div>
