@@ -27,15 +27,14 @@ async def wait_for_run_completion(client, thread_id, run_id):
 @router.post("/generate-roadmap/")
 async def generate_roadmap(career_info: CareerInfo):
     try:
-        skills = ', '.join(career_info.skills)
+        # skills = ', '.join(career_info.skills)
         message = (
             f"I want to be a {career_info.career}, "
             f"My experience in {career_info.career} is {career_info.experience} "
             f"I can dedicate {career_info.hours_dedicated_to_learning} hours per week to learn. "
             f"My total budget for the courses is {career_info.budget} dollars a week. "
-            f"The skills I want to gain are: {skills}. "
             f"My preferred learning style is {career_info.preferred_learning_style}. "
-            f"My expected timeframe is {career_info.timeframe} months. "
+            f"My expected timeframe is three months. "
             f"I am a {career_info.current_knowledge} in this field."
         )
 
@@ -56,7 +55,8 @@ async def generate_roadmap(career_info: CareerInfo):
             instructions=(
                 "Start the response with a summary that highlights the key learning outcomes, total time commitment, and skill development progression. Mention the overarching goals and how this roadmap prepares the learner for their career. After the summary, use the following strict template for each month section of the career roadmap: " +
                 "\n- Begin each section with the month and course title." +
-                "\n- Follow with details: Course Name, Link, Skill level, Price, and Description, each on a new line, in this order." +
+                "\n- Follow with details: Course Name, Link, Skill level, Price, Duration, and Description, each on a new line, in this order." +
+                "\n- Include the estimated duration for completing each course. Specify whether the duration is in hours, days, or weeks." +
                 "\n- Avoid markdown formatting." +
                 "\nExample format:" +
                 "\nSummary: This roadmap covers the essential skills and knowledge for a career in Java development, requiring a total of 6 months with an average weekly study time of 10 hours. It aims to equip learners with foundational to advanced Java skills, preparing them for job-ready competencies." +
@@ -65,6 +65,7 @@ async def generate_roadmap(career_info: CareerInfo):
                 "\nLink: https://www.udacity.com/course/java-programming-basics--ud282" +
                 "\nSkill level: Beginner" +
                 "\nPrice: $12.99" +
+                "\nDuration: 3 weeks" +
                 "\nDescription: Introduction to Java programming basics, including variables, loops, and lists." +
                 "\n\nContinue with this format for each month, ensuring the courses align with the learner's timeframe and weekly study hours."
             )
@@ -81,6 +82,7 @@ async def generate_roadmap(career_info: CareerInfo):
                 "link": r"Link: (.+)",
                 "skill_level": r"Skill level: (.+)",
                 "price": r"Price: (.+)",
+                "duration": r"Duration: (.+)",
                 "description": r"Description: (.+)"
             }
 

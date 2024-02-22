@@ -23,7 +23,7 @@ export const Budget: React.FC = () => {
         </div>
         <div className="flex justify-between mt-auto mb-10 w-[1200px]">
           <NavButton back to='/hours-per-week'>Back</NavButton>
-          <NavButton to='/desired-skills'>Continue</NavButton>
+          <NavButton to='/learning-style'>Continue</NavButton>
         </div>
       </div>
     </div>
