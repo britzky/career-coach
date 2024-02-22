@@ -7,9 +7,9 @@ class CareerInfo(BaseModel):
     experience: str
     hours_dedicated_to_learning: int
     budget: int
-    skills: List[str]
+    # skills: List[str]
     preferred_learning_style: str
-    timeframe: str
+    # timeframe: str
     current_knowledge: str
 
 # Schema for User

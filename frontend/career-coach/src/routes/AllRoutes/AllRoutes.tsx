@@ -1,7 +1,7 @@
 import { Routes, Route } from "react-router-dom";
 import {
-    Budget, LandingPage, DesiredJob, DesiredSkills, HoursPerWeek, JobLevel,
-    LearningStyle, LoadingScreen, SkillLevel, Timeframe, Roadmap, Error
+    Budget, LandingPage, DesiredJob, HoursPerWeek, JobLevel,
+    LearningStyle, LoadingScreen, SkillLevel, Roadmap, Error
 } from "../../pages";
 import { NavBar } from "../../components/NavBar";
 
