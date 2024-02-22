@@ -1,6 +1,6 @@
 export { Budget } from './Budget';
 export { DesiredJob } from './DesiredJob'
-export { DesiredSkills } from './DesiredSkills';
+// export { DesiredSkills } from './DesiredSkills';
 export { HoursPerWeek } from './HoursPerWeek';
 export { JobLevel } from './JobLevel';
 export { LandingPage } from './LandingPage';

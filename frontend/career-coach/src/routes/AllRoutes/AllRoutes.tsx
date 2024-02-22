@@ -1,10 +1,10 @@
 
-import { Routes, Route, Navigate } from "react-router-dom";
+import { Routes, Route, Navigate, useLocation } from "react-router-dom";
 import {
     Budget, LandingPage, DesiredJob, HoursPerWeek, JobLevel,
-    LearningStyle, LoadingScreen, SkillLevel, Timeframe, Roadmap, Error
+    LearningStyle, LoadingScreen, SkillLevel, Roadmap, Error
 } from "../../pages";
-import { NavBar } from "../../components/NavBar";
+
 
 
 export const AllRoutes = () => {
