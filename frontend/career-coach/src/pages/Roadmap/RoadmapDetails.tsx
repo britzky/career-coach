@@ -8,6 +8,7 @@ export const RoadmapDetails = () => {
         <h1 className="font-bold">Roadmap Details</h1>
         <p className="font-bold">Hours Per Week: <span className="font-normal">{careerDetails.hours_dedicated_to_learning}</span></p>
         <p className="font-bold">Budget: <span className="font-normal">${careerDetails.budget}</span></p>
+        <p className="font-bold">Timeframe: <span className="font-normal">3 months</span></p>
         <p className="font-bold">Learning Style: <span className="font-normal">{careerDetails.preferred_learning_style}</span></p>
     </div>
   )

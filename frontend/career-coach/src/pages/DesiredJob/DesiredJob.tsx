@@ -33,17 +33,19 @@ export const DesiredJob = () => {
   }, [careerDetails])
 
   return (
-    <div className="flex justify-center min-h-screen w-full">
-      <div className="flex flex-col max-w-[1200px] mt-28">
+    <div className="flex justify-center min-h-screen">
+      <div className="flex flex-col mt-28">
         <div className="flex justify-center mb-8">
-          <p className="text-purpleText text-base font-bold bg-desired-job gradient-text">I want to be a...</p>
+          <p className="text-purpleText text-xl font-bold bg-desired-job gradient-text">I want to be a...</p>
         </div>
-        <div className="mb-7">
-          <InputBox
-            placeholder="If you can't find your job below, search it here"
-            onChange={handleInputChange}
-            border
-          />
+        <div className="mb-7 flex justify-center">
+          <div className="w-[1200px]">
+            <InputBox
+              placeholder="If you can't find your job below, search it here"
+              onChange={handleInputChange}
+              border
+            />
+          </div>
         </div>
         <div className="flex flex-wrap gap-10 justify-center">
           {jobs.map((job) => (

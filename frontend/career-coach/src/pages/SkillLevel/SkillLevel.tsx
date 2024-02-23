@@ -30,9 +30,9 @@ export const SkillLevel = () => {
 
   return (
     <div className="flex justify-center min-h-screen w-full">
-      <div className="flex flex-col max-w-[1200px] mt-28">
+      <div className="flex flex-col w-full mt-28">
         <div className="flex justify-center mb-8">
-          <p className="text-purpleText text-base font-bold">What is your current knowledge in <span className="bg-current-knowledge gradient-text">{careerDetails.career}</span>?</p>
+          <p className="text-purpleText text-xl font-bold">What is your current knowledge in <span className="bg-current-knowledge gradient-text">{careerDetails.career}</span>?</p>
         </div>
         <div className="flex gap-10 justify-center">
           <div>
@@ -60,8 +60,8 @@ export const SkillLevel = () => {
             />
           </div>
         </div>
-        <div className="flex justify-between mt-auto mb-10 w-[1200px]">
-          <NavButton back to='/learning-style'>Back</NavButton>
+        <div className="flex justify-between mt-auto mb-10 ">
+          <NavButton back to='/timeframe'>Back</NavButton>
           <NavButton onClick={handleContinue}>Continue</NavButton>
         </div>
       </div>

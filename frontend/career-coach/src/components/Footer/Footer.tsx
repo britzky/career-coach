@@ -5,7 +5,7 @@ import x from '../../assets/images/x.png'
 export const Footer = () => {
   return (
     <footer className="flex items-center bg-footer h-[110px] w-full mt-auto">
-        <div className="flex justify-between w-full max-w-screen-xl mx-auto font-medium text-sm">
+        <div className="flex justify-between w-full mx-10 font-medium text-sm">
             <div>
                 <p>All Rights Reserved © MyPDP 2024</p>
             </div>
