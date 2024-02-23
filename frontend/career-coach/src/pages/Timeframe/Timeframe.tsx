@@ -12,7 +12,7 @@ export const Timeframe = () => {
     <div className="flex justify-center min-h-screen w-full">
         <div className="flex flex-col mt-28">
             <div className="flex justify-center mb-8">
-                <p className="text-purpleText text-base font-bold">What is your expected<span className="bg-timeframe gradient-text"> timeframe</span>?</p>
+                <p className="text-purpleText text-xl font-bold">What is your expected<span className="bg-timeframe gradient-text"> timeframe</span>?</p>
             </div>
             <div className="flex flex-col items-center">
                 <div className='mb-6 w-40 flex justify-center items-center'>
