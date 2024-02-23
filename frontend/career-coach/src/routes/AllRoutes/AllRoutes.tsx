@@ -9,10 +9,10 @@ import {
 
 export const AllRoutes = () => {
   const location = useLocation();
-  const isLandingPage = location.pathname === "/";
+  const noMargin = location.pathname === "/" || location.pathname === "/roadmap";
 
   return (
-    <div className={isLandingPage ? "" : "mx-10"}>
+    <div className={noMargin ? "" : "mx-10"}>
         <Routes>
             <Route path="/" element={<LandingPage />} />
             <Route path="budget" element={<Budget />} />
