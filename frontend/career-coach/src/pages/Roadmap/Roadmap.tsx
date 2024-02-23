@@ -2,6 +2,7 @@ import { CourseAccordion, Footer } from "../../components";
 import { RoadmapDetails } from "./RoadmapDetails";
 import { Overview } from "./Overview";
 import { Summary } from "./Summary";
+import { BlurredContent } from "./BlurredContent";
 
 export const Roadmap = () => {
   return (
@@ -16,6 +17,7 @@ export const Roadmap = () => {
             <div className="flex flex-col items-center flex-1 ml-7 mb-28">
               <Summary />
               <CourseAccordion />
+              <BlurredContent />
             </div>
           </div>
         </div>
