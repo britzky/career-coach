@@ -34,7 +34,11 @@ export const LoadingScreen = () => {
 
   useEffect(() => {
     if (!loading && roadmap) {
-      navigate('/roadmap');
+      if (roadmap.roadmap.length === 0) {
+        navigate('/error')
+      } else {
+        navigate('/roadmap');
+      }
     }
   }, [loading, navigate, roadmap]);
 
