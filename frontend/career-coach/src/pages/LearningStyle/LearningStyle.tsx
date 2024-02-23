@@ -55,7 +55,7 @@ export const LearningStyle = () => {
             />
           </div>
         </div>
-        <div className="flex justify-between mt-auto mb-3 w-[1200px]">
+        <div className="flex justify-between mt-auto mb-10 w-[1200px]">
           <NavButton back to='/budget'>Back</NavButton>
           <NavButton to='/skill-level'>Continue</NavButton>
         </div>
