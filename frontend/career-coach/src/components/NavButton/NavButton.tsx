@@ -23,12 +23,12 @@ export const NavButton: React.FC<ButtonProps> = ({ children, back, to, onClick }
   return (
     <>
     {back ? (
-      <button type="button" onClick={handleClick} className="text-buttonText bg-buttonWhite hover:bg-hoverButton focus:ring-1 focus:bg-clickedButton font-bold rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center me-2 shadow-md">
+      <button type="button" onClick={handleClick} className="text-buttonText bg-buttonWhite hover:bg-hoverButton focus:ring-1 focus:bg-clickedButton font-bold rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center  shadow-md">
         <WestIcon className="mr-2" />
         {children}
       </button>
     ):(
-      <button type="button" onClick={handleClick} className="text-buttonText bg-buttonWhite hover:bg-hoverButton focus:ring-1 focus:bg-clickedButton font-bold rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center me-2 shadow-md">
+      <button type="button" onClick={handleClick} className="text-buttonText bg-buttonWhite hover:bg-hoverButton focus:ring-1 focus:bg-clickedButton font-bold rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center shadow-md">
         {children}
         <EastIcon className="ml-2" />
       </button>

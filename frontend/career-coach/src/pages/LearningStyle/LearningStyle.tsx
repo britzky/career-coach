@@ -17,7 +17,7 @@ export const LearningStyle = () => {
 
   return (
     <div className="flex justify-center min-h-screen w-full">
-      <div className="flex flex-col max-w-[1200px] mt-28">
+      <div className="flex flex-col w-full mt-28">
         <div className="flex justify-center mb-8">
           <p className="text-purpleText text-base font-bold">What is the preferred <span className="bg-learning-style gradient-text">learning style</span>?</p>
         </div>
@@ -55,9 +55,9 @@ export const LearningStyle = () => {
             />
           </div>
         </div>
-        <div className="flex justify-between mt-auto mb-3 w-[1200px]">
+        <div className="flex justify-between mt-auto mb-10">
           <NavButton back to='/budget'>Back</NavButton>
-          <NavButton to='/skill-level'>Continue</NavButton>
+          <NavButton to='/timeframe'>Continue</NavButton>
         </div>
       </div>
     </div>
