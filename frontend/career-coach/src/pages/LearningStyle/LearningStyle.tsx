@@ -1,10 +1,12 @@
 import { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { CareerInfoCard, NavButton } from '../../components';
 import { useCareerDetails } from '../../context/CareerContext';
 
 export const LearningStyle = () => {
   const  { careerDetails, updateCareer } = useCareerDetails()
   const [selectedCard, setSelectedCard] = useState<string | null>(null)
+  const navigate = useNavigate();
 
   const handleCardClick = (tag: string) => {
     updateCareer('preferred_learning_style', tag)
@@ -14,6 +16,12 @@ export const LearningStyle = () => {
   useEffect(() => {
     console.log(careerDetails)
   }, [careerDetails])
+
+  const handleContinueClick = () => {
+    if (selectedCard) {
+      navigate('/timeframe')
+    }
+  }
 
   return (
     <div className="flex justify-center min-h-screen w-full">
@@ -57,7 +65,7 @@ export const LearningStyle = () => {
         </div>
         <div className="flex justify-between mt-auto mb-10">
           <NavButton back to='/budget'>Back</NavButton>
-          <NavButton to='/timeframe'>Continue</NavButton>
+          <NavButton onClick={handleContinueClick}>Continue</NavButton>
         </div>
       </div>
     </div>

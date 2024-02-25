@@ -25,7 +25,7 @@ export const Timeframe = () => {
                     *Attention:
                     The scope of our career roadmap is restricted to a 3 month timeframe,
                     which will increase in a later update.
-                    Kindly consider this limitation when setting your career goals
+                    Kindly consider this limitation when setting your career goals.
                 </h5>
                 <div className="flex justify-between">
                     <NavButton back to='/learning-style'>Back</NavButton>
