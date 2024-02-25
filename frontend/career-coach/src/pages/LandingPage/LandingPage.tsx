@@ -48,21 +48,21 @@ export const LandingPage = () => {
             </div>
           </div>
           <h1 className="font-bold text-xxl gradient-text bg-logo text-center w-full">Your Path to Success</h1>
-            <div className="flex justify-center gap-12">
-              <div className="flex flex-col items-center border-2 border-purpleText rounded-md gap-7 p-5 max-w-[24rem]">
+            <div className="flex justify-center gap-5">
+              <div className="flex flex-col items-center border-2 border-purpleText rounded-md gap-7 p-5 max-w-[28rem]">
                 <img src={skillDev} alt="Man running" />
                 <h6 className="font-bold text-sm text-purpleText">Skill development roadmap</h6>
-                <p className="font-medium text-sm text-center">Receive a tailor-made roadmap outlining the skills you need to succeed in your chosen career path.</p>
+                <p className="font-medium text-sm text-center max-w-[24rem]">Receive a tailor-made roadmap outlining the skills you need to succeed in your chosen career path.</p>
               </div>
-              <div className="flex flex-col items-center border-2 border-purpleText rounded-md gap-7 p-5 max-w-[24rem]">
+              <div className="flex flex-col items-center border-2 border-purpleText rounded-md gap-7 p-5 max-w-[28rem]">
                 <img src={progress} alt="Woman showing progress chart" />
                 <h6 className="font-bold text-sm text-purpleText text-center">Progress Tracking and Analytics</h6>
-                <p className="font-medium text-sm text-center">Monitor your progress and track your accomplishments with detailed analytics and performance insights.</p>
+                <p className="font-medium text-sm text-center max-w-[24rem]">Monitor your progress and track your accomplishments with detailed analytics and performance insights.</p>
               </div>
-              <div className="flex flex-col items-center border-2 border-purpleText rounded-md gap-7 p-5 max-w-[24rem]">
+              <div className="flex flex-col items-center border-2 border-purpleText rounded-md gap-7 p-5 max-w-[28rem]">
                 <img src={career} alt="Man looking through binoculars at a city" />
                 <h6 className="font-bold text-sm text-purpleText">Career Path Exploration</h6>
-                <p className="font-medium text-sm text-center self-center">Explore various career paths aligned with your interests and skills with detailed insights and recommendations.</p>
+                <p className="font-medium text-sm text-center self-center max-w-[24rem]">Explore various career paths aligned with your interests and skills with detailed insights and recommendations.</p>
               </div>
           </div>
         </div>
