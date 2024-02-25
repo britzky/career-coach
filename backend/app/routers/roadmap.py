@@ -77,13 +77,13 @@ async def generate_roadmap(career_info: CareerInfo):
             # Regex patterns
             patterns = {
                 "month": r"^(Month \d+(?:-\d+)?):",
-                "title": r"^(Month \d+(?:-\d+)?): (.+)$",
-                "course_name": r"Course Name: (.+)",
-                "link": r"Link: (.+)",
-                "skill_level": r"Skill level: (.+)",
-                "price": r"Price: (.+)",
-                "duration": r"Duration: (.+)",
-                "description": r"Description: (.+)"
+                "title": r"^\s*-\s*Title: (.+)$",
+                "course_name": r"^\s*-\s*Course Name: (.+)",
+                "link": r"^\s*-\s*Link: (.+)",
+                "skill_level": r"^\s*-\s*Skill level: (.+)",
+                "price": r"^\s*-\s*Price: (.+)",
+                "duration": r"^\s*-\s*Duration: (.+)",
+                "description": r"^\s*-\s*Description: (.+)"
             }
 
             # Extract the summary using regex
@@ -98,30 +98,33 @@ async def generate_roadmap(career_info: CareerInfo):
             roadmap = []
             for section in months:
                 month_data = {}
-                # Extract month and title
+                # Extract month
                 month_match = re.search(patterns["month"], section, re.MULTILINE)
-                title_match = re.search(patterns["title"], section, re.MULTILINE)
-                if month_match and title_match:
+                if month_match:
                     month_data["month"] = month_match.group(1).strip()
-                    month_data["title"] = title_match.group(2).strip()
-                # Extract course info
-                course_info = {}
-                for key, pattern in patterns.items():
-                    if key not in ["month", "title"]:  # Skip month and title
-                        match = re.search(pattern, section, re.MULTILINE)
-                        if match:
-                            course_info_key = key.replace("_", "")  # Remove underscore for JSON key
-                            course_info[course_info_key] = match.group(1).strip()
-                if course_info:
-                    month_data["courseInfo"] = course_info
+                    month_data["courses"] = []
+                # Split the section by "Title" to get individual courses
+                courses = re.split(r'(?=^\s*-\s*Title: )', section, flags=re.MULTILINE)
+                courses = [course for course in courses if course.strip()]
+
+                for course in courses:
+                    course_info = {}
+                    for key, pattern in patterns.items():
+                        if key not in ["month"]:  # Skip month
+                            match = re.search(pattern, course, re.MULTILINE)
+                            if match:
+                                course_info_key = key.replace("_", "")  # Remove underscore for JSON key
+                                course_info[course_info_key] = match.group(1).strip()
+                    if course_info:
+                        month_data["courses"].append(course_info)
+
                 if month_data:
                     roadmap.append(month_data)
 
-            logging.info(response)
             return {
                 "summary": summary,
                 "roadmap": roadmap
-                }
+            }
         else:
             raise HTTPException(status_code=500, detail="Failed to get response from the assistant")
     except Exception as e:
