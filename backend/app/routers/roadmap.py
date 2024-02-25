@@ -77,13 +77,13 @@ async def generate_roadmap(career_info: CareerInfo):
             # Regex patterns
             patterns = {
                 "month": r"^(Month \d+(?:-\d+)?):",
-                "title": r"^\s*-\s*Title: (.+)$",
-                "course_name": r"^\s*-\s*Course Name: (.+)",
-                "link": r"^\s*-\s*Link: (.+)",
-                "skill_level": r"^\s*-\s*Skill level: (.+)",
-                "price": r"^\s*-\s*Price: (.+)",
-                "duration": r"^\s*-\s*Duration: (.+)",
-                "description": r"^\s*-\s*Description: (.+)"
+                "title": r"^\s*Title: (.+)$",
+                "course_name": r"^\s*Course Name: (.+)",
+                "link": r"^\s*Link: (.+)",
+                "skill_level": r"^\s*Skill level: (.+)",
+                "price": r"^\s*Price: (.+)",
+                "duration": r"^\s*Duration: (.+)",
+                "description": r"^\s*Description: (.+)"
             }
 
             # Extract the summary using regex
@@ -104,7 +104,7 @@ async def generate_roadmap(career_info: CareerInfo):
                     month_data["month"] = month_match.group(1).strip()
                     month_data["courses"] = []
                 # Split the section by "Title" to get individual courses
-                courses = re.split(r'(?=^\s*-\s*Title: )', section, flags=re.MULTILINE)
+                courses = re.split(r'(?=^\s*Title: )', section, flags=re.MULTILINE)
                 courses = [course for course in courses if course.strip()]
 
                 for course in courses:
@@ -120,6 +120,12 @@ async def generate_roadmap(career_info: CareerInfo):
 
                 if month_data:
                     roadmap.append(month_data)
+
+                completed_roadmap = {
+                    "summary": summary,
+                    "roadmap": roadmap
+                }
+                print(completed_roadmap)
 
             return {
                 "summary": summary,
