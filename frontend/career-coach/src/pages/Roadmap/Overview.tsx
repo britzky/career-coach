@@ -15,7 +15,7 @@ export const Overview = () => {
       }
 
   return (
-    <div className="border-2 border-purpleText py-2 px-10 rounded-lg">
+    <div className="border-2 border-purpleText py-2 px-10 rounded-lg max-w-[341px]">
       <p className="text-xs font-bold mb-4 text-purpleText">Overview</p>
       <div className="space-y-4">
         {roadmap?.roadmap.map((item, i) => (

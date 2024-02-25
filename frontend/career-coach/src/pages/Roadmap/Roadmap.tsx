@@ -10,7 +10,7 @@ export const Roadmap = () => {
       <div className="flex-grow">
         <div className="flex flex-col md:flex-row mx-10">
           <div className="flex flex-col md:flex-row mt-28">
-            <div className="flex flex-col gap-5 md:flex-1">
+            <div className="flex flex-col gap-5 md:flex-1 max-w-[341px]">
               <RoadmapDetails />
               <Overview />
             </div>
