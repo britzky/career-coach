@@ -1,22 +1,35 @@
 import { useState, useEffect, ChangeEvent } from 'react' // added useState
+import { useNavigate } from 'react-router-dom';
 import { InputBox, NavButton } from "../../components"
 import { useCareerDetails } from "../../context/CareerContext"
 
 export const HoursPerWeek = () => {
   const {updateCareer, careerDetails} = useCareerDetails()
   const [hours, setHours] = useState(careerDetails.hours_dedicated_to_learning || 0);
+  const [isValidInput, setIsValidInput] = useState(true);
+  const navigate = useNavigate();
 
   // need to add validation before shipping to production
   const handleSliderChange = (event: ChangeEvent<HTMLInputElement>) => {
     const newHours = Number(event.target.value); {/* added this line */}
     setHours(newHours); {/* changed from setHours(Number(event.target.value)); */}
     updateCareer('hours_dedicated_to_learning', newHours); {/* changed from hours to newHours */}
+    setIsValidInput(newHours > 0 && newHours <= 40);
   }
 
   const handleInputChange = (value: string) => {
     const newHours = Number(value); {/* added this line */}
     setHours(newHours); {/* changed from setHours(Number(value)); */}
     updateCareer('hours_dedicated_to_learning', newHours); {/* changed from hours */}
+    setIsValidInput(!isNaN(newHours) && newHours > 0 && newHours <= 40);
+  }
+
+  const handleContinueClick = () => {
+    if (isValidInput) {
+      navigate('/budget');
+    } else {
+      console.log("Please set the slider or input a number between 0 and 40 before continuing.")
+    }
   }
 
   // remove before shipping to production
@@ -48,7 +61,7 @@ export const HoursPerWeek = () => {
         </div>
         <div className="flex justify-between mt-auto mb-10 w-full">
           <NavButton to='/job-level' back>Back</NavButton>
-          <NavButton to='/budget'>Continue</NavButton>
+          <NavButton onClick={handleContinueClick}>Continue</NavButton>
         </div>
       </div>
     </div>

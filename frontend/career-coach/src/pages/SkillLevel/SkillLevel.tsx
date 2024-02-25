@@ -1,13 +1,13 @@
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { CareerInfoCard } from '../../components';
+import { CareerInfoCard, NavButton } from '../../components';
 import { useCareerDetails } from '../../context/CareerContext';
-import { NavButton } from '../../components';
+
 
 export const SkillLevel = () => {
   const { careerDetails, updateCareer, submitCareerDetails, loading, roadmap } = useCareerDetails()
-  const navigate = useNavigate();
   const [selectedCard, setSelectedCard] = useState<string | null>(null)
+  const navigate = useNavigate();
 
   const handleCardClick = (tag: string) => {
     updateCareer('current_knowledge', tag)
@@ -16,6 +16,15 @@ export const SkillLevel = () => {
 
   const handleContinue = async () => {
     await submitCareerDetails();
+  }
+
+  const handleContinueClick = async () => {
+    if (selectedCard) {
+      await handleContinue();
+      navigate('/loading-screen')
+    } else {
+      console.log("Please select a card before continuing.")
+    }
   }
 
   useEffect(() => {
@@ -62,7 +71,7 @@ export const SkillLevel = () => {
         </div>
         <div className="flex justify-between mt-auto mb-10 ">
           <NavButton back to='/timeframe'>Back</NavButton>
-          <NavButton onClick={handleContinue}>Continue</NavButton>
+          <NavButton onClick={handleContinueClick}>Continue</NavButton>
         </div>
       </div>
     </div>
