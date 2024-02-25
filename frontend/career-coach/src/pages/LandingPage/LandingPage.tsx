@@ -32,7 +32,7 @@ export const LandingPage = () => {
             </button>
           </div>
         </div>
-        <div className="overflow-x-hidden space-y-14 my-14 mt-[54rem]">
+        <div className="overflow-x-hidden space-y-14 my-14 mt-[35rem]">
           <div className="flex flex-col items-center">
             <div className="max-w-[94rem]">
               <h1 className="font-bold text-xxl gradient-text bg-logo text-center mt-14">What is a Career Roadmap?</h1>
