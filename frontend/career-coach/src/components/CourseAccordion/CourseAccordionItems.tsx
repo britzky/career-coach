@@ -12,11 +12,11 @@ interface CourseInfo {
 
   interface AccordionItemProps {
     month: string;
-    title: string;
-    courseInfo: CourseInfo;
+    courses: CourseInfo[];
+    overview: string
   }
 
-export const CourseAccordionItems: React.FC<AccordionItemProps> = ({ month, title, courseInfo }) => {
+export const CourseAccordionItems: React.FC<AccordionItemProps> = ({ month, courses, overview }) => {
     const [open, setOpen] = useState<boolean>(false);
 
   return (
@@ -24,7 +24,7 @@ export const CourseAccordionItems: React.FC<AccordionItemProps> = ({ month, titl
         <div className="border-4 rounded-md border-purpleText p-5 w-full">
             <div className="flex flex-col">
                 <div className="flex justify-between">
-                    <span className="font-bold text-base text-purpleText">{month}: {title}</span>
+                    <span className="font-bold text-base text-purpleText">{month}: {courses[0].coursename} </span>
                     <div>
                         <button
                             onClick={() => setOpen(!open)}
@@ -35,26 +35,27 @@ export const CourseAccordionItems: React.FC<AccordionItemProps> = ({ month, titl
                         </button>
                     </div>
                 </div>
-                <p className="text-xs font-medium text-purpleText">{courseInfo.description}</p>
+                <p className="text-xs font-medium text-purpleText">{overview}</p>
             </div>
-            {open && (
-            <div className="bg-buttonWhite border-2 border-purpleText rounded-md p-3 text-purpleText">
-                <p className="font-bold">Course Name: {courseInfo.coursename}</p>
-                <p>Duration: {courseInfo.duration}</p>
-                <p>
-                    <a
-                        href={courseInfo.link}
-                        className="underline cursor-pointer"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        Course Link
-                    </a>
-                </p>
-                <p>Skill Level: {courseInfo.skilllevel}</p>
-                <p>Price: {courseInfo.price}</p>
-            </div>
-            )}
+            {open && courses.map((course, index) => (
+                <div key={index} className="bg-buttonWhite border-2 border-purpleText rounded-md p-3 text-purpleText">
+                    <p className="font-bold">Course Name: {course.coursename}</p>
+                    <p>Duration: {course.duration}</p>
+                    <p>
+                        <a
+                            href={course.link}
+                            className="underline cursor-pointer"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            Course Link
+                        </a>
+                    </p>
+                    <p>Skill Level: {course.skilllevel}</p>
+                    <p>Price: {course.price}</p>
+                    <p>Description: {course.description}</p>
+                </div>
+            ))}
         </div>
     </div>
   )

@@ -13,8 +13,8 @@ export const CourseAccordion: React.FC = () => {
                 <CourseAccordionItems
                     key={index}
                     month={item.month}
-                    title={item.title}
-                    courseInfo={item.courseInfo}
+                    overview={item.overview}
+                    courses={item.courses}
                 />
                 {index !== roadmap.roadmap.length - 1 && (
                     <div className="my-1">

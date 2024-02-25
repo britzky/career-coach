@@ -33,8 +33,8 @@ interface RoadmapState {
 
 interface RoadmapSectionType {
   month: string;
-  title: string;
-  courseInfo: CourseInfoType;
+  courses: CourseInfoType[];
+  overview: string;
 }
 
 interface CourseInfoType {
