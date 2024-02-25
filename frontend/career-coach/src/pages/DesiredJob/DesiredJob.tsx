@@ -67,10 +67,10 @@ export const DesiredJob = () => {
             </div>
           ))}
         </div>
-      </div>
-        <div className="flex justify-end mt-auto mb-10"> {/* changed from mt-14 mb-3 flex justify-end */}
+        <div className="flex justify-end mt-auto mb-10 w-full"> {/* changed from mt-14 mb-3 flex justify-end */}
           <NavButton onClick={handleContinueClick}>Continue</NavButton>
         </div>
+      </div>
     </div>
   )
 }
