@@ -54,13 +54,15 @@ async def generate_roadmap(career_info: CareerInfo):
             assistant_id=assistant_id,
             instructions=(
                 "Start the response with a summary that highlights the key learning outcomes, total time commitment, and skill development progression. Mention the overarching goals and how this roadmap prepares the learner for their career. After the summary, use the following strict template for each month section of the career roadmap: " +
-                "\n- Begin each section with the month and course title." +
-                "\n- Follow with details: Course Name, Link, Skill level, Price, Duration, and Description, each on a new line, in this order." +
+                "\n- Begin each section with the month and a brief overview of what the user will learn during that month. This overview should highlight the main themes and skills covered." +
+                "\n- Follow with the course title." +
+                "\n- Then provide details for each course: Course Name, Link, Skill level, Price, Duration, and Description, each on a new line, in this order." +
                 "\n- Include the estimated duration for completing each course. Specify whether the duration is in hours, days, or weeks." +
                 "\n- Avoid markdown formatting." +
                 "\nExample format:" +
                 "\nSummary: This roadmap covers the essential skills and knowledge for a career in Java development, requiring a total of 6 months with an average weekly study time of 10 hours. It aims to equip learners with foundational to advanced Java skills, preparing them for job-ready competencies." +
-                "\n\nMonth 1: Basic Java Programming" +
+                "\n\nMonth 1: Getting Started with Java" +
+                "\nOverview: This month focuses on introducing you to Java programming, covering basic concepts and setting the foundation for more advanced topics." +
                 "\nCourse Name: Java Programming Basics" +
                 "\nLink: https://www.udacity.com/course/java-programming-basics--ud282" +
                 "\nSkill level: Beginner" +
