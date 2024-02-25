@@ -35,7 +35,7 @@ export const LandingPage = () => {
         <div className="overflow-x-hidden space-y-14 my-14 mt-[30rem]">
           <div className="flex flex-col items-center">
             <div className="max-w-[94rem]">
-              <h1 className="font-bold text-xxl gradient-text bg-logo text-center mt-14">What is a Career Roadmap?</h1>
+              <h1 className="font-bold text-xxl gradient-text bg-logo text-center">What is a Career Roadmap?</h1>
               <p className="font-medium text-base text-center">
                 A career roadmap is your personalized guide to success,
                 like a GPS for your career journey.
