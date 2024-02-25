@@ -1,8 +1,15 @@
 import { useNavigate } from 'react-router-dom'
 import error from '../../assets/images/error.png'
+import { useCareerDetails } from '../../context/CareerContext';
 
 export const Error = () => {
     const navigate = useNavigate();
+    const { resetCareer } = useCareerDetails();
+
+    const handleClick = () => {
+      resetCareer();
+      navigate('/')
+    }
 
   return (
     <div className="flex justify-center min-h-screen w-full">
@@ -16,7 +23,7 @@ export const Error = () => {
             <button
               type="button"
               className="w-full text-white bg-purpleText font-bold rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2"
-              onClick={() => navigate('/')}
+              onClick={handleClick}
               >
               Take Me Back!
             </button>
