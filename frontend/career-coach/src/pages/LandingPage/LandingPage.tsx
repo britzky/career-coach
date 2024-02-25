@@ -15,7 +15,7 @@ export const LandingPage = () => {
       <div className="mt-28 mx-10">
         <div className="flex flex-col mb-7 h-[695px]">
           <div className="relative mx-0 w-full">
-            <img src={road} alt="road" className="absolute -ml-28 mt-20 min-w-[1700px]" />
+            <img src={road} alt="road" className="absolute -ml-28 mt-20 min-w-[2100px]" />
           </div>
           <div className="max-w-[957px] flex flex-col">
             <span className="text-purpleText2 font-bold text-base">Get your DREAM JOB with our</span>
@@ -32,7 +32,7 @@ export const LandingPage = () => {
             </button>
           </div>
         </div>
-        <div className="overflow-x-hidden space-y-14 my-14">
+        <div className="overflow-x-hidden space-y-14 my-14 mt-56">
           <h1 className="font-bold text-xxl gradient-text bg-logo text-center mt-14">What is a Career Roadmap?</h1>
           <p className="font-medium text-base">
             A career roadmap is your personalized guide to success,
