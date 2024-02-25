@@ -33,8 +33,8 @@ export const DesiredJob = () => {
   }, [careerDetails])
 
   return (
-    <div className="flex justify-center min-h-screen">
-      <div className="flex flex-col mt-28">
+    <div className="flex justify-center min-h-screen w-full">
+      <div className="flex flex-col items-center mt-28 w-full">
         <div className="flex justify-center mb-8">
           <p className="text-purpleText text-xl font-bold bg-desired-job gradient-text">I want to be a...</p>
         </div>
@@ -59,10 +59,10 @@ export const DesiredJob = () => {
             </div>
           ))}
         </div>
+      </div>
         <div className="flex justify-end mt-auto mb-10"> {/* changed from mt-14 mb-3 flex justify-end */}
           <NavButton to='/job-level'>Continue</NavButton>
         </div>
-      </div>
     </div>
   )
 }
