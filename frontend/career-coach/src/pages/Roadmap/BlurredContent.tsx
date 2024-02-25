@@ -6,13 +6,13 @@ export const BlurredContent = () => {
   return (
     <div className="flex justify-center items-center">
         <div className="flex flex-col items-center">
-            <div className="text-purpleText font-semibold text-base mb-16 mt-7">
+            <div className="text-purpleText font-semibold text-base mt-7">
                 <h4>Whoops, our roadmap is feeling a bit like a procrastinating student and can only plan the next 3 months. But hey, with a focused sprint, you'll be acing that career exam in no time!</h4>
             </div>
             <div className="absolute z-10 mt-40">
                 <img src={help} alt="struggling man" />
             </div>
-            <div className="flex flex-col items-center blur">
+            <div className="flex flex-col items-center blur mt-10">
                 <div className="border-4 rounded-md border-purpleText p-5">
                     <div className="flex flex-col">
                         <div className="flex justify-between">

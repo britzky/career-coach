@@ -14,7 +14,7 @@ export const Roadmap = () => {
               <RoadmapDetails />
               <Overview />
             </div>
-            <div className="flex flex-col items-center flex-1 ml-7 mb-28">
+            <div className="flex flex-col items-center flex-1 ml-7 mb-28 w-full">
               <Summary />
               <CourseAccordion />
               <BlurredContent />
