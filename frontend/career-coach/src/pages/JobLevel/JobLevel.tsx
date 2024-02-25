@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { CareerInfoCard, NavButton } from '../../components';
 import { useCareerDetails } from '../../context/CareerContext';
 
@@ -6,6 +7,7 @@ import { useCareerDetails } from '../../context/CareerContext';
 export const JobLevel = () => {
   const { careerDetails, updateCareer } = useCareerDetails()
   const [selectedCard, setSelectedCard] = useState<string | null>(null)
+  const navigate = useNavigate();
 
   const handleCardClick = (tag: string) => {
     updateCareer('experience', tag)
@@ -15,6 +17,12 @@ export const JobLevel = () => {
   useEffect(() => {
     console.log(careerDetails)
   }, [careerDetails])
+
+  const handleContinueClick = () => {
+    if (selectedCard) {
+      navigate('/hours-per-week')
+    }
+  }
 
   return (
     <div className="flex justify-center min-h-screen w-full">
@@ -62,7 +70,7 @@ export const JobLevel = () => {
         </div>
         <div className="flex justify-between mt-auto mb-10"> {/* added w-[1200px] */}
           <NavButton to='/desired-job' back>Back</NavButton>
-          <NavButton to='/hours-per-week'>Continue</NavButton>
+          <NavButton onClick={handleContinueClick}>Continue</NavButton>
         </div>
       </div>
     </div>
