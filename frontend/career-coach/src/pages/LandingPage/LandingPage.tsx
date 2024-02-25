@@ -12,11 +12,11 @@ export const LandingPage = () => {
   console.log(careerDetails)
   return (
     <div className="overflow-x-hidden flex flex-col min-h-screen">
+      <div className="relative -mx-24 min-w-full h-auto">
+        <img src={road} alt="road" className="absolute mt-20 min-w-full h-auto" />
+      </div>
       <div className="mt-28 mx-10">
         <div className="flex flex-col h-[695px]">
-          <div className="relative mx-0 w-full">
-            <img src={road} alt="road" className="absolute -ml-40 mt-20 min-w-[2750px]" />
-          </div>
           <div className="max-w-[957px] flex flex-col">
             <span className="text-purpleText2 font-bold text-base">Get your DREAM JOB with our</span>
             <span className="gradient-text bg-landing-page-title font-bold text-xxl">AI-Powered Career Roadmaps</span>
