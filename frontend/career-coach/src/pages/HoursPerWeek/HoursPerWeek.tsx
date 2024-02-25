@@ -25,7 +25,7 @@ export const HoursPerWeek = () => {
   }
 
   const handleContinueClick = () => {
-    if (isValidInput) {
+    if (isValidInput && hours > 0 && hours < 41) {
       navigate('/budget');
     } else {
       console.log("Please set the slider or input a number between 0 and 40 before continuing.")
