@@ -47,7 +47,7 @@ export const DesiredJob = () => {
             />
           </div>
         </div>
-        <div className="flex flex-wrap gap-10 justify-center">
+        <div className="flex flex-wrap gap-10 justify-center max-w-[1200px]">
           {jobs.map((job) => (
             <div key={job}>
               <CareerInfoCard
