@@ -79,6 +79,7 @@ async def generate_roadmap(career_info: CareerInfo):
             # Regex patterns
             patterns = {
                 "month": r"^(Month \d+(?:-\d+)?):",
+                "overview": r"^\s*Overview: (.+)$",
                 "title": r"^\s*Title: (.+)$",
                 "course_name": r"^\s*Course Name: (.+)",
                 "link": r"^\s*Link: (.+)",
@@ -105,6 +106,12 @@ async def generate_roadmap(career_info: CareerInfo):
                 if month_match:
                     month_data["month"] = month_match.group(1).strip()
                     month_data["courses"] = []
+
+                # Extract overview
+                overview_match = re.search(patterns["overview"], section, re.MULTILINE)
+                if overview_match:
+                    month_data["overview"] = overview_match.group(1).strip()
+
                 # Split the section by "Title" to get individual courses
                 courses = re.split(r'(?=^\s*Title: )', section, flags=re.MULTILINE)
                 courses = [course for course in courses if course.strip()]
@@ -112,7 +119,7 @@ async def generate_roadmap(career_info: CareerInfo):
                 for course in courses:
                     course_info = {}
                     for key, pattern in patterns.items():
-                        if key not in ["month"]:  # Skip month
+                        if key not in ["month", "overview"]:  # Skip month and overview
                             match = re.search(pattern, course, re.MULTILINE)
                             if match:
                                 course_info_key = key.replace("_", "")  # Remove underscore for JSON key
