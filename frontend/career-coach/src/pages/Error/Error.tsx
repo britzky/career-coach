@@ -12,7 +12,7 @@ export const Error = () => {
           <p className="text-error font-medium text-base text-center">It seems our roadmap got lost on the career highway.</p>
           <div className="flex flex-col items-center mb-10">
             <img src={error} alt="Error image" />
-            <p className="text-purpleText text-sm font-medium self-center">Let's go back to the homepage and try again!</p>
+            <p className="text-purpleText text-sm font-medium self-center mb-7">Let's go back to the homepage and try again!</p>
             <button
               type="button"
               className="w-full text-white bg-purpleText font-bold rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2"
