@@ -15,11 +15,11 @@ export const Overview = () => {
       }
 
   return (
-    <div className="border-2 border-purpleText py-2 px-10 rounded-lg max-w-[341px]">
-      <p className="text-xs font-bold mb-4 text-purpleText">Overview</p>
+    <div className="border-2 border-purpleText py-2 pr-24 pl-5 rounded-lg max-w-[300px]">
+      <p className="text-base font-bold mb-4 text-purpleText">Overview</p>
       <div className="space-y-4">
         {roadmap?.roadmap.map((item, i) => (
-          <div key={i} className="flex items-center gap-16">
+          <div key={i} className="flex items-center">
             <span className="text-xs flex-1 font-medium">{item.month}</span>
             <div className="relative flex items-center">
               {i <= (selectedMonth ?? -1) ? (

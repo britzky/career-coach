@@ -7,6 +7,21 @@ interface QuoteState {
   author: string;
 }
 
+interface RoadmapSectionType {
+  month: string;
+  courses: CourseInfoType[];
+  overview: string;
+}
+
+interface CourseInfoType {
+  coursename: string;
+  link: string;
+  skilllevel: string;
+  price: string;
+  duration: string;
+  description: string;
+}
+
 export const LoadingScreen = () => {
   const [quote, setQuote] = useState<QuoteState | undefined>()
   const { loading, roadmap } = useCareerDetails();
@@ -34,7 +49,8 @@ export const LoadingScreen = () => {
 
   useEffect(() => {
     if (!loading && roadmap) {
-      if (roadmap.roadmap.length === 0) {
+      const emptyFields = roadmap.roadmap.length === 0 || roadmap.roadmap.some((course: RoadmapSectionType) => course.courses.length == 0)
+      if (emptyFields) {
         navigate('/error')
       } else {
         navigate('/roadmap');
