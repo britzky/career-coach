@@ -1,16 +1,21 @@
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { Stepper, Step, StepLabel } from '@mui/material';
 import { CareerInfoCard, InputBox, NavButton } from '../../components'
 import { useCareerDetails } from '../../context/CareerContext';
 
+const totalSteps = 5;
+
 export const DesiredJob = () => {
-  const  { careerDetails, updateCareer } = useCareerDetails()
+  const { careerDetails, updateCareer } = useCareerDetails()
   const [selectedCard, setSelectedCard] = useState<string | null>(null)
   const navigate = useNavigate();
+  const [activeStep, setActiveStep] = useState(-1);
 
   const handleCardClick = (tag: string) => {
     updateCareer('career', tag)
     setSelectedCard(tag)
+    // handleNext()
   }
 
   const handleInputChange = (value: string) => {
@@ -34,15 +39,32 @@ export const DesiredJob = () => {
     console.log(careerDetails)
   }, [careerDetails])
 
+  useEffect(() => {
+    // Count the current step based on whether a selection is made or not
+    setActiveStep(selectedCard || careerDetails.career ? 1 : 0);
+  }, [selectedCard, careerDetails.career]);
+
   const handleContinueClick = () => {
     if (selectedCard) {
       navigate('/job-level')
     }
   }
+  // const handleNext = () => {
+  //   setActiveStep((prevActiveStep) => prevActiveStep +1)
+  // }
+
+  // const progress = ((activeStep +1) / totalSteps) * 100;
 
   return (
     <div className="flex justify-center min-h-screen w-full">
       <div className="flex flex-col items-center mt-28 w-full">
+        <Stepper activeStep={activeStep} alternativeLabel>
+          {[...Array(totalSteps)].map((_, index) => (
+            <Step key={index}>
+              <StepLabel>{`Step ${index + 1}`}</StepLabel>
+            </Step>
+          ))}
+        </Stepper>
         <div className="flex justify-center mb-8">
           <p className="text-purpleText text-xl font-bold bg-desired-job gradient-text">I want to be a...</p>
         </div>

@@ -1,13 +1,16 @@
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { Stepper, Step, StepLabel } from '@mui/material';
 import { CareerInfoCard, NavButton } from '../../components';
 import { useCareerDetails } from '../../context/CareerContext';
 
+const totalSteps = 5;
 
 export const SkillLevel = () => {
   const { careerDetails, updateCareer, submitCareerDetails, loading, roadmap } = useCareerDetails()
   const [selectedCard, setSelectedCard] = useState<string | null>(null)
-  const navigate = useNavigate();
+  const navigate = useNavigate()
+  const [activeStep, setActiveStep] = useState(4)
 
   const handleCardClick = (tag: string) => {
     updateCareer('current_knowledge', tag)
@@ -37,9 +40,20 @@ export const SkillLevel = () => {
     }
   }, [loading, navigate, roadmap])
 
+  useEffect(() => {
+    setActiveStep(selectedCard ? 5 : 4);
+  }, [selectedCard]);
+
   return (
     <div className="flex justify-center min-h-screen w-full">
       <div className="flex flex-col w-full mt-28">
+        <Stepper activeStep={activeStep} alternativeLabel>
+          {[...Array(totalSteps)].map((_, index) => (
+            <Step key={index}>
+              <StepLabel>{`Step ${index + 1}`}</StepLabel>
+            </Step>
+          ))}
+        </Stepper>
         <div className="flex justify-center mb-8">
           <p className="text-purpleText text-xl font-bold">What is your current knowledge in <span className="bg-current-knowledge gradient-text">{careerDetails.career}</span>?</p>
         </div>
