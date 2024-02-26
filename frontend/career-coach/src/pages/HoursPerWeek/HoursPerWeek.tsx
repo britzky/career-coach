@@ -1,13 +1,17 @@
 import { useState, useEffect, ChangeEvent } from 'react' // added useState
 import { useNavigate } from 'react-router-dom';
+import { Stepper, Step, StepLabel } from '@mui/material';
 import { InputBox, NavButton } from "../../components"
 import { useCareerDetails } from "../../context/CareerContext"
+
+const totalSteps = 5;
 
 export const HoursPerWeek = () => {
   const {updateCareer, careerDetails} = useCareerDetails()
   const [hours, setHours] = useState(careerDetails.hours_dedicated_to_learning || 0);
   const [isValidInput, setIsValidInput] = useState(true);
   const navigate = useNavigate();
+  const [activeStep, setActiveStep] = useState(2);
 
   // need to add validation before shipping to production
   const handleSliderChange = (event: ChangeEvent<HTMLInputElement>) => {
@@ -37,9 +41,21 @@ export const HoursPerWeek = () => {
     console.log(careerDetails)
   }, [careerDetails])
 
+  useEffect(() => {
+    setActiveStep(hours > 0 ? 3 : 2);
+  }, [hours]);
+
+
   return (
     <div className="flex justify-center min-h-screen">
       <div className="flex flex-col items-center w-full mt-28">
+        <Stepper activeStep={activeStep} alternativeLabel>
+          {[...Array(totalSteps)].map((_, index) => (
+            <Step key={index}>
+              <StepLabel>{`Step ${index + 1}`}</StepLabel>
+            </Step>
+          ))}
+        </Stepper>
         <p className="text-purpleText text-xl font-bold">How many <span className="bg-hours-per-week gradient-text">hours per week</span> can you dedicate?</p>
         <div className="w-[210px] my-14 flex items-center">
           <InputBox value={hours} placeholder='0' onChange={handleInputChange} />

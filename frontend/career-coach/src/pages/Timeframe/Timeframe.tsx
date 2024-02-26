@@ -1,4 +1,5 @@
 import { InputBox, NavButton } from '../../components'
+import InfoIcon from '@mui/icons-material/Info'
 // import { useCareerDetails } from '../../context/CareerContext'
 
 export const Timeframe = () => {
@@ -22,6 +23,7 @@ export const Timeframe = () => {
             </div>
             <div className="mt-auto mb-10">
                 <h5 className="font-medium text-sm text-purpleText mb-10">
+                    <span className='mr-2'><InfoIcon /></span>
                     *Attention:
                     The scope of our career roadmap is restricted to a 3 month timeframe,
                     which will increase in a later update.
