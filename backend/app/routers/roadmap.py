@@ -130,16 +130,13 @@ async def generate_roadmap(career_info: CareerInfo):
                 if month_data:
                     roadmap.append(month_data)
 
-                completed_roadmap = {
+                completedRoadmap = {
                     "summary": summary,
                     "roadmap": roadmap
                 }
-                print(completed_roadmap)
+                print(response)
 
-            return {
-                "summary": summary,
-                "roadmap": roadmap
-            }
+            return completedRoadmap
         else:
             raise HTTPException(status_code=500, detail="Failed to get response from the assistant")
     except Exception as e:
