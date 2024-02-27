@@ -4,7 +4,7 @@ import { Stepper, Step, StepLabel } from '@mui/material';
 import { CareerInfoCard, InputBox, NavButton } from '../../components'
 import { useCareerDetails } from '../../context/CareerContext';
 
-const totalSteps = 5;
+const totalSteps = 7;
 
 export const DesiredJob = () => {
   const { careerDetails, updateCareer } = useCareerDetails()
@@ -58,13 +58,6 @@ export const DesiredJob = () => {
   return (
     <div className="flex justify-center min-h-screen w-full">
       <div className="flex flex-col items-center mt-28 w-full">
-        <Stepper activeStep={activeStep} alternativeLabel>
-          {[...Array(totalSteps)].map((_, index) => (
-            <Step key={index}>
-              <StepLabel>{`Step ${index + 1}`}</StepLabel>
-            </Step>
-          ))}
-        </Stepper>
         <div className="flex justify-center mb-8">
           <p className="text-purpleText text-xl font-bold bg-desired-job gradient-text">I want to be a...</p>
         </div>
@@ -89,7 +82,18 @@ export const DesiredJob = () => {
             </div>
           ))}
         </div>
-        <div className="flex justify-end mt-auto mb-10 w-full"> {/* changed from mt-14 mb-3 flex justify-end */}
+        <div className="flex justify-between mt-auto mb-10 w-full"> {/* changed from mt-14 mb-3 flex justify-end */}
+          <div className="flex items-center">
+            <div className='flex justify-center'>
+              <Stepper activeStep={activeStep} alternativeLabel>
+                {[...Array(totalSteps)].map((_, index) => (
+                  <Step key={index}>
+                    <StepLabel></StepLabel>
+                  </Step>
+                ))}
+              </Stepper>
+            </div>
+          </div>
           <NavButton onClick={handleContinueClick}>Continue</NavButton>
         </div>
       </div>
