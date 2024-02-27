@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useCareerDetails } from '../../context/CareerContext';
+import { ColorRing } from 'react-loader-spinner';
 
 interface QuoteState {
   quote: string;
@@ -24,6 +25,7 @@ interface CourseInfoType {
 
 export const LoadingScreen = () => {
   const [quote, setQuote] = useState<QuoteState | undefined>()
+  const [time, setTime] = useState<number>(0);
   const { loading, roadmap } = useCareerDetails();
   const navigate = useNavigate();
 
@@ -48,6 +50,14 @@ export const LoadingScreen = () => {
   }, [])
 
   useEffect(() => {
+    const timer = setInterval(() => {
+      setTime((prevTime) => prevTime + 1);
+    }, 1000);
+
+    return () => clearInterval(timer);
+  }, [])
+
+  useEffect(() => {
     if (!loading && roadmap) {
       const emptyFields = roadmap.roadmap.length === 0 || roadmap.roadmap.some((course: RoadmapSectionType) => course.courses.length == 0)
       if (emptyFields) {
@@ -61,15 +71,31 @@ export const LoadingScreen = () => {
 
   return (
     <div className="flex justify-center">
-      <div className="flex flex-col max-w-[1200px] mt-28">
-        <div className="self-center">
+      <div className="flex flex-col items-center max-w-[1200px] mt-28">
+        <div>
           <p className="text-purpleText font-bold text-xl text-center">Loading your results...</p>
+          {time > 60 && (
+            <p className="text-red-500 text-center mt-6 text-sm font-medium">Our server must be tired. Please bear with us while it wakes up!</p>
+          )}
         </div>
-        {quote &&
-        <div className="my-12">
-        <blockquote className="bg-loading-screen-quote gradient-text text-base font-bold">"{quote.quote}" - {quote.author}</blockquote>
+        {quote ? (
+          <div className="my-12">
+          <blockquote className="bg-loading-screen-quote gradient-text text-base font-bold">"{quote.quote}" - {quote.author}</blockquote>
+          </div>
+        ) : (
+          <div className="my-12">
+            <blockquote className="bg-loading-screen-quote gradient-text text-base font-bold">
+            "Embrace the journey of growth, for each step forward illuminates the path to becoming the best version of yourself." - ChatGPT
+            </blockquote>
+          </div>
+        )}
+        <div>
+          <ColorRing
+            height="500"
+            width="500"
+            colors={['#448FD9', '#A270C0', '#D76573', '#F0944C', '#F7D400']}
+          />
         </div>
-        }
       </div>
     </div>
   )
