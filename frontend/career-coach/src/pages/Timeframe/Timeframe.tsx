@@ -1,14 +1,19 @@
 import { InputBox, NavButton } from '../../components'
 import InfoIcon from '@mui/icons-material/Info'
-// import { useCareerDetails } from '../../context/CareerContext'
+import { useCareerDetails } from '../../context/CareerContext'
 
 export const Timeframe = () => {
 //   const { updateCareer } = useCareerDetails();
+const { setMonths, months } = useCareerDetails();
 
 //   const handleInputChange = (value: string) => {
 //     updateCareer('timeframe', value)
 //   }
+const tempInputChange = (value: string) => {
+    setMonths(Number(value))
+}
 
+console.log(months)
   return (
     <div className="flex justify-center min-h-screen w-full">
         <div className="flex flex-col mt-28">
@@ -17,7 +22,7 @@ export const Timeframe = () => {
             </div>
             <div className="flex flex-col items-center">
                 <div className='mb-6 w-40 flex justify-center items-center'>
-                    <InputBox placeholder='3'/>
+                    <InputBox placeholder='0' onChange={tempInputChange} />
                     <span className='ml-2'>Months</span>
                 </div>
             </div>

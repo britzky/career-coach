@@ -1,4 +1,3 @@
-import help from "../../assets/images/Overwhelmed-amico 1.png"
 import { DownChevron } from "../../assets/icons/DownChevron"
 import { DownArrow } from '../../assets/icons/DownArrow';
 
@@ -8,9 +7,6 @@ export const BlurredContent = () => {
         <div className="flex flex-col items-center">
             <div className="text-purpleText font-semibold text-base mt-7">
                 <h4>Whoops, our roadmap is feeling a bit like a procrastinating student and can only plan the next 3 months. But hey, with a focused sprint, you'll be acing that career exam in no time!</h4>
-            </div>
-            <div className="absolute z-10 mt-40">
-                <img src={help} alt="struggling man" />
             </div>
             <div className="flex flex-col items-center blur mt-10">
                 <div className="border-4 rounded-md border-purpleText p-5">

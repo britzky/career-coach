@@ -1,4 +1,4 @@
-import { useState, useContext, createContext, ReactNode } from 'react'
+import { useState, useContext, createContext, ReactNode, Dispatch, SetStateAction } from 'react'
 
 interface CareerDetailsState {
   career: string;
@@ -20,6 +20,8 @@ interface CareerContextType {
   submitCareerDetails: () => Promise<void>;
   roadmap?: RoadmapState;
   loading: boolean;
+  months: number;
+  setMonths:Dispatch<SetStateAction<number>>;
 }
 
 interface CareerProviderProps {
@@ -62,6 +64,7 @@ const emptyCareerDetails: CareerDetailsState = {
 export const CareerProvider: React.FC<CareerProviderProps> = ({ children }) => {
   const [loading, setLoading] = useState<boolean>(false);
   const [roadmap, setRoadmap] = useState<RoadmapState>()
+  const [months, setMonths] = useState<number>(0)
   const [careerDetails, setCareerDetails] = useState<CareerDetailsState>(emptyCareerDetails);
 
   const updateCareer: CareerContextType['updateCareer'] = (key, value) => {
@@ -109,7 +112,7 @@ export const CareerProvider: React.FC<CareerProviderProps> = ({ children }) => {
   }
 
   return (
-    <CareerContext.Provider value={{careerDetails, updateCareer, resetCareer, submitCareerDetails, roadmap, loading }}>
+    <CareerContext.Provider value={{careerDetails, updateCareer, resetCareer, submitCareerDetails, roadmap, loading, months, setMonths }}>
       {children}
     </CareerContext.Provider>
   )
