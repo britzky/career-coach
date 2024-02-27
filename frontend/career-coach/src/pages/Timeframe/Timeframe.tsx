@@ -1,17 +1,28 @@
+import { useState, useEffect } from 'react'
+import { Stepper, Step, StepLabel } from '@mui/material'
 import { InputBox, NavButton } from '../../components'
 import InfoIcon from '@mui/icons-material/Info'
 import { useCareerDetails } from '../../context/CareerContext'
 
+const totalSteps = 7;
+
 export const Timeframe = () => {
+    const [activeStep, setActiveStep] = useState(5)
 //   const { updateCareer } = useCareerDetails();
-const { setMonths, months } = useCareerDetails();
+    const { setMonths, months } = useCareerDetails();
 
 //   const handleInputChange = (value: string) => {
 //     updateCareer('timeframe', value)
 //   }
-const tempInputChange = (value: string) => {
-    setMonths(Number(value))
-}
+
+    useEffect(() => {
+        setActiveStep(5); // Set active step to 6 for step 6
+    }, [])
+
+    const tempInputChange = (value: string) => {
+        setMonths(Number(value))
+    }
+
 
 console.log(months)
   return (
@@ -29,13 +40,19 @@ console.log(months)
             <div className="mt-auto mb-10">
                 <h5 className="font-medium text-sm text-purpleText mb-10">
                     <span className='mr-2'><InfoIcon /></span>
-                    *Attention:
                     The scope of our career roadmap is restricted to a 3 month timeframe,
                     which will increase in a later update.
                     Kindly consider this limitation when setting your career goals.
                 </h5>
                 <div className="flex justify-between">
                     <NavButton back to='/learning-style'>Back</NavButton>
+                    <Stepper activeStep={activeStep} alternativeLabel>
+                        {[...Array(totalSteps)].map((_, index) => (
+                            <Step key={index}>
+                                <StepLabel></StepLabel>
+                            </Step>
+                        ))}
+                    </Stepper>
                     <NavButton to='/skill-level'>Continue</NavButton>
                 </div>
             </div>

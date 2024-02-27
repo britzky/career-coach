@@ -4,13 +4,13 @@ import { Stepper, Step, StepLabel } from '@mui/material';
 import { CareerInfoCard, NavButton } from '../../components';
 import { useCareerDetails } from '../../context/CareerContext';
 
-const totalSteps = 5;
+const totalSteps = 7;
 
 export const LearningStyle = () => {
   const  { careerDetails, updateCareer } = useCareerDetails()
   const [selectedCard, setSelectedCard] = useState<string | null>(null)
   const navigate = useNavigate()
-  const [activeStep, setActiveStep] = useState(3);
+  const [activeStep, setActiveStep] = useState(4);
 
   const handleCardClick = (tag: string) => {
     updateCareer('preferred_learning_style', tag)
@@ -22,7 +22,7 @@ export const LearningStyle = () => {
   }, [careerDetails])
 
   useEffect(() => {
-    setActiveStep(selectedCard ? 4 : 3); // Set active step based on whether a selection is made
+    setActiveStep(selectedCard ? 5 : 4); // Set active step based on whether a selection is made
   }, [selectedCard]);
 
   const handleContinueClick = () => {
@@ -34,13 +34,6 @@ export const LearningStyle = () => {
   return (
     <div className="flex justify-center min-h-screen w-full">
       <div className="flex flex-col w-full mt-28">
-        <Stepper activeStep={activeStep} alternativeLabel>
-          {[...Array(totalSteps)].map((_, index) => (
-            <Step key={index}>
-              <StepLabel>{`Step ${index + 1}`}</StepLabel>
-            </Step>
-          ))}
-        </Stepper>
         <div className="flex justify-center mb-8">
           <p className="text-purpleText text-xl font-bold">What is the preferred <span className="bg-learning-style gradient-text">learning style</span>?</p>
         </div>
@@ -80,6 +73,13 @@ export const LearningStyle = () => {
         </div>
         <div className="flex justify-between mt-auto mb-10">
           <NavButton back to='/budget'>Back</NavButton>
+          <Stepper activeStep={activeStep} alternativeLabel>
+            {[...Array(totalSteps)].map((_, index) => (
+              <Step key={index}>
+                <StepLabel></StepLabel>
+              </Step>
+            ))}
+          </Stepper>
           <NavButton onClick={handleContinueClick}>Continue</NavButton>
         </div>
       </div>

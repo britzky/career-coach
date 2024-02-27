@@ -4,7 +4,7 @@ import { Stepper, Step, StepLabel } from '@mui/material';
 import { CareerInfoCard, NavButton } from '../../components';
 import { useCareerDetails } from '../../context/CareerContext';
 
-const totalSteps = 5;
+const totalSteps = 7;
 
 export const JobLevel = () => {
   const { careerDetails, updateCareer } = useCareerDetails()
@@ -35,13 +35,6 @@ export const JobLevel = () => {
   return (
     <div className="flex justify-center min-h-screen w-full">
       <div className="flex flex-col w-full mt-28">
-        <Stepper activeStep={activeStep} alternativeLabel>
-          {[...Array(totalSteps)].map((_, index) => (
-            <Step key={index}>
-              <StepLabel>{`Step ${index + 1}`}</StepLabel>
-            </Step>
-          ))}
-        </Stepper>
         <div className="flex justify-center mb-8">
           <p className="text-purpleText text-xl font-bold">What is your <span className="bg-desired-job-level gradient-text">Expected Level </span>at your new job?</p>
         </div>
@@ -85,6 +78,13 @@ export const JobLevel = () => {
         </div>
         <div className="flex justify-between mt-auto mb-10"> {/* added w-[1200px] */}
           <NavButton to='/desired-job' back>Back</NavButton>
+          <Stepper activeStep={activeStep} alternativeLabel>
+            {[...Array(totalSteps)].map((_, index) => (
+              <Step key={index}>
+                <StepLabel></StepLabel>
+              </Step>
+            ))}
+          </Stepper>
           <NavButton onClick={handleContinueClick}>Continue</NavButton>
         </div>
       </div>

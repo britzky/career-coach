@@ -86,6 +86,7 @@ export const CareerProvider: React.FC<CareerProviderProps> = ({ children }) => {
   const resetCareer = () => {
     setCareerDetails(emptyCareerDetails)
     setRoadmap(undefined)
+    setMonths(0)
   }
 
   const submitCareerDetails = async () => {
