@@ -76,7 +76,7 @@ export const SkillLevel = () => {
             />
           </div>
         </div>
-        <div className="flex justify-between mt-auto mb-10 ">
+        <div className="flex justify-between mt-auto mb-10">
           <NavButton back to='/timeframe'>Back</NavButton>
           <Stepper activeStep={activeStep} alternativeLabel>
             {[...Array(totalSteps)].map((_, index) => (

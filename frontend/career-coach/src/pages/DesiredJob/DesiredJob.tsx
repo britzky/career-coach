@@ -82,9 +82,10 @@ export const DesiredJob = () => {
             </div>
           ))}
         </div>
-        <div className="flex justify-between mt-auto mb-10 w-full"> {/* changed from mt-14 mb-3 flex justify-end */}
-          <div className="flex items-center">
-            <div className='flex justify-center'>
+        <div className="flex justify-between mt-auto mb-10 w-full">
+          {/* <div className="flex items-center"> */}
+            {/* <div className='flex justify-center'> */}
+              <NavButton back to='/'>Back</NavButton>
               <Stepper activeStep={activeStep} alternativeLabel>
                 {[...Array(totalSteps)].map((_, index) => (
                   <Step key={index}>
@@ -92,9 +93,11 @@ export const DesiredJob = () => {
                   </Step>
                 ))}
               </Stepper>
-            </div>
+            {/* </div> */}
+          {/* </div> */}
+          <div className='flex'>
+            <NavButton onClick={handleContinueClick}>Continue</NavButton>
           </div>
-          <NavButton onClick={handleContinueClick}>Continue</NavButton>
         </div>
       </div>
     </div>
