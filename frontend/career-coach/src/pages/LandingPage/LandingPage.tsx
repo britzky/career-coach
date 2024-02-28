@@ -65,7 +65,7 @@ export const LandingPage = () => {
               <p className="font-medium text-sm text-center self-center max-w-[24rem]">Explore various career paths aligned with your interests and skills with detailed insights and recommendations.</p>
             </div>
             <div>
-              <TeamCard />
+              {/* <TeamCard /> */}
             </div>
           </div>
         </div>
