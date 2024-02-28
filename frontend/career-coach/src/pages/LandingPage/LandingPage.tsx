@@ -7,6 +7,7 @@ import road from "../../assets/images/road.svg"
 import jay from "../../assets/images/jay.jpg"
 import jon from "../../assets/images/jon.jpg"
 import me from "../../assets/images/me2.jpg"
+import juan from "../../assets/images/Juan.jpg"
 
 import { useCareerDetails } from "../../context/CareerContext";
 
@@ -71,7 +72,7 @@ export const LandingPage = () => {
           </div>
           <h1 className="font-bold text-xxl gradient-text bg-logo text-center w-full">Meet the Team</h1>
           <div className="flex justify-center gap-5">
-              <TeamCard image={me} name="Juan Carlos Yao" title="Product Manager" fact="I love christmas as much as Clapper!" link="http://linkedin.com/in/j-hernandez-dev" />
+              <TeamCard image={juan} name="Juan Carlos Yao" title="Product Manager" fact="I love to travel and collect pins from places I have visited!" link="https://www.linkedin.com/in/juancarlosyao" />
               <TeamCard image={jon} name="Jon Chiang" title="Product Designer" fact="I love christmas as much as Clapper!" link="https://www.linkedin.com/in/jmchiang5" />
               <TeamCard image={jay} name="Juan Hernandez" title="Developer" fact="I love christmas as much as Clapper!" link="http://linkedin.com/in/j-hernandez-dev" />
               <TeamCard image={me} name="John Clapper" title="Developer" fact="I love christmas!" link="https://www.linkedin.com/in/john-clapper" />
