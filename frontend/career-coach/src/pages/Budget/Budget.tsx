@@ -34,7 +34,7 @@ export const Budget: React.FC = () => {
     <div className="flex justify-center min-h-screen">
       <div className="flex flex-col mt-28 w-full">
         <div className="flex justify-center mb-8">
-          <p className='text-purpleText text-xl font-bold'>What is your <span className="bg-budget gradient-text">total budget</span> per week? (optional)</p>
+          <p className='text-purpleText text-xl font-bold'>What is your <span className="bg-budget gradient-text">total budget</span> per month? (optional)</p>
         </div>
         <div className='flex justify-center'>
           <div className='flex items-center'>
