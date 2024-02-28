@@ -57,7 +57,7 @@ console.log(months)
                             </Step>
                         ))}
                     </Stepper>
-                    <NavButton to='/skill-level'>Continue</NavButton>
+                    <NavButton disabled={months === 0} to='/skill-level'>Continue</NavButton>
             </div>
         </div>
     </div>

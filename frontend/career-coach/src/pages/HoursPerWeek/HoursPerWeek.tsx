@@ -77,7 +77,7 @@ export const HoursPerWeek = () => {
               </Step>
             ))}
           </Stepper>
-          <NavButton onClick={handleContinueClick}>Continue</NavButton>
+          <NavButton disabled={hours === 0} onClick={handleContinueClick}>Continue</NavButton>
         </div>
       </div>
     </div>

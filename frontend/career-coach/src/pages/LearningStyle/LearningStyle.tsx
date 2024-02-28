@@ -80,7 +80,7 @@ export const LearningStyle = () => {
               </Step>
             ))}
           </Stepper>
-          <NavButton onClick={handleContinueClick}>Continue</NavButton>
+          <NavButton disabled={!selectedCard} onClick={handleContinueClick}>Continue</NavButton>
         </div>
       </div>
     </div>

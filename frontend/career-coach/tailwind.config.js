@@ -32,7 +32,8 @@ export default {
         line: '#4B4B4B',
         footer: '#9A94FF',
         error: '#DC143CCC',
-        purpleText2: '#6146FF'
+        purpleText2: '#6146FF',
+        disabled: '#A9A9A9',
       },
       backgroundImage: {
         'desired-job': 'linear-gradient(90deg, #448FD9 3.21%, #A270C0 38.63%, #D76573 65.59%, #F0944C 96.17%)',

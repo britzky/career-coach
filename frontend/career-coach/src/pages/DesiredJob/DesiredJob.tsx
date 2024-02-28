@@ -77,7 +77,7 @@ export const DesiredJob = () => {
             />
           </div>
         </div>
-        <div className="flex flex-col w-[1200px] gap-3">
+        <div className="flex flex-col w-[1200px] gap-3 mb-[12px]">
           {jobs.map((job) => (
             <div key={job}>
               <JobCard
@@ -103,7 +103,7 @@ export const DesiredJob = () => {
             {/* </div> */}
           {/* </div> */}
           <div className='flex'>
-            <NavButton onClick={handleContinueClick}>Continue</NavButton>
+            <NavButton disabled={!selectedCard} onClick={handleContinueClick}>Continue</NavButton>
           </div>
         </div>
       </div>
