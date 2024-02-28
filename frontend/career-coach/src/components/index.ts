@@ -5,3 +5,4 @@ export { SkillsInputBox } from './SkillsInputBox';
 export { CourseAccordion } from './CourseAccordion';
 export { Footer } from './Footer';
 export { TeamCard } from './TeamCard';
+export { JobCard } from "./JobCard";

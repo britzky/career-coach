@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Stepper, Step, StepLabel } from '@mui/material';
-import { CareerInfoCard, InputBox, NavButton } from '../../components'
+import { JobCard, InputBox, NavButton } from '../../components'
 import { useCareerDetails } from '../../context/CareerContext';
 
 const totalSteps = 7;
@@ -31,7 +31,14 @@ export const DesiredJob = () => {
     'Front End Engineer',
     'Back End Engineer',
     'Product Manager',
-    'Cloud Developer'
+    'Cloud Developer',
+    'Data Scientist',
+    'Data Analyst',
+    'DevOps Engineer',
+    'Android Developer',
+    'Software Architect',
+    'Blockchain Developer',
+    'Cyber Security Analyst',
   ]
 
   // remove before shipping to production
@@ -70,10 +77,10 @@ export const DesiredJob = () => {
             />
           </div>
         </div>
-        <div className="flex flex-wrap gap-10 justify-center max-w-[1200px]">
+        <div className="flex flex-col w-[1200px] gap-3">
           {jobs.map((job) => (
             <div key={job}>
-              <CareerInfoCard
+              <JobCard
                 text={job}
                 tag={job}
                 onCardClick={handleCardClick}
