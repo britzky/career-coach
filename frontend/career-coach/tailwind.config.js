@@ -48,6 +48,7 @@ export default {
         'landing-page-reverse': 'linear-gradient(90deg, #F0944C 0%, #D76573 32.9%, #A270C0 61.9%, #448FD9 100%)',
         'logo': 'linear-gradient(90deg, #6146FF 0%, #9FA4FF 196.6%)',
         'landing-page-title': 'linear-gradient(90deg, #448FD9 3.21%, #A270C0 38.63%, #D76573 65.59%, #F0944C 96.17%)',
+        'blurred-content': 'linear-gradient(90deg, #448FD9 3.21%, #A270C0 44.51%, #D76573 75.95%, #F0944C 111.62%)'
       }
     },
   },

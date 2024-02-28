@@ -24,7 +24,7 @@ export const CourseAccordionItems: React.FC<AccordionItemProps> = ({ month, cour
         <div className="border-4 rounded-md border-purpleText p-5 w-full">
             <div className="flex flex-col">
                 <div className="flex justify-between">
-                    <span className="font-bold text-base text-purpleText">{month}: {courses[0].coursename} </span>
+                    <span className="font-bold text-sm text-purpleText">{month}: {courses[0].coursename} </span>
                     <div>
                         <button
                             onClick={() => setOpen(!open)}

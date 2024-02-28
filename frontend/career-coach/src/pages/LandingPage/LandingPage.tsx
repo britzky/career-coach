@@ -4,6 +4,10 @@ import skillDev from "../../assets/images/Moving forward.png"
 import progress from "../../assets/images/Progress overview.png"
 import career from "../../assets/images/Job hunt.png"
 import road from "../../assets/images/road.svg"
+import jay from "../../assets/images/jay.jpg"
+import jon from "../../assets/images/jon.jpg"
+import me from "../../assets/images/me2.jpg"
+
 import { useCareerDetails } from "../../context/CareerContext";
 
 export const LandingPage = () => {
@@ -64,11 +68,15 @@ export const LandingPage = () => {
               <h6 className="font-bold text-sm text-purpleText">Career Path Exploration</h6>
               <p className="font-medium text-sm text-center self-center max-w-[24rem]">Explore various career paths aligned with your interests and skills with detailed insights and recommendations.</p>
             </div>
-            <div>
-              {/* <TeamCard /> */}
+          </div>
+          <h1 className="font-bold text-xxl gradient-text bg-logo text-center w-full">Meet the Team</h1>
+          <div className="flex justify-center gap-5">
+              <TeamCard image={me} name="Juan Carlos Yao" title="Product Manager" fact="I love christmas as much as Clapper!" link="http://linkedin.com/in/j-hernandez-dev" />
+              <TeamCard image={jon} name="Jon Chiang" title="Product Designer" fact="I love christmas as much as Clapper!" link="https://www.linkedin.com/in/jmchiang5" />
+              <TeamCard image={jay} name="Juan Hernandez" title="Developer" fact="I love christmas as much as Clapper!" link="http://linkedin.com/in/j-hernandez-dev" />
+              <TeamCard image={me} name="John Clapper" title="Developer" fact="I love christmas!" link="https://www.linkedin.com/in/john-clapper" />
             </div>
           </div>
-        </div>
       </div>
       <div className="mt-auto">
         <Footer />
