@@ -7,7 +7,7 @@ import road from "../../assets/images/road.svg"
 import jay from "../../assets/images/jay.jpg"
 import jon from "../../assets/images/jon.jpg"
 import me from "../../assets/images/me2.jpg"
-import juan from "../../assets/images/Juan.jpg"
+import juan from "../../assets/images/JuanCarlos.jpg"
 
 import { useCareerDetails } from "../../context/CareerContext";
 
