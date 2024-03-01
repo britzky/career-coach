@@ -11,16 +11,16 @@ My Professional Development Plan is a web application that empowers users to nav
 ## Tech Stack
 <p align="left">
 <a href="https://fastapi.tiangolo.com/tutorial/first-steps/" target="_blank" rel="noreferrer">
-    <img align="center" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/fastapi/fastapi-original-wordmark.svg" alt="FastAPI" width="50" height="50" />
+    <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/fastapi/fastapi-original-wordmark.svg" alt="FastAPI" width="50" height="50" />
 </a>
 <a href="https://www.python.org/" target="_blank" rel="noreferrer">
-    <img align="center" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg" alt="python" width="40" height="40" />
+    <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg" alt="python" width="40" height="40" />
 </a>
 <a href="https://www.typescriptlang.org/" target="_blank" rel="noreferrer">
-    <img align="center" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/typescript/typescript-original.svg" alt="typescript" width="40" height="40" /> 
+    <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/typescript/typescript-original.svg" alt="typescript" width="40" height="40" /> 
 </a>
 <a href="https://react.dev/" target="_blank" rel="noreferrer">
-      <img align="center" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original-wordmark.svg" alt="react" width="40" height="40" />
+      <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original-wordmark.svg" alt="react" width="40" height="40" />
 </a>  
 </p>
 
