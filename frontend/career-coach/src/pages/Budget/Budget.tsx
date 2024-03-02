@@ -45,12 +45,12 @@ export const Budget: React.FC = () => {
         </div>
         <div className="flex justify-between mt-auto mb-10">
           <NavButton back to='/hours-per-week'>Back</NavButton>
-          <div style={{ flexGrow: 1}}>
+          <div style={{ flexGrow: 1}} className='mx-[30rem]'>
             <Stepper activeStep={budget !== null ? 4 : activeStep}>
               {[...Array(totalSteps)].map((_, index) => (
                 <Step key={index}>
                   <div className={`flex items-center justify-center w-6 h-6 rounded-full ${activeStep > index + 1 ? 'bg-purple' : 'border-2 border-purpleText'}`}>
-                    {activeStep >= index + 1 ? <Checkmark /> : index + 1}
+                    {activeStep >= index + 1 ? <Checkmark /> : null}
                   </div>
                 </Step>
               ))}
