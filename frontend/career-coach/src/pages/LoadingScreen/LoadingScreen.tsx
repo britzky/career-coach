@@ -75,7 +75,7 @@ export const LoadingScreen = () => {
         <div>
           <p className="text-purpleText font-bold text-xl text-center">Loading your results...</p>
           {time > 60 && (
-            <p className="text-red-500 text-center mt-6 text-sm font-medium">Our server must be tired. Please bear with us while it wakes up!</p>
+            <p className="text-purpleText text-center mt-6 text-sm font-medium">Our server must be tired. Please bear with us while it wakes up!</p>
           )}
         </div>
         {quote ? (

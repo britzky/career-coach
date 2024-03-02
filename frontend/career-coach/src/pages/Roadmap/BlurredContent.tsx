@@ -6,7 +6,7 @@ export const BlurredContent = () => {
     <div className="flex justify-center items-center">
         <div className="flex flex-col items-center">
             <div className="gradient-text bg-blurred-content font-semibold text-base mt-7">
-                <h4>Whoops, our roadmap is feeling a bit like a procrastinating student and can only plan the next 3 months. But hey, with a focused sprint, you'll be acing that career exam in no time!</h4>
+                <h4>That's it for now! We are continuously working on our roadmap capabilities and will increse our ability to show more soon!</h4>
             </div>
             <div className="flex flex-col items-center blur mt-10">
                 <div className="border-4 rounded-md border-purpleText p-5">

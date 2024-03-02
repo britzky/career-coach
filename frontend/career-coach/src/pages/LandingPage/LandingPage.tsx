@@ -25,7 +25,7 @@ export const LandingPage = () => {
           <div className="max-w-[957px] flex flex-col">
             <span className="text-purpleText2 font-bold text-base">Get your DREAM JOB with our</span>
             <span className="gradient-text bg-landing-page-title font-bold text-xxl">AI-Powered Career Roadmaps</span>
-            <p className="font-medium text-sm">Discover personalized courses, expert guidance, and a roadmap to your dream career, all powered by ChatGPT!</p>
+            <p className="font-medium text-sm">Discover personalized courses, expert guidance, and a roadmap to your dream career, all powered by OpenAI!</p>
           </div>
           <div>
             <button
@@ -73,7 +73,7 @@ export const LandingPage = () => {
           <h1 className="font-bold text-xxl gradient-text bg-logo text-center w-full">Meet the Team</h1>
           <div className="flex justify-center gap-5">
               <TeamCard image={juan} name="Juan Carlos Yao" title="Product Manager" fact="I love to travel and collect pins from places I have visited!" link="https://www.linkedin.com/in/juancarlosyao" />
-              <TeamCard image={jon} name="Jon Chiang" title="Product Designer" fact="I love christmas as much as Clapper!" link="https://www.linkedin.com/in/jmchiang5" />
+              <TeamCard image={jon} name="Jon Chiang" title="Product Designer" fact="I love any and all racket sports including badminton, tennis, and pickleball!" link="https://www.linkedin.com/in/jmchiang5" />
               <TeamCard image={jay} name="Juan Hernandez" title="Developer" fact="I love christmas as much as Clapper!" link="http://linkedin.com/in/j-hernandez-dev" />
               <TeamCard image={me} name="John Clapper" title="Developer" fact="I love christmas!" link="https://www.linkedin.com/in/john-clapper" />
             </div>
