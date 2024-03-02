@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
-import { Stepper, Step, StepLabel } from '@mui/material'
+import { Stepper, Step } from '@mui/material'
+import { Checkmark } from "../../assets/icons/Checkmark"
 import { InputBox, NavButton } from '../../components'
 import { useCareerDetails } from '../../context/CareerContext'
 
@@ -26,7 +27,7 @@ export const Budget: React.FC = () => {
 
   useEffect(() => {
     if (budget !== null) {
-      setActiveStep(3); // Set active step to 3 if budget is entered
+      setActiveStep(4); // Set active step to 4 if budget is entered
     }
   }, [budget]);
 
@@ -44,13 +45,17 @@ export const Budget: React.FC = () => {
         </div>
         <div className="flex justify-between mt-auto mb-10">
           <NavButton back to='/hours-per-week'>Back</NavButton>
-          <Stepper activeStep={budget !== null ? 3 : activeStep} alternativeLabel>
-            {[...Array(totalSteps)].map((_, index) => (
-              <Step key={index}>
-                <StepLabel></StepLabel>
-              </Step>
-            ))}
-          </Stepper>
+          <div style={{ flexGrow: 1}}>
+            <Stepper activeStep={budget !== null ? 4 : activeStep}>
+              {[...Array(totalSteps)].map((_, index) => (
+                <Step key={index}>
+                  <div className={`flex items-center justify-center w-6 h-6 rounded-full ${activeStep > index + 1 ? 'bg-purple' : 'border-2 border-purpleText'}`}>
+                    {activeStep >= index + 1 ? <Checkmark /> : index + 1}
+                  </div>
+                </Step>
+              ))}
+            </Stepper>
+          </div>
           <NavButton to='/learning-style'>Continue</NavButton>
         </div>
       </div>
