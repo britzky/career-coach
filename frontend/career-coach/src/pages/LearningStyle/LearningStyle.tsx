@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Stepper, Step, StepLabel } from '@mui/material';
+import { Stepper, Step } from '@mui/material';
+import { Checkmark } from "../../assets/icons/Checkmark";
 import { CareerInfoCard, NavButton } from '../../components';
 import { useCareerDetails } from '../../context/CareerContext';
 
@@ -73,13 +74,17 @@ export const LearningStyle = () => {
         </div>
         <div className="flex justify-between mt-auto mb-10">
           <NavButton back to='/budget'>Back</NavButton>
-          <Stepper activeStep={activeStep} alternativeLabel>
-            {[...Array(totalSteps)].map((_, index) => (
-              <Step key={index}>
-                <StepLabel></StepLabel>
-              </Step>
-            ))}
-          </Stepper>
+          <div style={{ flexGrow: 1}}>
+            <Stepper activeStep={activeStep}>
+              {[...Array(totalSteps)].map((_, index) => (
+                <Step key={index}>
+                  <div className={`flex items-center justify-center w-6 h-6 rounded-full ${activeStep > index + 1 ? 'bg-purple' : 'border-2 border-purpleText'}`}>
+                    {activeStep >= index + 1 ? <Checkmark /> : index + 1}
+                  </div>
+                </Step>
+              ))}
+            </Stepper>
+          </div>
           <NavButton disabled={!selectedCard} onClick={handleContinueClick}>Continue</NavButton>
         </div>
       </div>

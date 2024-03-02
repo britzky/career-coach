@@ -1,6 +1,7 @@
 import { useState, useEffect, ChangeEvent } from 'react' // added useState
 import { useNavigate } from 'react-router-dom';
-import { Stepper, Step, StepLabel } from '@mui/material';
+import { Stepper, Step } from '@mui/material';
+import { Checkmark } from "../../assets/icons/Checkmark";
 import { InputBox, NavButton } from "../../components"
 import { useCareerDetails } from "../../context/CareerContext"
 
@@ -29,7 +30,7 @@ export const HoursPerWeek = () => {
   }
 
   const handleContinueClick = () => {
-    if (isValidInput && hours > 0 && hours < 41) {
+    if (isValidInput && hours > 0 && hours <= 40) {
       navigate('/budget');
     } else {
       console.log("Please set the slider or input a number between 0 and 40 before continuing.")
@@ -70,13 +71,17 @@ export const HoursPerWeek = () => {
         </div>
         <div className="flex justify-between mt-auto mb-10 w-full">
           <NavButton to='/job-level' back>Back</NavButton>
-          <Stepper activeStep={activeStep} alternativeLabel>
-            {[...Array(totalSteps)].map((_, index) => (
-              <Step key={index}>
-                <StepLabel></StepLabel>
-              </Step>
-            ))}
-          </Stepper>
+          <div style={{ flexGrow: 1}}>
+            <Stepper activeStep={activeStep}>
+              {[...Array(totalSteps)].map((_, index) => (
+                <Step key={index}>
+                  <div className={`flex items-center justify-center w-6 h-6 rounded-full ${activeStep > index + 1 ? 'bg-purple' : 'border-2 border-purpleText'}`}>
+                    {activeStep >= index + 1 ? <Checkmark /> : index + 1}
+                  </div>
+                </Step>
+              ))}
+            </Stepper>
+          </div>
           <NavButton disabled={hours === 0} onClick={handleContinueClick}>Continue</NavButton>
         </div>
       </div>
