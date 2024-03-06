@@ -70,13 +70,13 @@ export const DesiredJob = () => {
           <p className="text-purpleText text-xl font-bold bg-desired-job gradient-text">I want to be a...</p>
         </div>
         <div className="mb-7 flex justify-center">
-          <div className="w-[1200px]">
+          {/* <div className="w-[1200px]">
             <InputBox
               placeholder="If you can't find your job below, search it here"
               onChange={handleInputChange}
               border
             />
-          </div>
+          </div> */}
         </div>
         <div className="flex flex-col w-[1200px] gap-3 mb-[12px]">
           {jobs.map((job) => (
