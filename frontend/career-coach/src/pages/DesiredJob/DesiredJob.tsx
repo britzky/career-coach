@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Stepper, Step } from '@mui/material';
 import { Checkmark } from "../../assets/icons/Checkmark";
-import { JobCard, InputBox, NavButton } from '../../components'
+import { JobCard, NavButton } from '../../components'
 import { useCareerDetails } from '../../context/CareerContext';
 
 const totalSteps = 7;
@@ -19,10 +19,10 @@ export const DesiredJob = () => {
     // handleNext()
   }
 
-  const handleInputChange = (value: string) => {
-    updateCareer('career', value)
-    setSelectedCard(null)
-  }
+  // const handleInputChange = (value: string) => {
+  //   updateCareer('career', value)
+  //   setSelectedCard(null)
+  // }
 
   const jobs = [
     'Product Designer',
