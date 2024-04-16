@@ -75,7 +75,7 @@ export const LandingPage = () => {
               <TeamCard image={juan} name="Juan Carlos Yao" title="Product Manager" fact="I love to travel and collect pins from places I have visited!" link="https://www.linkedin.com/in/juancarlosyao" />
               <TeamCard image={jon} name="Jon Chiang" title="Product Designer" fact="I love any and all racket sports including badminton, tennis, and pickleball!" link="https://www.linkedin.com/in/jmchiang5" />
               <TeamCard image={jay} name="Juan Hernandez" title="Developer" fact="I have a twin sister and she is 1 minute older!" link="http://linkedin.com/in/j-hernandez-dev" />
-              <TeamCard image={me} name="John Clapper" title="Developer" fact="I love christmas!" link="https://www.linkedin.com/in/john-clapper" />
+              <TeamCard image={me} name="John Clapper" title="Developer" fact="I love Christmas!" link="https://www.linkedin.com/in/john-clapper" />
             </div>
           </div>
       </div>
