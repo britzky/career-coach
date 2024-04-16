@@ -13,7 +13,7 @@ export const NavBar: React.FC = () => {
     }
 
     return (
-    <nav className="absolute mx-10">
+    <nav className="absolute mx-5 md:mx-10">
         <div className="flex flex-wrap justify-between items-center max-w-screen-xl pt-5">
             <div onClick={handleLogoClick} className="flex items-center space-x-3 rtl:space-x-reverse cursor-pointer">
                 <img src={logo} className="h-10" alt="MyPDP Logo" />
