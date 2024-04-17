@@ -1,17 +1,15 @@
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Stepper, Step } from '@mui/material';
-import { Checkmark } from "../../assets/icons/Checkmark";
 import { CareerInfoCard, NavButton } from '../../components';
 import { useCareerDetails } from '../../context/CareerContext';
-
-const totalSteps = 7;
+import { useProgressState } from '../../context/ProgressContex/ProgressContext';
+import { ProgressTracker } from '../../components/ProgressTracker';
 
 export const LearningStyle = () => {
   const  { careerDetails, updateCareer } = useCareerDetails()
   const [selectedCard, setSelectedCard] = useState<string | null>(null)
   const navigate = useNavigate()
-  const [activeStep, setActiveStep] = useState(4);
+  const { setActiveStep } = useProgressState();
 
   const handleCardClick = (tag: string) => {
     updateCareer('preferred_learning_style', tag)
@@ -75,15 +73,7 @@ export const LearningStyle = () => {
         <div className="flex justify-between mt-auto mb-10">
           <NavButton back to='/budget'>Back</NavButton>
           <div style={{ flexGrow: 1}} className='mx-[30rem]'>
-            <Stepper activeStep={activeStep}>
-              {[...Array(totalSteps)].map((_, index) => (
-                <Step key={index}>
-                  <div className={`flex items-center justify-center w-6 h-6 rounded-full ${activeStep > index + 1 ? 'bg-purple' : 'border-2 border-purpleText'}`}>
-                    {activeStep >= index + 1 ? <Checkmark /> : null}
-                  </div>
-                </Step>
-              ))}
-            </Stepper>
+            <ProgressTracker />
           </div>
           <NavButton disabled={!selectedCard} onClick={handleContinueClick}>Continue</NavButton>
         </div>

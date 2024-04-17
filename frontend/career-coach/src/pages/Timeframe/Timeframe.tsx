@@ -1,17 +1,15 @@
-import { useState, useEffect } from 'react'
-import { Stepper, Step } from '@mui/material'
-import { Checkmark } from "../../assets/icons/Checkmark"
+import { useEffect } from 'react'
 import { InputBox, NavButton } from '../../components'
 // import InfoIcon from '@mui/icons-material/Info'
 import ErrorOutlineOutlinedIcon from '@mui/icons-material/ErrorOutlineOutlined'
 import { useCareerDetails } from '../../context/CareerContext'
+import { useProgressState } from '../../context/ProgressContex/ProgressContext'
+import { ProgressTracker } from '../../components/ProgressTracker'
 
-const totalSteps = 7;
 
 export const Timeframe = () => {
-    const [activeStep, setActiveStep] = useState(5)
-//   const { updateCareer } = useCareerDetails();
     const { setMonths, months } = useCareerDetails();
+    const { setActiveStep } = useProgressState();
 
 //   const handleInputChange = (value: string) => {
 //     updateCareer('timeframe', value)
@@ -29,8 +27,6 @@ export const Timeframe = () => {
         setMonths(Number(value))
     }
 
-
-console.log(months)
   return (
     <div className="flex justify-center min-h-screen w-full">
         <div className="flex flex-col w-full mt-28">
@@ -56,15 +52,7 @@ console.log(months)
             <div className="flex justify-between mb-10">
                 <NavButton back to='/learning-style'>Back</NavButton>
                 <div style={{ flexGrow: 1}} className='mx-[30rem]'>
-                    <Stepper activeStep={activeStep}>
-                        {[...Array(totalSteps)].map((_, index) => (
-                            <Step key={index}>
-                                <div className={`flex items-center justify-center w-6 h-6 rounded-full ${activeStep > index + 1 ? 'bg-purple' : 'border-2 border-purpleText'}`}>
-                                    {activeStep >= index + 1 ? <Checkmark /> : null}
-                                </div> 
-                            </Step>
-                        ))}
-                    </Stepper>
+                    <ProgressTracker />
                 </div>
                 <NavButton disabled={months === 0} to='/skill-level'>Continue</NavButton>
             </div>

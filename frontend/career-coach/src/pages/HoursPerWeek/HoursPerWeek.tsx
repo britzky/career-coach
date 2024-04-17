@@ -4,15 +4,15 @@ import { Stepper, Step } from '@mui/material';
 import { Checkmark } from "../../assets/icons/Checkmark";
 import { InputBox, NavButton } from "../../components"
 import { useCareerDetails } from "../../context/CareerContext"
-
-const totalSteps = 7;
+import { useProgressState } from '../../context/ProgressContex/ProgressContext';
+import { ProgressTracker } from '../../components/ProgressTracker';
 
 export const HoursPerWeek = () => {
   const {updateCareer, careerDetails} = useCareerDetails()
   const [hours, setHours] = useState(careerDetails.hours_dedicated_to_learning || 0);
   const [isValidInput, setIsValidInput] = useState(true);
   const navigate = useNavigate();
-  const [activeStep, setActiveStep] = useState(2);
+  const { setActiveStep } = useProgressState();
 
   // need to add validation before shipping to production
   const handleSliderChange = (event: ChangeEvent<HTMLInputElement>) => {
@@ -72,15 +72,7 @@ export const HoursPerWeek = () => {
         <div className="flex justify-between mt-auto mb-10 w-full">
           <NavButton to='/job-level' back>Back</NavButton>
           <div style={{ flexGrow: 1}} className='mx-[30rem]'>
-            <Stepper activeStep={activeStep}>
-              {[...Array(totalSteps)].map((_, index) => (
-                <Step key={index}>
-                  <div className={`flex items-center justify-center w-6 h-6 rounded-full ${activeStep > index + 1 ? 'bg-purple' : 'border-2 border-purpleText'}`}>
-                    {activeStep >= index + 1 ? <Checkmark /> : null}
-                  </div>
-                </Step>
-              ))}
-            </Stepper>
+            <ProgressTracker />
           </div>
           <NavButton disabled={hours === 0 || hours > 40} onClick={handleContinueClick}>Continue</NavButton>
         </div>
