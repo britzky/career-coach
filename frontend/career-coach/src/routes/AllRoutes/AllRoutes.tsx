@@ -12,7 +12,7 @@ export const AllRoutes = () => {
   const noMargin = location.pathname === "/" || location.pathname === "/roadmap";
 
   return (
-    <div className={noMargin ? "" : "mx-10"}>
+    <div className={noMargin ? "" : "mx-5 lg:mx-10"}>
         <Routes>
             <Route path="/" element={<LandingPage />} />
             <Route path="budget" element={<Budget />} />

@@ -31,7 +31,6 @@ export const DesiredJob = () => {
     'Android Developer',
     'Software Architect',
     'Blockchain Developer',
-    'Cyber Security Analyst',
   ]
 
   // remove before shipping to production
@@ -58,26 +57,31 @@ export const DesiredJob = () => {
         </div>
         <div className="mb-7 flex justify-center">
         </div>
-        <div className="flex flex-col xl:w-[1200px] gap-3 mb-[12px]">
-          {jobs.map((job) => (
-            <div key={job}>
-              <JobCard
-                text={job}
-                tag={job}
-                onCardClick={handleCardClick}
-                selected={selectedCard === job}
-              />
-            </div>
-          ))}
+        <div className="flex flex-col items-center w-full xl:w-[1200px] mb-[12px]">
+          <div className="grid grid-cols-2 gap-2">
+            {jobs.map((job) => (
+              <div key={job}>
+                <JobCard
+                  text={job}
+                  tag={job}
+                  onCardClick={handleCardClick}
+                  selected={selectedCard === job}
+                />
+              </div>
+            ))}
+          </div>
         </div>
         <div className="flex justify-between mt-auto mb-10 w-full">
           <NavButton back to='/'>Back</NavButton>
-          <div style={{ flexGrow: 1}} className='mx-[30rem]'>
+          <div style={{ flexGrow: 1}} className='lg:mx-[30rem] hidden lg:block'>
             <ProgressTracker />
           </div>
           <div className='flex'>
             <NavButton disabled={!selectedCard} onClick={handleContinueClick}>Continue</NavButton>
           </div>
+        </div>
+        <div className="lg:hidden mb-10">
+          <ProgressTracker />
         </div>
       </div>
     </div>
