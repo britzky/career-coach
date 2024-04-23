@@ -14,7 +14,7 @@ export default {
         'sm': '24px',
         'base': '32px',
         'lg': '40px',
-        'xl': '48px',
+        'xl': '44px',
         'xxl': '60px',
       },
       fontWeight: {

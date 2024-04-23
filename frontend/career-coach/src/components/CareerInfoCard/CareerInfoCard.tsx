@@ -7,7 +7,7 @@ interface CareerInfoCardProps {
 }
 
 export const CareerInfoCard: React.FC<CareerInfoCardProps> = ({ text, tag, years, onCardClick, selected }) => {
-  const customClass = selected ? 'bg-purpleText text-white w-[250px] h-[200px] rounded-[10px] cursor-pointer flex flex-col justify-center items-center min-h-[200px] text-base font-medium text-center' : 'border-2 border-purpleText hover:bg-cardHover w-[250px] h-[200px] rounded-[10px] cursor-pointer flex flex-col justify-center items-center min-h-[200px] text-purpleText text-base font-medium text-center'
+  const customClass = selected ? 'bg-purpleText text-white lg:w-[250px]  rounded-[10px] cursor-pointer flex flex-col justify-center items-center min-h-[200px] text-base font-medium text-center' : 'border-2 border-purpleText hover:bg-cardHover lg:w-[250px] w-full rounded-[10px] cursor-pointer flex flex-col justify-center items-center lg:min-h-[200px] text-purpleText text-base font-medium text-center py-5'
   return (
       <div className={customClass} onClick={() => onCardClick(tag)}>
         <p>{text}</p>
