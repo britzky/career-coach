@@ -58,9 +58,9 @@ export const DesiredJob = () => {
         <div className="mb-7 flex justify-center">
         </div>
         <div className="flex flex-col w-full lg:w-[1200px] mb-[12px]">
-          <div className="grid grid-cols-2 gap-2 lg:block">
+          <div className="grid grid-cols-2 gap-4 lg:block">
             {jobs.map((job) => (
-              <div key={job}>
+              <div key={job} className="lg:py-2">
                 <JobCard
                   text={job}
                   tag={job}
