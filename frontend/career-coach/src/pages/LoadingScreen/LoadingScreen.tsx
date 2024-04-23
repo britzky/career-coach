@@ -72,7 +72,7 @@ export const LoadingScreen = () => {
   return (
     <div className="flex justify-center">
       <div className="flex flex-col items-center max-w-[1200px] mt-28">
-        <div>
+        <div className="">
           <p className="text-purpleText font-bold text-xl text-center">Loading your results...</p>
           {time > 60 && (
             <p className="text-purpleText text-center mt-6 text-sm font-medium">Our server must be tired. Please bear with us while it wakes up!</p>
@@ -80,7 +80,7 @@ export const LoadingScreen = () => {
         </div>
         {quote ? (
           <div className="my-12">
-          <blockquote className="bg-loading-screen-quote gradient-text text-base font-bold">"{quote.quote}" - {quote.author}</blockquote>
+          <blockquote className="bg-loading-screen-quote gradient-text text-base font-bold text-center">"{quote.quote}" - {quote.author}</blockquote>
           </div>
         ) : (
           <div className="my-12">
@@ -91,8 +91,8 @@ export const LoadingScreen = () => {
         )}
         <div>
           <ColorRing
-            height="500"
-            width="500"
+            height="400"
+            width="400"
             colors={['#448FD9', '#A270C0', '#D76573', '#F0944C', '#F7D400']}
           />
         </div>
