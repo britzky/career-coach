@@ -57,8 +57,8 @@ export const DesiredJob = () => {
         </div>
         <div className="mb-7 flex justify-center">
         </div>
-        <div className="flex flex-col items-center w-full xl:w-[1200px] mb-[12px]">
-          <div className="grid grid-cols-2 gap-2">
+        <div className="flex flex-col w-full lg:w-[1200px] mb-[12px]">
+          <div className="grid grid-cols-2 gap-2 lg:block">
             {jobs.map((job) => (
               <div key={job}>
                 <JobCard
