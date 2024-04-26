@@ -1,6 +1,5 @@
 import { useEffect } from 'react'
 import { InputBox, NavButton } from '../../components'
-// import InfoIcon from '@mui/icons-material/Info'
 import ErrorOutlineOutlinedIcon from '@mui/icons-material/ErrorOutlineOutlined'
 import { useCareerDetails } from '../../context/CareerContext'
 import { useProgressState } from '../../context/ProgressContex/ProgressContext'

@@ -1,7 +1,5 @@
 import { useState, useEffect, ChangeEvent } from 'react' // added useState
 import { useNavigate } from 'react-router-dom';
-import { Stepper, Step } from '@mui/material';
-import { Checkmark } from "../../assets/icons/Checkmark";
 import { InputBox, NavButton } from "../../components"
 import { useCareerDetails } from "../../context/CareerContext"
 import { useProgressState } from '../../context/ProgressContex/ProgressContext';
