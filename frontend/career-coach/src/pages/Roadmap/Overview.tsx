@@ -15,13 +15,15 @@ export const Overview = () => {
       }
 
   return (
-    <div className="border-2 border-purpleText py-2 pr-24 pl-5 rounded-lg lg:max-w-[300px]">
-      <p className="text-base font-bold mb-4 text-purpleText">Overview</p>
-      <div className="flex lg:flex-col lg:block">
+    <div className="lg:border-2 border-purpleText py-2 lg:pr-24 lg:pl-5 rounded-lg lg:max-w-[300px]">
+      <p className="text-base font-bold mb-4 text-purpleText text-center lg:text-left">Overview</p>
+      <div className="flex relative justify-between lg:flex-col lg:block">
         {roadmap?.roadmap.map((item, i) => (
-          <div key={i} className="flex items-center">
-            <span className="text-xs flex-1 font-medium">{item.month}</span>
-            <div className="relative flex flex-col lg:flex-row items-center">
+          <div key={i} className="lg:flex">
+            <div className="hidden w-full lg:block">
+              <span className="text-xs flex-1 font-medium">{item.month}</span>
+            </div>
+            <div className="lg:relative flex lg:flex lg:items-center">
               {i <= (selectedMonth ?? -1) ? (
                 <div onClick={() => handleCircleClick(i)} className="w-6 h-6 bg-purple border-2 border-purpleText rounded-full flex items-center justify-center text-white z-10 cursor-pointer">
                   <Checkmark />
@@ -30,7 +32,7 @@ export const Overview = () => {
                 <div onClick={() => handleCircleClick(i)} className="w-6 h-6 bg-buttonWhite border-2 border-purpleText rounded-full flex items-center justify-center text-white z-10 cursor-pointer"></div>
                 )}
               {i < roadmap?.roadmap.length - 1 && (
-                <div className={`absolute  h-1 lg:w-1 lg:h-6 top-1/2 lg:top-full left-1/2 transform -translate-y-1/2 lg:-translate-x-1/2 ${i <= (selectedMonth ?? -1) ? 'bg-purpleText': 'bg-line'}`}></div>
+                <div className={`absolute h-1 w-full lg:w-1 lg:h-6 top-1/2 lg:top-full lg:left-1/2 right-0 transform -translate-y-1/2 lg:-translate-x-1/2 ${i <= (selectedMonth ?? -1) ? 'bg-purpleText': 'bg-line'}`}></div>
               )}
             </div>
           </div>
