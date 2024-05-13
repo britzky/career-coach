@@ -25,14 +25,14 @@ export const Overview = () => {
             </div>
             <div className="lg:relative flex lg:flex lg:items-center">
               {i <= (selectedMonth ?? -1) ? (
-                <div onClick={() => handleCircleClick(i)} className="w-6 h-6 bg-purple border-2 border-purpleText rounded-full flex items-center justify-center text-white z-10 cursor-pointer">
-                  <Checkmark />
+                <div onClick={() => handleCircleClick(i)} className="w-6 h-6 bg-indigo-700 border-2 border-purpleText rounded-full flex items-center justify-center text-white z-50 cursor-pointer">
+                    <img src="https://tuk-cdn.s3.amazonaws.com/can-uploader/thin_with_steps-svg1.svg" alt="check"/>
                 </div>
               ) : (
-                <div onClick={() => handleCircleClick(i)} className="w-6 h-6 bg-buttonWhite border-2 border-purpleText rounded-full flex items-center justify-center text-white z-10 cursor-pointer"></div>
+                <div onClick={() => handleCircleClick(i)} className="w-6 h-6 bg-buttonWhite border-2 border-purpleText rounded-full flex items-center justify-center text-white z-50 cursor-pointer"></div>
                 )}
               {i < roadmap?.roadmap.length - 1 && (
-                <div className={`absolute h-1 w-full lg:w-1 lg:h-6 top-1/2 lg:top-full lg:left-1/2 right-0 transform -translate-y-1/2 lg:-translate-x-1/2 ${i <= (selectedMonth ?? -1) ? 'bg-purpleText': 'bg-line'}`}></div>
+                <div className={`absolute h-1 w-full lg:w-1 lg:h-6 top-1/2 lg:top-full lg:left-1/2 right-0 transform -translate-y-1/2 lg:-translate-x-1/2 ${i <= (selectedMonth ?? -1) ? 'bg-purpleText z-10': 'bg-line z-10'}`}></div>
               )}
             </div>
           </div>
