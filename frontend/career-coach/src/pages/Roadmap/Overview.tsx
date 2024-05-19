@@ -1,5 +1,4 @@
 import { useState } from "react"
-import { Checkmark } from "../../assets/icons/Checkmark";
 import { useCareerDetails } from "../../context/CareerContext";
 
 export const Overview = () => {
@@ -35,6 +34,13 @@ export const Overview = () => {
                 <div className={`absolute h-1 w-full lg:w-1 lg:h-6 top-1/2 lg:top-full lg:left-1/2 right-0 transform -translate-y-1/2 lg:-translate-x-1/2 ${i <= (selectedMonth ?? -1) ? 'bg-purpleText z-10': 'bg-line z-10'}`}></div>
               )}
             </div>
+          </div>
+        ))}
+      </div>
+      <div className="flex justify-between">
+        {roadmap?.roadmap.map((item, i) => (
+          <div key={i} className="lg:hidden">
+            <span className="text-xs flex-1 font-medium">{item.month}</span>
           </div>
         ))}
       </div>
