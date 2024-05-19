@@ -10,6 +10,9 @@ export default {
         'sans': ['Quicksand', 'sans-serif'],
       },
       fontSize: {
+        'xxxxs': '12px',
+        'xxxs': '14px',
+        'xxs': '16px',
         'xs': '20px',
         'sm': '24px',
         'base': '32px',

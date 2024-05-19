@@ -8,10 +8,10 @@ export const RoadmapDetails = () => {
       <div className="hidden lg:block">
         <h1 className="font-bold">Roadmap Details</h1>
       </div>
-      <p className="font-bold">Hours Per Week: <span className="font-normal">{careerDetails.hours_dedicated_to_learning}</span></p>
-      <p className="font-bold ml-1 lg:ml-0">Budget: <span className="font-normal">${careerDetails.budget}</span></p>
-      <p className="font-bold">Timeframe: <span className="font-normal">{months} months</span></p>
-      <p className="font-bold">Learning Style: <span className="font-normal">{careerDetails.preferred_learning_style}</span></p>
+      <p className="font-bold lg:text-xxs text-xxxs">Hours Per Week: <span className="font-normal">{careerDetails.hours_dedicated_to_learning}</span></p>
+      <p className="font-bold lg:text-xxs text-xxxs ml-1 lg:ml-0">Budget: <span className="font-normal">${careerDetails.budget}</span></p>
+      <p className="font-bold lg:text-xxs text-xxxs">Timeframe: <span className="font-normal">{months} months</span></p>
+      <p className="font-bold lg:text-xxs text-xxxs">Learning Style: <span className="font-normal">{careerDetails.preferred_learning_style}</span></p>
     </div>
   )
 }

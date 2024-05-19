@@ -24,18 +24,27 @@ export const CourseAccordionItems: React.FC<AccordionItemProps> = ({ month, cour
         <div className="border-4 rounded-md border-purpleText p-5 w-full">
             <div className="flex flex-col">
                 <div className="flex justify-between">
-                    <span className="font-bold text-sm text-purpleText">{month}: {courses[0].coursename} </span>
-                    <div>
+                    <span className="font-bold text-xxs lg:text-sm text-purpleText">{month}: {courses[0].coursename} </span>
+                    <div className="hidden lg:block">
                         <button
                             onClick={() => setOpen(!open)}
                             aria-expanded={open}
-                            className="border-4 rounded-lg border-purpleText p-1"
+                            className="border-4 rounded-lg border-purpleText p-1 h-[25px] lg:h-auto w-[25px] lg:w-auto"
                         >
-                            <DownChevron />
+                            <DownChevron height="20px" width="20px" />
+                        </button>
+                    </div>
+                    <div className="lg:hidden">
+                        <button
+                            onClick={() => setOpen(!open)}
+                            aria-expanded={open}
+                            className="border-4 rounded-lg border-purpleText p-1 h-[25px] lg:h-auto w-[25px] lg:w-auto"
+                        >
+                            <DownChevron height="15px" width="15px" />
                         </button>
                     </div>
                 </div>
-                <p className="text-xs font-medium text-purpleText">{overview}</p>
+                <p className="text-xxxs lg:text-xs font-medium text-purpleText">{overview}</p>
             </div>
             {open && courses.map((course, index) => (
                 <div key={index} className="bg-buttonWhite border-2 border-purpleText rounded-md p-3 text-purpleText">

@@ -1,8 +1,12 @@
+interface DownChevronProps {
+    height: string;
+    width: string;
+}
 
-export const DownChevron = () => {
+export const DownChevron: React.FC<DownChevronProps> = ({height, width}) => {
   return (
     <div>
-        <svg  height="20px" width="20px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" viewBox="0 0 330.002 330.002" xmlSpace="preserve">
+        <svg height={height} width={width} version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" viewBox="0 0 330.002 330.002" xmlSpace="preserve">
             <defs>
                 <linearGradient id="downChevronGradient" x1="0%" y1="0%" x2='100%' y2="0%">
                     <stop offset="3.21%" stopColor="#448FD9" />

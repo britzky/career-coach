@@ -14,8 +14,8 @@ export const Overview = () => {
       }
 
   return (
-    <div className="lg:border-2 border-purpleText py-2 lg:pr-24 lg:pl-5 rounded-lg lg:max-w-[300px]">
-      <p className="text-base font-bold mb-4 text-purpleText text-center lg:text-left">Overview</p>
+    <div className="lg:border-2 border-purpleText lg:py-2 lg:pr-24 lg:pl-5 rounded-lg lg:max-w-[300px]">
+      <p className="text-xxs lg:text-base font-bold mb-4 text-purpleText text-center lg:text-left">Overview</p>
       <div className="flex relative justify-between lg:flex-col lg:block">
         {roadmap?.roadmap.map((item, i) => (
           <div key={i} className="lg:flex">
@@ -40,7 +40,7 @@ export const Overview = () => {
       <div className="flex justify-between">
         {roadmap?.roadmap.map((item, i) => (
           <div key={i} className="lg:hidden">
-            <span className="text-xs flex-1 font-medium">{item.month}</span>
+            <span className="text-xxs flex-1 font-medium">{item.month}</span>
           </div>
         ))}
       </div>
