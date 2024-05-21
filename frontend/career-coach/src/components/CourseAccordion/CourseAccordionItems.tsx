@@ -25,22 +25,13 @@ export const CourseAccordionItems: React.FC<AccordionItemProps> = ({ month, cour
             <div className="flex flex-col">
                 <div className="flex justify-between">
                     <span className="font-bold text-xxs lg:text-sm text-purpleText">{month}: {courses[0].coursename} </span>
-                    <div className="hidden lg:block">
+                    <div className="flex flex-col  items-center">
                         <button
                             onClick={() => setOpen(!open)}
                             aria-expanded={open}
-                            className="border-4 rounded-lg border-purpleText p-1 h-[25px] lg:h-auto w-[25px] lg:w-auto"
+                            className="flex justify-center items-center border-4 rounded-lg border-purpleText p-1 h-[25px] lg:h-auto w-[25px] lg:w-auto"
                         >
                             <DownChevron height="20px" width="20px" />
-                        </button>
-                    </div>
-                    <div className="lg:hidden">
-                        <button
-                            onClick={() => setOpen(!open)}
-                            aria-expanded={open}
-                            className="border-4 rounded-lg border-purpleText p-1 h-[25px] lg:h-auto w-[25px] lg:w-auto"
-                        >
-                            <DownChevron height="15px" width="15px" />
                         </button>
                     </div>
                 </div>
