@@ -32,7 +32,10 @@ export const NavBar: React.FC = () => {
         <div className="flex flex-wrap justify-between items-center max-w-screen-xl pt-5">
             <div onClick={handleLogoClick} className="flex items-center space-x-3 rtl:space-x-reverse cursor-pointer">
                 {!noIcon && <img src={logo} className="h-10" alt="MyPDP Logo" />}
-                {!noText && <span className="self-center text-lg bg-logo gradient-text font-bold whitespace-nowrap">MyPDP</span>}
+                {!noText 
+                    ? <span className="self-center text-lg bg-logo gradient-text font-bold whitespace-nowrap">MyPDP</span>
+                    : <span className="hidden lg:block self-center text-lg bg-logo gradient-text font-bold whitespace-nowrap">MyPDP</span>
+                }
             </div>
         </div>
     </nav>
