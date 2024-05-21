@@ -71,7 +71,7 @@ export const DesiredJob = () => {
             ))}
           </div>
         </div>
-        <div className="flex justify-between mt-auto mb-10 w-full">
+        <div className="flex justify-between lg:mt-auto mt-20 mb-10 w-full">
           <NavButton back to='/'>Back</NavButton>
           <div style={{ flexGrow: 1}} className='lg:mx-[30rem] hidden lg:block'>
             <ProgressTracker />

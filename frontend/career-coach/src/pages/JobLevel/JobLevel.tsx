@@ -35,9 +35,9 @@ export const JobLevel = () => {
     <div className="flex justify-center min-h-screen w-full">
       <div className="flex flex-col w-full mt-28">
         <div className="flex justify-center mb-8">
-          <p className="text-purpleText text-xl font-bold">What is your <span className="bg-desired-job-level gradient-text">Expected Level </span>at your new job?</p>
+          <p className="text-purpleText text-center text-base lg:text-xl font-bold">What is your <span className="bg-desired-job-level gradient-text">Expected Level </span>at your new job?</p>
         </div>
-        <div className="flex flex-wrap gap-10 justify-center">
+        <div className="flex flex-wrap flex-col lg:flex-row gap-7 lg:gap-10 justify-center">
           <div>
             <CareerInfoCard
               text="Entry Level"
@@ -75,12 +75,17 @@ export const JobLevel = () => {
             />
           </div>
         </div>
-        <div className="flex justify-between mt-auto mb-10">
-          <NavButton to='/desired-job' back>Back</NavButton>
-          <div style={{ flexGrow: 1}} className='mx-[30rem]'>
+        <div className="flex justify-between mt-20 lg:mt-auto mb-10 w-full">
+          <NavButton back to='/'>Back</NavButton>
+          <div style={{ flexGrow: 1}} className='lg:mx-[30rem] hidden lg:block'>
             <ProgressTracker />
           </div>
-          <NavButton disabled={!selectedCard} onClick={handleContinueClick}>Continue</NavButton>
+          <div className='flex'>
+            <NavButton disabled={!selectedCard} onClick={handleContinueClick}>Continue</NavButton>
+          </div>
+        </div>
+        <div className="lg:hidden mb-10">
+          <ProgressTracker />
         </div>
       </div>
     </div>
