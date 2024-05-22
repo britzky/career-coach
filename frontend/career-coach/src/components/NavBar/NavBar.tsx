@@ -18,7 +18,7 @@ export const NavBar: React.FC = () => {
         "/budget",
         "/desired-job",
         "/desired-skills",
-        "hours-per-week",
+        "/hours-per-week",
         "/job-level",
         "/learning-style",
         "/loading-screen", 
