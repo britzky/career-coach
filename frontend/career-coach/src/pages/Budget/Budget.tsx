@@ -33,20 +33,25 @@ export const Budget: React.FC = () => {
     <div className="flex justify-center min-h-screen">
       <div className="flex flex-col mt-28 w-full">
         <div className="flex justify-center mb-8">
-          <p className='text-purpleText text-xl font-bold'>What is your <span className="bg-budget gradient-text">total budget</span> per month? (optional)</p>
+          <p className='text-purpleText text-base text-center lg:text-xl font-bold'>What is your <span className="bg-budget gradient-text">total budget</span> per month? (optional)</p>
         </div>
         <div className='flex justify-center'>
-          <div className='flex items-center'>
+          <div className='flex items-center w-[120px]'>
             <InputBox placeholder='$100' onChange={handleInputChange}/>
-            <span className='ml-2'>USD</span>
+            <span className='ml-4 text-xs'>USD</span>
           </div>
         </div>
-        <div className="flex justify-between mt-auto mb-10">
-          <NavButton back to='/hours-per-week'>Back</NavButton>
-          <div style={{ flexGrow: 1}} className='mx-[30rem]'>
+        <div className="flex justify-between mt-auto mb-10 w-full">
+          <NavButton back to='/'>Back</NavButton>
+          <div style={{ flexGrow: 1}} className='lg:mx-[30rem] hidden lg:block'>
             <ProgressTracker />
           </div>
-          <NavButton to='/learning-style'>Continue</NavButton>
+          <div className='flex'>
+            <NavButton to='/learning-style'>Continue</NavButton>
+          </div>
+        </div>
+        <div className="lg:hidden mb-10">
+          <ProgressTracker />
         </div>
       </div>
     </div>

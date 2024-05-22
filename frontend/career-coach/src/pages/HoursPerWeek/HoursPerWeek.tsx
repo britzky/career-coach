@@ -46,7 +46,7 @@ export const HoursPerWeek = () => {
         <p className="text-purpleText text-center text-base lg:text-xl font-bold">How many <span className="bg-hours-per-week gradient-text">hours per week</span> can you dedicate?</p>
         <div className="w-[120px] lg:w-[210px] my-14 flex items-center">
           <InputBox value={hours} placeholder='0' onChange={handleInputChange} />
-          <span className='ml-2 text-xs'>Hours</span>
+          <span className='ml-4 text-xs'>Hours</span>
         </div>
         <div className="w-[943px] relative hidden lg:block">
           <input
