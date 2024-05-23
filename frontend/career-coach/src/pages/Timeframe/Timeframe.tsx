@@ -30,16 +30,16 @@ export const Timeframe = () => {
     <div className="flex justify-center min-h-screen w-full">
         <div className="flex flex-col w-full mt-28">
             <div className="flex justify-center mb-8">
-                <p className="text-purpleText text-xl font-bold">What is your expected<span className="bg-timeframe gradient-text"> timeframe</span>?</p>
+                <p className="text-purpleText text-center text-base lg:text-xl font-bold">What is your expected<span className="bg-timeframe gradient-text"> timeframe</span>?</p>
             </div>
             <div className="flex flex-col items-center">
-                <div className='mb-6 w-40 flex justify-center items-center'>
+                <div className='mb-6 w-[120px] lg:w-40 flex justify-center items-center'>
                     <InputBox placeholder='0' onChange={tempInputChange} />
-                    <span className='ml-2'>Months</span>
+                    <span className='ml-2 text-xs'>Months</span>
                 </div>
             </div>
             <div className='flex flex-col items-center mt-auto mb-10'>
-                <h5 className="flex font-medium text-sm text-purpleText mb-6">
+                <h5 className="flex font-medium text-xxs lg:text-sm text-purpleText mb-6">
                     <span className='mr-2'><ErrorOutlineOutlinedIcon /></span>
                     <span>
                         Attention: Currently, our career roadmaps only support showing the first 3 months.
@@ -48,12 +48,17 @@ export const Timeframe = () => {
                     </span>
                 </h5>
             </div>
-            <div className="flex justify-between mb-10">
-                <NavButton back to='/learning-style'>Back</NavButton>
-                <div style={{ flexGrow: 1}} className='mx-[30rem]'>
+            <div className="flex justify-between mb-10 w-full">
+                <NavButton back to='/'>Back</NavButton>
+                <div style={{ flexGrow: 1}} className='lg:mx-[30rem] hidden lg:block'>
                     <ProgressTracker />
                 </div>
-                <NavButton disabled={months === 0} to='/skill-level'>Continue</NavButton>
+                <div className='flex'>
+                    <NavButton to='/learning-style'>Continue</NavButton>
+                </div>
+            </div>
+            <div className="lg:hidden mb-10">
+                <ProgressTracker />
             </div>
         </div>
     </div>
