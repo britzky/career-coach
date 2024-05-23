@@ -54,7 +54,7 @@ export const Timeframe = () => {
                     <ProgressTracker />
                 </div>
                 <div className='flex'>
-                    <NavButton to='/learning-style'>Continue</NavButton>
+                    <NavButton to='/skill-level'>Continue</NavButton>
                 </div>
             </div>
             <div className="lg:hidden mb-10">
