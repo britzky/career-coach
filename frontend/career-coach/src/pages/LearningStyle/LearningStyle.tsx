@@ -34,9 +34,9 @@ export const LearningStyle = () => {
     <div className="flex justify-center min-h-screen w-full">
       <div className="flex flex-col w-full mt-28">
         <div className="flex justify-center mb-8">
-          <p className="text-purpleText text-xl font-bold">What is the preferred <span className="bg-learning-style gradient-text">learning style</span>?</p>
+          <p className="text-purpleText text-center text-base lg:text-xl font-bold">What is the preferred <span className="bg-learning-style gradient-text">learning style</span>?</p>
         </div>
-        <div className="flex gap-10 justify-center">
+        <div className="flex flex-col lg:flex-row gap-7 lg:gap-10 justify-center">
           <div>
             <CareerInfoCard
               text="Project Based"
@@ -70,12 +70,17 @@ export const LearningStyle = () => {
             />
           </div>
         </div>
-        <div className="flex justify-between mt-auto mb-10">
-          <NavButton back to='/budget'>Back</NavButton>
-          <div style={{ flexGrow: 1}} className='mx-[30rem]'>
+        <div className="flex justify-between mt-auto mb-10 w-full">
+          <NavButton back to='/'>Back</NavButton>
+          <div style={{ flexGrow: 1}} className='lg:mx-[30rem] hidden lg:block'>
             <ProgressTracker />
           </div>
-          <NavButton disabled={!selectedCard} onClick={handleContinueClick}>Continue</NavButton>
+          <div className='flex'>
+            <NavButton disabled={!selectedCard} onClick={handleContinueClick}>Continue</NavButton>
+          </div>
+        </div>
+        <div className="lg:hidden mb-10">
+          <ProgressTracker />
         </div>
       </div>
     </div>
