@@ -16,7 +16,7 @@ export const LandingPage = () => {
   const { careerDetails } = useCareerDetails();
   console.log(careerDetails)
   return (
-    <div className="overflow-x-hidden flex flex-col min-h-screen">
+    <div className="overflow-x-hidden flex flex-col min-h-screen leading-5 lg:leading-8">
       <div className="hidden lg:block relative -mx-24 min-w-full h-auto">
         <img src={road} alt="road" className="absolute mt-20 min-w-full h-auto" />
       </div>
@@ -24,7 +24,7 @@ export const LandingPage = () => {
         <div className="flex flex-col lg:h-[695px]">
           <div className="max-w-[957px] flex flex-col space-y-3">
             <span className="text-purpleText2 font-bold text-xxs lg:text-base">Get your DREAM JOB with our</span>
-            <span className="gradient-text bg-landing-page-title font-bold text-xs lg:text-xxl">AI-Powered Career Roadmaps</span>
+            <span className="gradient-text bg-landing-page-title font-bold text-xs lg:text-xxl lg:leading-normal">AI-Powered Career Roadmaps</span>
             <p className="font-medium text-xxs lg:text-sm">Discover personalized courses, expert guidance, and a roadmap to your dream career, all powered by ChatGPT!</p>
           </div>
           <div>
@@ -40,7 +40,7 @@ export const LandingPage = () => {
         <div className="overflow-x-hidden space-y-7 lg:space-y-14 lg:my-14 lg:mt-[30rem]">
           <div className="hidden lg:flex flex-col items-center">
             <div className="max-w-[94rem]">
-              <h1 className="font-bold text-xxl gradient-text bg-logo text-center">What is a Career Roadmap?</h1>
+              <h1 className="font-bold text-xxl gradient-text bg-logo text-center lg:leading-normal">What is a Career Roadmap?</h1>
               <p className="font-medium text-base text-center">
                 A career roadmap is your personalized guide to success,
                 like a GPS for your career journey.
@@ -52,26 +52,26 @@ export const LandingPage = () => {
               </p>
             </div>
           </div>
-          <h1 className="font-bold text-sm lg:text-xxl gradient-text bg-logo text-center w-full">Your Path to Success</h1>
+          <h1 className="font-bold text-sm lg:text-xxl gradient-text bg-logo text-center w-full lg:leading-normal">Your Path to Success</h1>
           <div className="flex flex-col lg:flex-row items-center justify-center gap-5">
-            <div className="flex flex-col items-center border-2 border-purpleText rounded-md lg:gap-7 gap-2 p-5 lg:max-w-[28rem]">
-              <img src={skillDev} alt="Man running" className="w-[100px] lg:w-auto" />
+            <div className="flex flex-col items-center border-2 border-purpleText rounded-md lg:gap-7 gap-2 p-5 lg:w-[430px] lg:h-[470px]">
+              <img src={skillDev} alt="Man running" className="w-[100px] lg:w-[200px] lg:h-[200px]" />
               <h6 className="font-bold text-xs lg:text-sm text-purpleText">Skill development roadmap</h6>
               <p className="font-medium text-xxs lg:text-sm text-center max-w-[24rem]">Receive a tailor-made roadmap outlining the skills you need to succeed in your chosen career path.</p>
             </div>
-            <div className="flex flex-col items-center border-2 border-purpleText rounded-md gap-7 p-5 lg:max-w-[28rem]">
-              <img src={progress} alt="Woman showing progress chart" className="w-[100px] lg:w-auto" />
+            <div className="flex flex-col items-center border-2 border-purpleText rounded-md gap-7 p-5 lg:w-[430px] lg:h-[470px]">
+              <img src={progress} alt="Woman showing progress chart" className="w-[100px] lg:w-[200px] lg:h-[200px]" />
               <h6 className="font-bold text-xs lg:text-sm text-purpleText">Progress Tracking and Analytics</h6>
               <p className="font-medium text-xxs lg:text-sm text-center max-w-[24rem]">Monitor your progress and track your accomplishments with detailed analytics and performance insights.</p>
             </div>
-            <div className="flex flex-col items-center border-2 border-purpleText rounded-md gap-7 p-5 max-w-[28rem]">
-              <img src={career} alt="Man looking through binoculars at a city" className="w-[100px] lg:w-auto" />
+            <div className="flex flex-col items-center border-2 border-purpleText rounded-md gap-7 p-5 lg:w-[430px] lg:h-[470px]">
+              <img src={career} alt="Man looking through binoculars at a city" className="w-[100px] lg:w-[200px] lg:h-[200px]" />
               <h6 className="font-bold text-xs lg:text-sm text-purpleText">Career Path Exploration</h6>
               <p className="font-medium text-xxs lg:text-sm text-center max-w-[24rem]">Explore various career paths aligned with your interests and skills with detailed insights and recommendations.</p>
             </div>
           </div>
-          <h1 className="font-bold text-sm lg:text-xxl gradient-text bg-logo text-center w-full">Meet the Team</h1>
-          <div className="flex justify-center gap-5">
+          <h1 className="font-bold text-sm lg:text-xxl gradient-text bg-logo text-center w-full lg:leading-normal">Meet the Team</h1>
+          <div className="flex flex-col lg:flex-row justify-center gap-5">
               <TeamCard 
                 image={juan} 
                 name="Juan Carlos Yao" 
@@ -100,7 +100,7 @@ export const LandingPage = () => {
             </div>
           </div>
       </div>
-      <div className="mt-auto">
+      <div className="mt-6 lg:mt-auto">
         <Footer />
       </div>
     </div>
