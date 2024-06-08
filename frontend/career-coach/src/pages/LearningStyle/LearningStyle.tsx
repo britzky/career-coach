@@ -34,7 +34,7 @@ export const LearningStyle = () => {
     <div className="flex justify-center min-h-screen w-full">
       <div className="flex flex-col w-full mt-28">
         <div className="flex justify-center mb-8">
-          <p className="text-purpleText text-center text-base lg:text-xl font-bold">What is the preferred <span className="bg-learning-style gradient-text">learning style</span>?</p>
+          <p className="text-purpleText text-center text-base lg:text-xl font-bold leading-[45px] lg:leading-[60px]">What is the preferred <span className="bg-learning-style gradient-text">learning style</span>?</p>
         </div>
         <div className="flex flex-col lg:flex-row gap-7 lg:gap-10 justify-center">
           <div>

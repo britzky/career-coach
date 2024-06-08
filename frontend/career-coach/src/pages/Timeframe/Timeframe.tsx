@@ -30,7 +30,7 @@ export const Timeframe = () => {
     <div className="flex justify-center min-h-screen w-full">
         <div className="flex flex-col w-full mt-28">
             <div className="flex justify-center mb-8">
-                <p className="text-purpleText text-center text-base lg:text-xl font-bold">What is your expected<span className="bg-timeframe gradient-text"> timeframe</span>?</p>
+                <p className="text-purpleText text-center text-base lg:text-xl font-bold leading-[45px] lg:leading-[60px]">What is your expected<span className="bg-timeframe gradient-text"> timeframe</span>?</p>
             </div>
             <div className="flex flex-col items-center">
                 <div className='mb-6 w-[120px] lg:w-40 flex justify-center items-center'>
@@ -38,7 +38,7 @@ export const Timeframe = () => {
                     <span className='ml-2 text-xs'>Months</span>
                 </div>
             </div>
-            <div className='flex flex-col items-center mt-auto mb-10'>
+            <div className='flex flex-col items-center mt-auto mb-10 leading-[15.6px] lg:leading-[30px]'>
                 <h5 className="flex font-medium text-xxs lg:text-sm text-purpleText mb-6">
                     <span className='mr-2'><ErrorOutlineOutlinedIcon /></span>
                     <span>

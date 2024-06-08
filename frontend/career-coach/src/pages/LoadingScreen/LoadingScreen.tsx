@@ -73,18 +73,18 @@ export const LoadingScreen = () => {
     <div className="flex justify-center">
       <div className="flex flex-col items-center max-w-[1200px] mt-28">
         <div className="">
-          <p className="text-purpleText font-bold text-base lg:text-xl text-center">Loading your results...</p>
+          <p className="text-purpleText font-bold text-base lg:text-xl text-center leading-[45px] lg:leading-[60px]">Loading your results...</p>
           {time > 60 && (
-            <p className="max-w-[350px] lg:max-w-[1200px] text-purpleText text-center mt-6 text-xxs lg:text-sm font-medium">Our server must be tired. Please bear with us while it wakes up!</p>
+            <p className="max-w-[350px] lg:max-w-[1200px] text-purpleText text-center mt-6 text-xxs lg:text-sm font-medium leading-[15px] lg:leading-[30px]">Our server must be tired. Please bear with us while it wakes up!</p>
           )}
         </div>
         {quote ? (
           <div className="my-12">
-          <blockquote className="bg-loading-screen-quote gradient-text text-sm lg:text-base font-bold text-center">"{quote.quote}" - {quote.author}</blockquote>
+          <blockquote className="bg-loading-screen-quote gradient-text text-sm lg:text-base font-bold text-center leading-[30px] lg:leading-[40px]">"{quote.quote}" - {quote.author}</blockquote>
           </div>
         ) : (
           <div className="my-12">
-            <blockquote className="bg-loading-screen-quote gradient-text lg:text-base font-bold">
+            <blockquote className="bg-loading-screen-quote gradient-text lg:text-base font-bold leading-[30px] lg:leading-[40px]">
             "Embrace the journey of growth, for each step forward illuminates the path to becoming the best version of yourself." - ChatGPT
             </blockquote>
           </div>
