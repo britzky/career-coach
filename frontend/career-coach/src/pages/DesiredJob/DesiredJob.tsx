@@ -32,11 +32,18 @@ export const DesiredJob = () => {
     'Software Architect',
     'Blockchain Developer',
   ]
-
-  // remove before shipping to production
-  useEffect(() => {
-    console.log(careerDetails)
-  }, [careerDetails])
+  const smallJobs = [
+    'Product Designer',
+    'UX Researcher',
+    'Interaction Designer',
+    'Visual Designer',
+    'Full-stack Engineer',
+    'Front-end Engineer',
+    'Back-end Engineer',
+    'Product Manager',
+    'Project Manager',
+    'Scrum Master',
+  ]
 
   useEffect(() => {
     // Count the current step based on whether a selection is made or not
@@ -50,15 +57,15 @@ export const DesiredJob = () => {
   }
 
   return (
-    <div className="flex justify-center min-h-screen w-full">
+    <div className="flex justify-center min-h-screen w-full leading-8 lg:leading-10">
       <div className="flex flex-col items-center mt-28 w-full">
+        
         <div className="flex justify-center">
           <p className="text-purpleText text-base lg:text-xl font-bold bg-desired-job gradient-text">I want to be a...</p>
         </div>
-        <div className="mb-7 flex justify-center">
-        </div>
-        <div className="flex flex-col w-full lg:w-[1200px] mb-[12px]">
-          <div className="grid grid-cols-2 gap-4 lg:block">
+        
+        <div className="hidden lg:flex flex-col w-[1200px] mb-[12px]">
+          <div className="gap-4">
             {jobs.map((job) => (
               <div key={job} className="lg:py-3">
                 <JobCard
@@ -71,6 +78,22 @@ export const DesiredJob = () => {
             ))}
           </div>
         </div>
+
+        <div className="lg:hidden flex flex-col w-full mt-[12px]">
+          <div className="grid grid-cols-2 gap-4">
+            {smallJobs.map((job) => (
+              <div key={job} className="lg:py-3">
+                <JobCard
+                  text={job}
+                  tag={job}
+                  onCardClick={handleCardClick}
+                  selected={selectedCard === job}
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+
         <div className="flex justify-between lg:mt-auto mt-20 mb-10 w-full">
           <NavButton back to='/'>Back</NavButton>
           <div style={{ flexGrow: 1}} className='lg:mx-[30rem] hidden lg:block'>
@@ -80,6 +103,7 @@ export const DesiredJob = () => {
             <NavButton disabled={!selectedCard} onClick={handleContinueClick}>Continue</NavButton>
           </div>
         </div>
+
         <div className="lg:hidden mb-10">
           <ProgressTracker />
         </div>
