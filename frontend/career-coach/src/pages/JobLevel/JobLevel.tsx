@@ -32,10 +32,10 @@ export const JobLevel = () => {
   }
 
   return (
-    <div className="flex justify-center min-h-screen w-full">
+    <div className="flex justify-center min-h-screen w-full leading-8 lg:leading-10">
       <div className="flex flex-col w-full mt-28">
         <div className="flex justify-center mb-8">
-          <p className="text-purpleText text-center text-base lg:text-xl font-bold">What is your <span className="bg-desired-job-level gradient-text">Expected Level </span>at your new job?</p>
+          <p className="text-purpleText text-center text-base lg:text-xl font-bold leading-[45px] lg:leading-[60px]">What is your <span className="bg-desired-job-level gradient-text">Expected Level </span>at your new job?</p>
         </div>
         <div className="flex flex-wrap flex-col lg:flex-row gap-7 lg:gap-10 justify-center">
           <div>

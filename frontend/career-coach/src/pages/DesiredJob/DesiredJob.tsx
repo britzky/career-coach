@@ -61,7 +61,7 @@ export const DesiredJob = () => {
       <div className="flex flex-col items-center mt-28 w-full">
         
         <div className="flex justify-center">
-          <p className="text-purpleText text-base lg:text-xl font-bold bg-desired-job gradient-text">I want to be a...</p>
+          <p className="text-purpleText text-base lg:text-xl font-bold bg-desired-job gradient-text leading-[45px] lg:leading-[60px]">I want to be a...</p>
         </div>
         
         <div className="hidden lg:flex flex-col w-[1200px] mb-[12px]">
