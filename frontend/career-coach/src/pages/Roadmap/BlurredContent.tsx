@@ -5,7 +5,7 @@ export const BlurredContent = () => {
   return (
     <div className="flex justify-center items-center w-full">
         <div className="flex flex-col items-center w-full">
-            <div className=" text-center gradient-text bg-blurred-content font-semibold lg:text-base mt-7 w-full">
+            <div className="leading-[20px] lg:leading-[40px] text-center gradient-text bg-blurred-content font-semibold lg:text-base mt-7 w-full">
                 <h4>That's it for now! We are continuously working on our roadmap capabilities and will increase our ability to show more soon!</h4>
             </div>
             <div className="lg:hidden flex flex-col items-center blur mt-10 w-full">
