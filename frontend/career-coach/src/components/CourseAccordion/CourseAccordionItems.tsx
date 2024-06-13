@@ -24,7 +24,7 @@ export const CourseAccordionItems: React.FC<AccordionItemProps> = ({ month, cour
         <div className="border-4 rounded-md border-purpleText p-5 w-full">
             <div className="flex flex-col">
                 <div className="flex justify-between">
-                    <span className="font-bold text-xxs lg:text-sm text-purpleText leading-[20px] lg:leading-[40px]">{month}: {courses[0].coursename} </span>
+                    <span className="font-bold text-xxs lg:text-sm text-purpleText leading-[20px] lg:leading-[40px] pb-3 lg:pb-1">{month}: {courses[0].coursename} </span>
                     <div className="flex flex-col items-center">
                         <button
                             onClick={() => setOpen(!open)}
@@ -38,10 +38,10 @@ export const CourseAccordionItems: React.FC<AccordionItemProps> = ({ month, cour
                 <p className="text-xxxs lg:text-xs font-medium text-purpleText leading-[15px] lg:leading-[25px]">{overview}</p>
             </div>
             {open && courses.map((course, index) => (
-                <div key={index} className="space-y-1 bg-buttonWhite border-2 border-purpleText rounded-md p-3 text-purpleText leading-[15.6px] lg:leading-[25px]">
+                <div key={index} className="space-y-1 bg-buttonWhite border-2 border-purpleText rounded-md p-3 text-purpleText leading-[15.6px] lg:leading-[25px] mt-3">
                     <p className="font-bold">Course Name: {course.coursename}</p>
                     <p>Duration: {course.duration}</p>
-                    <p className="mb-20">
+                    <p className="pb-1">
                         <a
                             href={course.link}
                             className="underline cursor-pointer"
