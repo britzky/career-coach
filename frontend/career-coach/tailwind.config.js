@@ -67,6 +67,10 @@ export default {
           WebkitBackgroundClip: 'text',
           WebkitTextFillColor: 'transparent',
         },
+        '.border-gradient': {
+          borderImageSource: 'var(--tw-gradient-stops)',
+          borderImageSlice: 1,
+        }
       });
     },
   ],

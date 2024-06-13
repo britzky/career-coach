@@ -2,7 +2,7 @@
 import { Routes, Route, Navigate, useLocation } from "react-router-dom";
 import {
     Budget, LandingPage, DesiredJob, HoursPerWeek, JobLevel,
-    LearningStyle, LoadingScreen, SkillLevel, Timeframe, Roadmap, Error
+    LearningStyle, LoadingScreen, SkillLevel, Timeframe, Roadmap, Error,
 } from "../../pages";
 
 
@@ -27,6 +27,7 @@ export const AllRoutes = () => {
             <Route path="timeframe" element={<Timeframe />} />
             <Route path="roadmap" element={<Roadmap />} />
             <Route path="error" element={<Error />} />
+            {/* <Route path="test" element={<Test />} /> */}
         </Routes>
     </div>
   )
