@@ -75,15 +75,15 @@ export const LoadingScreen = () => {
         <div className="">
           <p className="text-purpleText font-bold text-base lg:text-xl text-center leading-[45px] lg:leading-[60px]">Loading your results...</p>
           {time > 60 && (
-            <p className="max-w-[350px] lg:max-w-[1200px] text-purpleText text-center mt-6 text-xxs lg:text-sm font-medium leading-[15px] lg:leading-[30px]">Our server must be tired. Please bear with us while it wakes up!</p>
+            <p className="max-w-[350px] lg:max-w-[1200px] text-purpleText text-center mt-6 text-xxs lg:text-sm font-medium leading-[15px] lg:leading-[30px] mx-10">Our server must be tired. Please bear with us while it wakes up!</p>
           )}
         </div>
         {quote ? (
-          <div className="my-12">
+          <div className="my-12 mx-10">
           <blockquote className="bg-loading-screen-quote gradient-text text-sm lg:text-base font-bold text-center leading-[30px] lg:leading-[40px]">"{quote.quote}" - {quote.author}</blockquote>
           </div>
         ) : (
-          <div className="my-12">
+          <div className="my-12 mx-10">
             <blockquote className="bg-loading-screen-quote gradient-text lg:text-base font-bold leading-[30px] lg:leading-[40px]">
             "Embrace the journey of growth, for each step forward illuminates the path to becoming the best version of yourself." - ChatGPT
             </blockquote>
