@@ -54,113 +54,113 @@ async def generate_roadmap(career_info: CareerInfo):
             thread_id=thread.id,
             assistant_id=assistant_id,
             instructions=(
-                # "Start the response with a summary that highlights the key learning outcomes, total time commitment, and skill development progression. Mention the overarching goals and how this roadmap prepares the learner for their career. After the summary, use the following strict template for each month section of the career roadmap: " +
-                # "\n- Begin each section with the month and a brief overview of what the user will learn during that month. This overview should highlight the main themes and skills covered." +
-                # "\n- Follow with the course title." +
-                # "\n- Then provide details for each course: Course Name, Link, Skill level, Price, Duration, and Description, each on a new line, in this order." +
-                # "\n- Include the estimated duration for completing each course. Specify whether the duration is in hours, days, or weeks." +
-                # "\n- Avoid markdown formatting." +
-                # "\nExample format:" +
-                # "\nSummary: This roadmap covers the essential skills and knowledge for a career in Java development, requiring a total of 6 months with an average weekly study time of 10 hours. It aims to equip learners with foundational to advanced Java skills, preparing them for job-ready competencies." +
-                # "\n\nMonth 1: Getting Started with Java" +
-                # "\nOverview: This month focuses on introducing you to Java programming, covering basic concepts and setting the foundation for more advanced topics." +
-                # "\nCourse Name: Java Programming Basics" +
-                # "\nLink: https://www.udacity.com/course/java-programming-basics--ud282" +
-                # "\nSkill level: Beginner" +
-                # "\nPrice: $12.99" +
-                # "\nDuration: 3 weeks" +
-                # "\nDescription: Introduction to Java programming basics, including variables, loops, and lists." +
-                # "\n\nContinue with this format for each month, ensuring the courses align with the learner's timeframe and weekly study hours."
-                    "Provide the roadmap as a structured JSON object with the following format:"
-                    "{"
-                    "  'summary': 'Overall summary of the roadmap',"
-                    "  'roadmap': ["
-                    "    {"
-                    "      'month': 'Month 1',"
-                    "      'overview': 'Monthly overview',"
-                    "      'courses': ["
-                    "        {"
-                    "          'coursename': 'Course Title',"
-                    "          'link': 'https://example.com/course',"
-                    "          'skillLevel': 'Beginner',"
-                    "          'price': '$XX.XX',"
-                    "          'duration': 'X weeks',"
-                    "          'description': 'Course description'"
-                    "        }"
-                    "      ]"
-                    "    }"
-                    "  ]"
-                    "}"
+                "Start the response with a summary that highlights the key learning outcomes, total time commitment, and skill development progression. Mention the overarching goals and how this roadmap prepares the learner for their career. After the summary, use the following strict template for each month section of the career roadmap: " +
+                "\n- Begin each section with the month and a brief overview of what the user will learn during that month. This overview should highlight the main themes and skills covered." +
+                "\n- Follow with the course title." +
+                "\n- Then provide details for each course: Course Name, Link, Skill level, Price, Duration, and Description, each on a new line, in this order." +
+                "\n- Include the estimated duration for completing each course. Specify whether the duration is in hours, days, or weeks." +
+                "\n- Avoid markdown formatting." +
+                "\nExample format:" +
+                "\nSummary: This roadmap covers the essential skills and knowledge for a career in Java development, requiring a total of 6 months with an average weekly study time of 10 hours. It aims to equip learners with foundational to advanced Java skills, preparing them for job-ready competencies." +
+                "\n\nMonth 1: Getting Started with Java" +
+                "\nOverview: This month focuses on introducing you to Java programming, covering basic concepts and setting the foundation for more advanced topics." +
+                "\nCourse Name: Java Programming Basics" +
+                "\nLink: https://www.udacity.com/course/java-programming-basics--ud282" +
+                "\nSkill level: Beginner" +
+                "\nPrice: $12.99" +
+                "\nDuration: 3 weeks" +
+                "\nDescription: Introduction to Java programming basics, including variables, loops, and lists." +
+                "\n\nContinue with this format for each month, ensuring the courses align with the learner's timeframe and weekly study hours."
+                    # "Provide the roadmap as a structured JSON object with the following format:"
+                    # "{"
+                    # "  'summary': 'Overall summary of the roadmap',"
+                    # "  'roadmap': ["
+                    # "    {"
+                    # "      'month': 'Month 1',"
+                    # "      'overview': 'Monthly overview',"
+                    # "      'courses': ["
+                    # "        {"
+                    # "          'coursename': 'Course Title',"
+                    # "          'link': 'https://example.com/course',"
+                    # "          'skillLevel': 'Beginner',"
+                    # "          'price': '$XX.XX',"
+                    # "          'duration': 'X weeks',"
+                    # "          'description': 'Course description'"
+                    # "        }"
+                    # "      ]"
+                    # "    }"
+                    # "  ]"
+                    # "}"
             )
         )
 
         response = await wait_for_run_completion(client, thread.id, run.id)
 
         if response:
-            roadmap = json.loads(response)
+            # roadmap = json.loads(response)
             # Regex patterns
-            # patterns = {
-            #     "month": r"^(Month \d+(?:-\d+)?):",
-            #     "overview": r"^\s*Overview: (.+)$",
-            #     "title": r"^\s*Title: (.+)$",
-            #     "course_name": r"^\s*Course Name: (.+)",
-            #     "link": r"^\s*Link: (.+)",
-            #     "skill_level": r"^\s*Skill level: (.+)",
-            #     "price": r"^\s*Price: (.+)",
-            #     "duration": r"^\s*Duration: (.+)",
-            #     "description": r"^\s*Description: (.+)"
-            # }
+            patterns = {
+                "month": r"^(Month \d+(?:-\d+)?):",
+                "overview": r"^\s*Overview: (.+)$",
+                "title": r"^\s*Title: (.+)$",
+                "course_name": r"^\s*Course Name: (.+)",
+                "link": r"^\s*Link: (.+)",
+                "skill_level": r"^\s*Skill level: (.+)",
+                "price": r"^\s*Price: (.+)",
+                "duration": r"^\s*Duration: (.+)",
+                "description": r"^\s*Description: (.+)"
+            }
 
-            # # Extract the summary using regex
-            # summary_pattern = r"^Summary: (.*?)\n\nMonth 1:"
-            # summary_match = re.search(summary_pattern, response, re.DOTALL)
-            # summary = summary_match.group(1).strip() if summary_match else ""
+            # Extract the summary using regex
+            summary_pattern = r"^Summary: (.*?)\n\nMonth 1:"
+            summary_match = re.search(summary_pattern, response, re.DOTALL)
+            summary = summary_match.group(1).strip() if summary_match else ""
 
-            # # Split the text by "Month" followed by a number and a colon
-            # months = re.split(r'(?=(Month \d+(?:-\d+)?):)', response)
-            # months = [month for month in months if month.strip()]
+            # Split the text by "Month" followed by a number and a colon
+            months = re.split(r'(?=(Month \d+(?:-\d+)?):)', response)
+            months = [month for month in months if month.strip()]
 
-            # roadmap = []
-            # for section in months:
-            #     month_data = {}
-            #     # Extract month
-            #     month_match = re.search(patterns["month"], section, re.MULTILINE)
-            #     if month_match:
-            #         month_data["month"] = month_match.group(1).strip()
-            #         month_data["courses"] = []
+            roadmap = []
+            for section in months:
+                month_data = {}
+                # Extract month
+                month_match = re.search(patterns["month"], section, re.MULTILINE)
+                if month_match:
+                    month_data["month"] = month_match.group(1).strip()
+                    month_data["courses"] = []
 
-            #     # Extract overview
-            #     overview_match = re.search(patterns["overview"], section, re.MULTILINE)
-            #     if overview_match:
-            #         month_data["overview"] = overview_match.group(1).strip()
+                # Extract overview
+                overview_match = re.search(patterns["overview"], section, re.MULTILINE)
+                if overview_match:
+                    month_data["overview"] = overview_match.group(1).strip()
 
-            #     # Split the section by "Title" to get individual courses
-            #     courses = re.split(r'(?=^\s*Title: )', section, flags=re.MULTILINE)
-            #     courses = [course for course in courses if course.strip()]
+                # Split the section by "Title" to get individual courses
+                courses = re.split(r'(?=^\s*Title: )', section, flags=re.MULTILINE)
+                courses = [course for course in courses if course.strip()]
 
-            #     for course in courses:
-            #         course_info = {}
-            #         for key, pattern in patterns.items():
-            #             if key not in ["month", "overview"]:  # Skip month and overview
-            #                 match = re.search(pattern, course, re.MULTILINE)
-            #                 if match:
-            #                     course_info_key = key.replace("_", "")  # Remove underscore for JSON key
-            #                     course_info[course_info_key] = match.group(1).strip()
-            #         if course_info:
-            #             month_data["courses"].append(course_info)
+                for course in courses:
+                    course_info = {}
+                    for key, pattern in patterns.items():
+                        if key not in ["month", "overview"]:  # Skip month and overview
+                            match = re.search(pattern, course, re.MULTILINE)
+                            if match:
+                                course_info_key = key.replace("_", "")  # Remove underscore for JSON key
+                                course_info[course_info_key] = match.group(1).strip()
+                    if course_info:
+                        month_data["courses"].append(course_info)
 
-            #     if month_data:
-            #         roadmap.append(month_data)
+                if month_data:
+                    roadmap.append(month_data)
 
-            #     completedRoadmap = {
-            #         "summary": summary,
-            #         "roadmap": roadmap
-            #     }
-            #     print(response)
+                completedRoadmap = {
+                    "summary": summary,
+                    "roadmap": roadmap
+                }
+                print(response)
 
-            # return completedRoadmap
-            print(roadmap)
-            return roadmap
+            return completedRoadmap
+            # print(roadmap)
+            # return roadmap
         else:
             raise HTTPException(status_code=500, detail="Failed to get response from the assistant")
     except Exception as e:
