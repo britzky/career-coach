@@ -80,7 +80,7 @@ async def generate_roadmap(career_info: CareerInfo):
                     "      'overview': 'Monthly overview',"
                     "      'courses': ["
                     "        {"
-                    "          'title': 'Course Title',"
+                    "          'coursename': 'Course Title',"
                     "          'link': 'https://example.com/course',"
                     "          'skillLevel': 'Beginner',"
                     "          'price': '$XX.XX',"
