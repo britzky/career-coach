@@ -31,13 +31,19 @@ export const DesiredJob = () => {
     'Android Developer',
     'Software Architect',
     'Blockchain Developer',
-    'Cyber Security Analyst',
   ]
-
-  // remove before shipping to production
-  useEffect(() => {
-    console.log(careerDetails)
-  }, [careerDetails])
+  const smallJobs = [
+    'Product Designer',
+    'UX Researcher',
+    'Interaction Designer',
+    'Visual Designer',
+    'Full-stack Engineer',
+    'Front-end Engineer',
+    'Back-end Engineer',
+    'Product Manager',
+    'Project Manager',
+    'Scrum Master',
+  ]
 
   useEffect(() => {
     // Count the current step based on whether a selection is made or not
@@ -51,33 +57,55 @@ export const DesiredJob = () => {
   }
 
   return (
-    <div className="flex justify-center min-h-screen w-full">
+    <div className="flex justify-center min-h-screen w-full leading-8 lg:leading-10">
       <div className="flex flex-col items-center mt-28 w-full">
-        <div className="flex justify-center mb-8">
-          <p className="text-purpleText text-xl font-bold bg-desired-job gradient-text">I want to be a...</p>
+        
+        <div className="flex justify-center">
+          <p className="text-purpleText text-base lg:text-xl font-bold bg-desired-job gradient-text leading-[45px] lg:leading-[60px]">I want to be a...</p>
         </div>
-        <div className="mb-7 flex justify-center">
+        
+        <div className="hidden lg:flex flex-col w-[1200px] mb-[12px]">
+          <div className="gap-4">
+            {jobs.map((job) => (
+              <div key={job} className="lg:py-3">
+                <JobCard
+                  text={job}
+                  tag={job}
+                  onCardClick={handleCardClick}
+                  selected={selectedCard === job}
+                />
+              </div>
+            ))}
+          </div>
         </div>
-        <div className="flex flex-col xl:w-[1200px] gap-3 mb-[12px]">
-          {jobs.map((job) => (
-            <div key={job}>
-              <JobCard
-                text={job}
-                tag={job}
-                onCardClick={handleCardClick}
-                selected={selectedCard === job}
-              />
-            </div>
-          ))}
+
+        <div className="lg:hidden flex flex-col w-full mt-[12px]">
+          <div className="grid grid-cols-2 gap-4">
+            {smallJobs.map((job) => (
+              <div key={job} className="lg:py-3">
+                <JobCard
+                  text={job}
+                  tag={job}
+                  onCardClick={handleCardClick}
+                  selected={selectedCard === job}
+                />
+              </div>
+            ))}
+          </div>
         </div>
-        <div className="flex justify-between mt-auto mb-10 w-full">
+
+        <div className="flex justify-between lg:mt-auto mt-20 mb-10 w-full">
           <NavButton back to='/'>Back</NavButton>
-          <div style={{ flexGrow: 1}} className='mx-[30rem]'>
+          <div style={{ flexGrow: 1}} className='lg:mx-[30rem] hidden lg:block'>
             <ProgressTracker />
           </div>
           <div className='flex'>
             <NavButton disabled={!selectedCard} onClick={handleContinueClick}>Continue</NavButton>
           </div>
+        </div>
+
+        <div className="lg:hidden mb-10">
+          <ProgressTracker />
         </div>
       </div>
     </div>

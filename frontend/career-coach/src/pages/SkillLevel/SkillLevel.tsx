@@ -45,11 +45,11 @@ export const SkillLevel = () => {
 
   return (
     <div className="flex justify-center min-h-screen w-full">
-      <div className="flex flex-col w-full mt-28">
-        <div className="flex justify-center mb-8">
-          <p className="text-purpleText text-xl font-bold">What is your current knowledge in <span className="bg-current-knowledge gradient-text">{careerDetails.career}</span>?</p>
+      <div className="flex flex-col justify-center w-full mt-28">
+        <div className="flex flex-col justify-center mb-8">
+          <p className="text-purpleText text-base lg:text-xl text-center font-bold leading-[45px] lg:leading-[60px]">What is your current knowledge in <span className="bg-current-knowledge gradient-text">{careerDetails.career}</span>?</p>
         </div>
-        <div className="flex gap-10 justify-center">
+        <div className="flex flex-col lg:flex-row gap-7 justify-center mb-44">
           <div>
             <CareerInfoCard
               text="Beginner"
@@ -75,12 +75,15 @@ export const SkillLevel = () => {
             />
           </div>
         </div>
-        <div className="flex justify-between mt-auto mb-10">
+        <div className="flex justify-between lg:mt-auto -mt-5 mb-10">
           <NavButton back to='/timeframe'>Back</NavButton>
-          <div style={{ flexGrow: 1}} className='mx-[30rem]'>
+          <div style={{ flexGrow: 1}} className='lg:mx-[30rem] hidden lg:block'>
             <ProgressTracker />
           </div>
           <NavButton disabled={!selectedCard} onClick={handleContinueClick}>Continue</NavButton>
+        </div>
+        <div className="lg:hidden mb-10">
+          <ProgressTracker />
         </div>
       </div>
     </div>

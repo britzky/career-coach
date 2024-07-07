@@ -1,1 +1,1 @@
-export { ProgressContext } from './ProgressContext';
+export { ProgressProvider, useProgressState } from './ProgressContext';

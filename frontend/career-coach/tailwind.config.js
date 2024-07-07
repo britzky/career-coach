@@ -10,11 +10,14 @@ export default {
         'sans': ['Quicksand', 'sans-serif'],
       },
       fontSize: {
+        'xxxxs': '12px',
+        'xxxs': '14px',
+        'xxs': '16px',
         'xs': '20px',
         'sm': '24px',
         'base': '32px',
         'lg': '40px',
-        'xl': '48px',
+        'xl': '44px',
         'xxl': '60px',
       },
       fontWeight: {
@@ -64,6 +67,10 @@ export default {
           WebkitBackgroundClip: 'text',
           WebkitTextFillColor: 'transparent',
         },
+        '.border-gradient': {
+          borderImageSource: 'var(--tw-gradient-stops)',
+          borderImageSlice: 1,
+        }
       });
     },
   ],
