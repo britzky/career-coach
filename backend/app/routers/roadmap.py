@@ -2,6 +2,7 @@ from fastapi import APIRouter, HTTPException
 import logging
 import asyncio
 import re
+import json
 from ..config import assistant_id, client
 from app.schemas import CareerInfo
 
@@ -96,7 +97,7 @@ async def generate_roadmap(career_info: CareerInfo):
         response = await wait_for_run_completion(client, thread.id, run.id)
 
         if response:
-            roadmap = response.json()
+            roadmap = json.loads(response)
             # Regex patterns
             # patterns = {
             #     "month": r"^(Month \d+(?:-\d+)?):",
