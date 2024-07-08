@@ -16,9 +16,6 @@ RUN pip install --no-cache-dir -r /usr/src/app/requirements.txt
 # Copy the entire directory to /app
 COPY . /usr/src/app
 
-#Copy the .env file to the working directory
-COPY backend/app/.env /usr/src/app/.env
-
 # Expose port 8080 for the application
 EXPOSE 8080
 
