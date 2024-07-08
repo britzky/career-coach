@@ -80,6 +80,7 @@ jobs:
         uses: 'google-github-actions/auth@v1'
         with:
           credentials_json: '${{ secrets.GCP_CREDENTIALS }}'
+          token_format: 'access_token'
 
       - name: Check Access Token Availability
         run: |
