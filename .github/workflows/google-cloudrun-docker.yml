@@ -117,6 +117,13 @@ jobs:
           region: us-central1
           project_id: intricate-sweep-427521-c9
           image: us-east1-docker.pkg.dev/intricate-sweep-427521-c9/mypdp-repository/mypdp:${{ github.sha }}
+          env_vars: |
+            OPENAI_API_KEY=${{ secrets.OPENAI_API_KEY }}
+            OPEN_AI_ASSISTANT_ID=${{ secrets.OPEN_AI_ASSISTANT_ID }}
+            DATABASE_URL=${{ secrets.DATABASE_URL }}
+            SECRET_KEY=${{ secrets.SECRET_KEY }}
+            ALGORITHM=${{ secrets.ALGORITHM }}
+            ACCESS_TOKEN_EXPIRE_MINUTES=${{ secrets.ACCESS_TOKEN_EXPIRE_MINUTES }}
 
       # If required, use the Cloud Run url output in later steps
       - name: Show Output
