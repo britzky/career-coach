@@ -50,7 +50,7 @@ on:
 
 env:
   PROJECT_ID: intricate-sweep-427521-c9 # TODO: update Google Cloud project id
-  GAR_LOCATION: us-east1-docker.pkg.dev/intricate-sweep-427521-c9/mypdp-repository # TODO: update Artifact Registry location
+  GAR_LOCATION: us-east1-docker.pkg.dev # TODO: update Artifact Registry location
   SERVICE: mypdp # TODO: update Cloud Run service name
   REGION: us-central1 # TODO: update Cloud Run service region
 
