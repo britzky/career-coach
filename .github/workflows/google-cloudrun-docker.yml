@@ -82,14 +82,6 @@ jobs:
           credentials_json: '${{ secrets.GCP_CREDENTIALS }}'
           token_format: 'access_token'
 
-      - name: Check Access Token Availability
-        run: |
-          if [ -z "${{ steps.auth.outputs.access_token }}" ]; then
-            echo "Access token is missing!"
-          else
-            echo "Access token is available."
-          fi
-
       # BEGIN - Docker auth and build (NOTE: If you already have a container image, these Docker steps can be omitted)
 
       # Authenticate Docker to Google Cloud Artifact Registry
@@ -103,8 +95,16 @@ jobs:
 
       - name: Build and Push Container
         run: |-
-          docker build --build-arg OPENAI_API_KEY=${{ secrets.OPENAI_API_KEY }} --build-arg DATABASE_URL=${{ secrets.DATABASE_URL }} -t "${{ env.GAR_LOCATION }}-docker.pkg.dev/${{ env.PROJECT_ID }}/${{ env.SERVICE }}:${{ github.sha }}" -f backend/Dockerfile backend/
+          docker build -t "${{ env.GAR_LOCATION }}-docker.pkg.dev/${{ env.PROJECT_ID }}/${{ env.SERVICE }}:${{ github.sha }}" \
+            --build-arg OPENAI_API_KEY=${{ secrets.OPENAI_API_KEY }} \
+            --build-arg OPEN_AI_ASSISTANT_ID=${{ secrets.OPEN_AI_ASSISTANT_ID }} \
+            --build-arg DATABASE_URL=${{ secrets.DATABASE_URL }} \
+            --build-arg SECRET_KEY=${{ secrets.SECRET_KEY }} \
+            --build-arg ALGORITHM=${{ secrets.ALGORITHM }} \
+            --build-arg ACCESS_TOKEN_EXPIRE_MINUTES=${{ secrets.ACCESS_TOKEN_EXPIRE_MINUTES }} \
+            -f backend/Dockerfile backend/
           docker push "${{ env.GAR_LOCATION }}-docker.pkg.dev/${{ env.PROJECT_ID }}/${{ env.SERVICE }}:${{ github.sha }}"
+
 
       # END - Docker auth and build
 
