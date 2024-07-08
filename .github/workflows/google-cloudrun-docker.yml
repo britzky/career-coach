@@ -81,6 +81,14 @@ jobs:
         with:
           credentials_json: '${{ secrets.GCP_CREDENTIALS }}'
 
+      - name: Check Access Token Availability
+        run: |
+          if [ -z "${{ steps.auth.outputs.access_token }}" ]; then
+            echo "Access token is missing!"
+          else
+            echo "Access token is available."
+          fi
+
       # BEGIN - Docker auth and build (NOTE: If you already have a container image, these Docker steps can be omitted)
 
       # Authenticate Docker to Google Cloud Artifact Registry
