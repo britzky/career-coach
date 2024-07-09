@@ -63,13 +63,6 @@ COPY . /usr/src/app
 # Expose port 8080 for the application
 EXPOSE 8080
 
-# Add a startup script
-COPY startup.sh /usr/src/app/startup.sh
-RUN chmod +x /usr/src/app/startup.sh
-
-# # Command to run the app
-# CMD ["/usr/src/app/startup.sh"]
-
 # Command to run the app
 CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8080"]
 
