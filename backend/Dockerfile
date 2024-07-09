@@ -67,11 +67,11 @@ EXPOSE 8080
 COPY startup.sh /usr/src/app/startup.sh
 RUN chmod +x /usr/src/app/startup.sh
 
-# Command to run the app
-CMD ["/usr/src/app/startup.sh"]
+# # Command to run the app
+# CMD ["/usr/src/app/startup.sh"]
 
 # Command to run the app
-# CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8080"]
+CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8080"]
 
 
 
