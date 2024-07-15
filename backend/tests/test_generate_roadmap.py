@@ -1,10 +1,4 @@
-import pytest
-from fastapi.testclient import TestClient
-from app.main import app
 from app.schemas import CareerInfo
-import json
-
-client = TestClient(app)
 
 def test_generate_roadmap_response_structure(client):
     # create a sample CareerInfo object
