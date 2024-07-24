@@ -4,7 +4,7 @@ import skillDev from "../../assets/images/Moving forward.png";
 import progress from "../../assets/images/Progress overview.png";
 import career from "../../assets/images/Job hunt.png";
 import road from "../../assets/images/HeroImageLightMode.svg";
-import stars from "../../assets/images/star.svg";
+import stars from "../../assets/images/Star.svg";
 import jay from "../../assets/images/jay.jpg";
 import jon from "../../assets/images/jon.jpg";
 import me from "../../assets/images/me2.jpg";
