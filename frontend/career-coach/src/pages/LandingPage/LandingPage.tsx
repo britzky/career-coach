@@ -19,22 +19,22 @@ export const LandingPage = () => {
   return (
     <div className="flex flex-col min-h-screen leading-8 lg:leading-8 mx-5">
       <div className="mt-8 lg:mx-10">
-        <section className="flex flex-col items-center text-center mt-16 lg:mt-28">
+        <section className="flex flex-col items-center text-center mt-16 md:mt-24 lg:mt-28">
           <div className="flex flex-col max-w-[957px]">
-            <p className="text-purpleText2 font-bold text-xs lg:text-3xl">
+            <p className="text-purpleText2 font-bold text-xs md:text-3xl lg:text-3xl">
               Get your DREAM JOB with our
             </p>
             <div className="relative inline-flex items-center justify-center">
-              <h2 className="text-purpleText2 font-bold text-sm lg:text-6xl mt-3 lg:mt-8 leading-tight [filter:drop-shadow(0_0_25px_rgba(97,70,255,0.5))] flex items-center justify-center">
+              <h2 className="text-purpleText2 font-bold text-sm md:text-5xl lg:text-6xl mt-3 md:mt-8 leading-tight [filter:drop-shadow(0_0_25px_rgba(97,70,255,0.5))] flex items-center justify-center">
                 AI-Powered Career Roadmaps
               </h2>
               <img
                 src={stars}
                 alt="Product Designer Roadmap"
-                className="absolute left-full transform -translate-x-6 lg:-translate-x-16 w-8 h-8 lg:w-12 lg:h-12"
+                className="absolute left-full transform -translate-x-2 xl:-translate-x-16 w-6 h-6 md:w-10 md:h-10 lg:w-12 lg:h-12"
               />
             </div>
-            <p className="font-medium text-xs lg:text-2xl text-gray-700 mt-5 lg:mx-12 lg:mt-7">
+            <p className="font-medium text-xs md:text-3xl lg:text-2xl text-gray-700 mt-5 md:mt-7 lg:mx-12">
               Discover personalized courses, expert guidance, and a roadmap to
               your dream career, all powered by ChatGPT!
             </p>
@@ -43,12 +43,12 @@ export const LandingPage = () => {
             <button
               type="button"
               onClick={() => navigate("/desired-job")}
-              className="w-full lg:w-auto text-white bg-landing-page hover:bg-landing-page-reverse focus:ring-1 focus:outline-none focus:ring-purple-200 font-bold rounded-lg lg:rounded-full text-xs lg:text-2xl px-5 py-2.5 text-center mb-2 mt-6 z-10 cursor-pointer [filter:drop-shadow(0_0_25px_rgba(97,70,255,0.5))]"
+              className="w-full md:w-auto text-white bg-landing-page hover:bg-landing-page-reverse focus:ring-1 focus:outline-none focus:ring-purple-200 font-bold rounded-lg md:rounded-full text-xs md:text-2xl px-5 py-2.5 md:px-10 md:py-4 text-center mb-2 mt-6 z-10 cursor-pointer [filter:drop-shadow(0_0_25px_rgba(97,70,255,0.5))]"
             >
               Try MyPDP for free!
             </button>
           </div>
-          <div className="hidden lg:block mt-6 relative overflow-hidden h-[750px]">
+          <div className="hidden md:block mt-6 relative overflow-hidden h-[750px]">
             <img
               src={road}
               alt="Product Designer Roadmap"
