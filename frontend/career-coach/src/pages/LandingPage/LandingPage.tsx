@@ -48,7 +48,7 @@ export const LandingPage = () => {
               Try MyPDP for free!
             </button>
           </div>
-          <div className="hidden lg:block mt-6 relative overflow-hidden h-[750px]">
+          <div className="hidden md:block mt-6 relative overflow-hidden h-[750px]">
             <img
               src={road}
               alt="Product Designer Roadmap"
