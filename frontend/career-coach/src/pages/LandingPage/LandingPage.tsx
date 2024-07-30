@@ -17,36 +17,38 @@ export const LandingPage = () => {
   const { careerDetails } = useCareerDetails();
   console.log(careerDetails);
   return (
-    <div className="overflow-x-hidden flex flex-col min-h-screen leading-5 lg:leading-8">
-      <div className="mt-28 mx-10">
-        <section className="flex flex-col items-center text-center mt-28 mx-10">
-          <div className="flex flex-col space-y-7 max-w-[957px]">
-            <span className="text-purpleText2 font-bold text-base">
+    <div className="flex flex-col min-h-screen leading-8 lg:leading-8 mx-5">
+      <div className="mt-8 lg:mx-10">
+        <section className="flex flex-col items-center text-center mt-16 lg:mt-28">
+          <div className="flex flex-col max-w-[957px]">
+            <p className="text-purpleText2 font-bold text-xs lg:text-3xl">
               Get your DREAM JOB with our
-            </span>
-            <span className="text-purpleText2 font-bold text-5xl lg:text-6xl leading-tight [filter:drop-shadow(0_0_25px_rgba(97,70,255,0.5))] flex items-center justify-center">
-              AI-Powered Career Roadmaps
+            </p>
+            <div className="relative inline-flex items-center justify-center">
+              <h2 className="text-purpleText2 font-bold text-sm lg:text-6xl mt-3 lg:mt-8 leading-tight [filter:drop-shadow(0_0_25px_rgba(97,70,255,0.5))] flex items-center justify-center">
+                AI-Powered Career Roadmaps
+              </h2>
               <img
                 src={stars}
                 alt="Product Designer Roadmap"
-                className="ml-2 w-12 h-12 -mt-6"
+                className="absolute left-full transform -translate-x-6 lg:-translate-x-16 w-8 h-8 lg:w-12 lg:h-12"
               />
-            </span>
-            <p className="font-medium text-sm text-gray-700 mt-2">
+            </div>
+            <p className="font-medium text-xs lg:text-2xl text-gray-700 mt-5 lg:mx-12 lg:mt-7">
               Discover personalized courses, expert guidance, and a roadmap to
               your dream career, all powered by ChatGPT!
             </p>
           </div>
-          <div>
+          <div className="w-full flex justify-center">
             <button
               type="button"
               onClick={() => navigate("/desired-job")}
-              className="w-full lg:w-auto text-white bg-landing-page hover:bg-landing-page-reverse focus:ring-1 focus:outline-none focus:ring-purple-200 font-bold rounded-full text-base lg:text-xs px-5 py-2.5 text-center me-2 mb-2 mt-7 z-10 cursor-pointer relative"
+              className="w-full lg:w-auto text-white bg-landing-page hover:bg-landing-page-reverse focus:ring-1 focus:outline-none focus:ring-purple-200 font-bold rounded-lg lg:rounded-full text-xs lg:text-2xl px-5 py-2.5 text-center mb-2 mt-6 z-10 cursor-pointer [filter:drop-shadow(0_0_25px_rgba(97,70,255,0.5))]"
             >
               Try MyPDP for free!
             </button>
           </div>
-          <div className="mt-6 relative overflow-hidden h-[750px]">
+          <div className="hidden lg:block mt-6 relative overflow-hidden h-[750px]">
             <img
               src={road}
               alt="Product Designer Roadmap"
