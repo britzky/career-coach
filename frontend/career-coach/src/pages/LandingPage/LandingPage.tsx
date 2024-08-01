@@ -17,22 +17,22 @@ export const LandingPage = () => {
   const { careerDetails } = useCareerDetails();
   console.log(careerDetails);
   return (
-    <div className="flex flex-col min-h-screen leading-8 lg:leading-8 mx-5">
-      <div className="mt-8 lg:mx-10">
+    <div className="flex flex-col min-h-screen leading-8 lg:leading-8">
+      <div className="mt-8 lg:mx-10 px-5">
         <section className="flex flex-col items-center text-center mt-16 md:mt-24 lg:mt-28">
           <div className="flex flex-col max-w-[957px]">
             <p className="text-purpleText2 font-bold text-xs md:text-3xl lg:text-3xl">
               Get your DREAM JOB with our
             </p>
-            <div className="relative inline-flex items-center justify-center">
-              <h2 className="text-purpleText2 font-bold text-sm md:text-5xl lg:text-6xl mt-3 md:mt-8 leading-tight [filter:drop-shadow(0_0_25px_rgba(97,70,255,0.5))] flex items-center justify-center">
+            <div className="inline-flex items-center justify-center min-w-96">
+              <h2 className="relative text-purpleText2 font-bold text-sm md:text-5xl lg:text-6xl mt-3 md:mt-8 leading-tight [filter:drop-shadow(0_0_25px_rgba(97,70,255,0.5))] flex items-center justify-center">
                 AI-Powered Career Roadmaps
+                <img
+                  src={stars}
+                  alt="Product Designer Roadmap"
+                  className="absolute left-full transform -translate-x-1 -translate-y-2 w-6 h-6 md:w-10 md:h-10 lg:w-12 lg:h-12"
+                />
               </h2>
-              <img
-                src={stars}
-                alt="Product Designer Roadmap"
-                className="absolute left-full transform -translate-x-2 xl:-translate-x-16 w-6 h-6 md:w-10 md:h-10 lg:w-12 lg:h-12"
-              />
             </div>
             <p className="font-medium text-xs md:text-3xl lg:text-2xl text-gray-700 mt-5 md:mt-7 lg:mx-12">
               Discover personalized courses, expert guidance, and a roadmap to
