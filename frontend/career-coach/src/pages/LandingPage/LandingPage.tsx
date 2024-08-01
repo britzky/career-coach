@@ -17,8 +17,8 @@ export const LandingPage = () => {
   const { careerDetails } = useCareerDetails();
   console.log(careerDetails);
   return (
-    <div className="flex flex-col min-h-screen leading-8 lg:leading-8 mx-5">
-      <div className="mt-8 lg:mx-10">
+    <div className="flex flex-col min-h-screen leading-8 lg:leading-8">
+      <div className="mt-8 lg:mx-10 px-5">
         <section className="flex flex-col items-center text-center mt-16 md:mt-24 lg:mt-28">
           <div className="flex flex-col max-w-[957px]">
             <p className="text-purpleText2 font-bold text-xs md:text-3xl lg:text-3xl">
