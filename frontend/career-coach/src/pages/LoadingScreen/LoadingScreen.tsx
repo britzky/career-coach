@@ -31,7 +31,7 @@ export const LoadingScreen = () => {
 
   const fetchQuote = async () => {
     try {
-      const response = await fetch('https://career-coach-xh2c.onrender.com/quote/');
+      const response = await fetch('https://mypdp-cta4i5qpaq-uc.a.run.app/quote/');
       const data = await response.json();
       if (data) {
         console.log(data)
