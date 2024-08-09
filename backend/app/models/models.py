@@ -1,6 +1,7 @@
-from sqlalchemy import Column, Integer, String, ForeignKey, JSON
+from sqlalchemy import Column, Integer, String, ForeignKey, JSON, Boolean, DateTime
 from sqlalchemy.orm import relationship
 from sqlalchemy.ext.declarative import declarative_base
+from sqlalchemy.sql import func
 
 Base = declarative_base()
 
@@ -10,13 +11,36 @@ class User(Base):
     username = Column(String, unique=True, index=True)
     email = Column(String, unique=True, index=True)
     password = Column(String)
+    roadmaps = relationship("Roadmap", back_populates="user")
 
 class Roadmap(Base):
     __tablename__ = 'roadmap'
     id = Column(Integer, primary_key=True)
     user_id = Column(Integer, ForeignKey('user.id'))
     summary = Column(String)
-    content = Column(JSON)
+    created_at = Column(DateTime, server_default=func.now())
     user = relationship("User", back_populates="roadmaps")
+    months = relationship("Month", back_populates="roadmap")
 
-User.roadmaps = relationship("Roadmap", order_by=Roadmap.id, back_populates="user")
+class Month(Base):
+    __tablename__ = 'month'
+    id = Column(Integer, primary_key=True)
+    roadmap_id = Column(Integer, ForeignKey('roadmap.id'))
+    month = Column(String)
+    overview = Column(String)
+    roadmap = relationship("Roadmap", back_populates="months")
+    courses = relationship("Course", back_populates="month")
+
+class Course(Base):
+    __tablename__ = 'course'
+    id = Column(Integer, primary_key=True)
+    month_id = Column(Integer, ForeignKey('month.id'))
+    coursename = Column(String)
+    link = Column(String)
+    skilllevel = Column(String)
+    price = Column(String)
+    duration = Column(String)
+    description = Column(String)
+    completed = Column(Boolean, default=False)
+    month = relationship("Month", back_populates="courses")    
+
