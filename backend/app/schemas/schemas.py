@@ -1,47 +1,66 @@
 from pydantic import BaseModel
 from typing import List
+from datetime import datetime
 
-# Schema to build roadmap
-class CareerInfo(BaseModel):
-    career: str
-    experience: str
-    hours_dedicated_to_learning: int
-    budget: int
-    # skills: List[str]
-    preferred_learning_style: str
-    # timeframe: str
-    current_knowledge: str
-
-# Schema for User
-class User(BaseModel):
-    username: str
-    email: str
-    password: str
-
-# Schema for roadmap course info
-class RoadmapCourseInfo(BaseModel):
+class CourseBase(BaseModel):
     coursename: str
     link: str
     skilllevel: str
     price: str
+    duration: str
     description: str
 
-# Schema for roadmap sections
-class RoadmapSection(BaseModel):
+class CourseCreate(CourseBase):
+    pass
+
+class Course(CourseBase):
+    id: int
+    month_id: int
+    completed: bool
+
+    class Config:
+        orm_mode = True
+
+class MonthBase(BaseModel):
     month: str
-    title: str
-    courseInfo: RoadmapCourseInfo
+    overview: str
 
-# Schema for creating the roadmap object
-class RoadmapObject(BaseModel):
+class MonthCreate(MonthBase):
+    courses: List[CourseCreate]
+
+class Month(MonthBase):
+    id: int
+    roadmap_id: int
+    courses: List[Course]
+
+    class Config:
+        orm_mode = True
+
+class RoadmapBase(BaseModel):
     summary: str
-    roadmap: List[RoadmapSection]
 
-# Schema for reading the roadmap from the database
-class Roadmap(RoadmapObject):
+class RoadmapCreate(RoadmapBase):
+    roadmap: List[MonthCreate]
+
+class Roadmap(RoadmapBase):
     id: int
     user_id: int
+    created_at: datetime
+    roadmap: list[Month]
 
-    # Class to tell Pydantic to treat the models as dictionaries
     class Config:
-        from_attributes = True
+        orm_mode = True
+
+class UserBase(BaseModel):
+    username: str
+    email: str
+
+class UserCreate(UserBase):
+    password: str
+
+class User(UserBase):
+    id: int
+    roadmaps: List[Roadmap]
+
+    class Config:
+        orm_mode = True
