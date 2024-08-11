@@ -2,6 +2,16 @@ from pydantic import BaseModel
 from typing import List
 from datetime import datetime
 
+class CareerInfo(BaseModel):
+    career: str
+    experience: str
+    hours_dedicated_to_learning: int
+    budget: int
+    # skills: List[str]
+    preferred_learning_style: str
+    # timeframe: str
+    current_knowledge: str
+
 class CourseBase(BaseModel):
     coursename: str
     link: str
