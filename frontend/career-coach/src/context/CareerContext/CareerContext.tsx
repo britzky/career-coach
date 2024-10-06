@@ -93,7 +93,7 @@ export const CareerProvider: React.FC<CareerProviderProps> = ({ children }) => {
     setLoading(true)
 
     try {
-      const response = await fetch('https://mypdp-cta4i5qpaq-uc.a.run.app/generate-roadmap/', {
+      const response = await fetch('https://career-coach-xh2c.onrender.com/generate-roadmap/', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
